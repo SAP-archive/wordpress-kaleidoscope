@@ -1,0 +1,23 @@
+  @media (max-width: 1920px) {
+    .lock {
+      font-size: 8px !important;
+    }
+  }
+  
+  .lock {
+    position: absolute;
+    bottom: 7px;
+    right: 10px;
+    opacity: 0.6;
+    color: white;
+    font-size: 0.55vw;
+    transition: opacity 0.4s;
+  }
+  
+  .lock img {
+    width: 15px;
+  }
+  
+  .lock span {
+    cursor: pointer;
+  }

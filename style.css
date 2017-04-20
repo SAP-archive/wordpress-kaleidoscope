@@ -1,0 +1,439 @@
+/*
+Theme Name: ICNPortfolio
+Theme URI: http://icn.sap.com/
+Description: ICN Portfolio.
+Author: Thomas Uhde & Stefan Ritter & Thomas Augsten & Florian Moritz & Lutz Gericke & Julian Weise
+Version: 1.0
+Tags: ICN, SAP, portfolio
+*/
+
+/* --- Overview Page Particle Coloring --- */
+.overview__particle-0 {
+  background-color: #7FB618;
+  border-color: #7FB618;
+}
+
+.overview__particle-1 {
+  background-color: #5884d3;
+  border-color: #5884d3;
+}
+
+.overview__particle-2 {
+  background-color: #36A8AF;
+  border-color: #36A8AF;
+}
+
+.overview__particle-3 {
+  background-color: #9D73AA;
+  border-color: #9D73AA;
+}
+
+.overview__particle-4 {
+  background-color: #E57562;
+  border-color: #E57562;
+}
+
+.overview__particle-5 {
+  background-color: #F1A040;
+  border-color: #F1A040;
+}
+
+
+/* --- Project Particle Coloring --- */
+
+.category_01 path.cube.cubefill,
+.category_01 svg path.cube.cubefill,
+.category_01 path.cube,
+.category_01 rect.cube,
+.category_01 .cube,
+.category_01.detailview__exitbutton path,
+.category_01.detailview__exitbutton use {
+    fill: #7FB618;
+    stroke: #7FB618;
+}
+
+.category_02 path.cube.cubefill,
+.category_02 svg path.cube.cubefill,
+.category_02 path.cube,
+.category_02 rect.cube,
+.category_02 .cube,
+.category_02.detailview__exitbutton path,
+.category_02.detailview__exitbutton use {
+    fill: #5884d3;
+    stroke: #5884d3;
+}
+
+.detailview__footer.category_01,
+.detailview__hero.category_01,
+.particle__category_01,
+.matrix_color_code .matrix_legend_category_01::before,
+.lctable .category_01,
+.timeline .category_01,
+.Matrix_cell ul li.category_01,
+.filtermenuitem__selected .filtermenuitem__legenditem__category_01 {
+    background-color: #7FB618 !important;
+    border-color: #7FB618;
+}
+
+.detailview__footer.category_02,
+.detailview__hero.category_02,
+.particle__category_02,
+.matrix_color_code .matrix_legend_category_02::before,
+.lctable .category_02,
+.timeline .category_02,
+.Matrix_cell ul li.category_02,
+.filtermenuitem__selected .filtermenuitem__legenditem__category_02 {
+    background-color: #5884d3 !important;
+    border-color: #5884d3;
+}
+
+.request_info_button.category_01,
+.detailview__editButton.category_01,
+.detailview__banner_sticker.category_01,
+.category_01 .slick-dots li.slick-active button:before,
+.category_01 .slick-prev:before,
+.category_01 .slick-next:before,
+.filtermenuitem__legenditem.filtermenuitem__legenditem__category_01 {
+    border-color: #7FB618 !important;
+    color: #7FB618;
+}
+
+.request_info_button.category_02,
+.detailview__editButton.category_02,
+.detailview__banner_sticker.category_02,
+.category_02 .slick-dots li.slick-active button:before,
+.category_02 .slick-prev:before,
+.category_02 .slick-next:before,
+.filtermenuitem__legenditem.filtermenuitem__legenditem__category_02 {
+    border-color: #5884d3 !important;
+    color: #5884d3;
+}
+
+.category_03 path.cube.cubefill,
+.category_03 svg path.cube.cubefill,
+.category_03 path.cube,
+.category_03 rect.cube,
+.category_03 .cube,
+.category_03.detailview__exitbutton path,
+.category_03.detailview__exitbutton use {
+    fill: #36A8AF;
+    stroke: #36A8AF;
+}
+
+.detailview__footer.category_03,
+.detailview__hero.category_03,
+.particle__category_03,
+.matrix_color_code .matrix_legend_category_03::before,
+.lctable .category_03,
+.timeline .category_03,
+.Matrix_cell ul li.category_03,
+.filtermenuitem__selected .filtermenuitem__legenditem__category_03 {
+        background-color: #36A8AF !important;
+        border-color: #36A8AF;
+}
+
+.request_info_button.category_03,
+.detailview__editButton.category_03,
+.detailview__banner_sticker.category_03,
+.category_03 .slick-dots li.slick-active button:before,
+.category_03 .slick-prev:before,
+.category_03 .slick-next:before,
+.filtermenuitem__legenditem.filtermenuitem__legenditem__category_03 {
+    border-color: #36A8AF !important;
+    color: #36A8AF;
+}
+
+.category_04 path.cube.cubefill,
+.category_04 svg path.cube.cubefill,
+.category_04 path.cube,
+.category_04 rect.cube,
+.category_04 .cube,
+.category_04.detailview__exitbutton path,
+.category_04.detailview__exitbutton use {
+    fill: #9D73AA;
+    stroke: #9D73AA;
+}
+
+.detailview__footer.category_04,
+.detailview__hero.category_04,
+.particle__category_04,
+.matrix_color_code .matrix_legend_category_04::before,
+.lctable .category_04,
+.timeline .category_04,
+.Matrix_cell ul li.category_04,
+.filtermenuitem__selected .filtermenuitem__legenditem__category_04 {
+    background-color: #9D73AA !important;
+    border-color: #9D73AA;
+}
+
+.request_info_button.category_04,
+.detailview__editButton.category_04,
+.detailview__banner_sticker.category_04,
+.category_04 .slick-dots li.slick-active button:before,
+.category_04 .slick-prev:before,
+.category_04 .slick-next:before,
+.filtermenuitem__legenditem.filtermenuitem__legenditem__category_04 {
+    border-color: #9D73AA !important;
+    color: #9D73AA;
+}
+
+.category_05 path.cube.cubefill,
+.category_05 svg path.cube.cubefill,
+.category_05 path.cube,
+.category_05 rect.cube,
+.category_05 .cube,
+.category_05.detailview__exitbutton path,
+.category_05.detailview__exitbutton use {
+    fill: #E57562;
+    stroke: #E57562;
+}
+
+.detailview__footer.category_05,
+.detailview__hero.category_05,
+.particle__category_05,
+.matrix_color_code .matrix_legend_category_05::before,
+.lctable .category_05,
+.timeline .category_05,
+.Matrix_cell ul li.category_05,
+.filtermenuitem__selected .filtermenuitem__legenditem__category_05 {
+    background-color: #E57562 !important;
+    border-color: #E57562;
+}
+
+.request_info_button.category_05,
+.detailview__editButton.category_05,
+.detailview__banner_sticker.category_05,
+.category_05 .slick-dots li.slick-active button:before,
+.category_05 .slick-prev:before,
+.category_05 .slick-next:before,
+.filtermenuitem__legenditem.filtermenuitem__legenditem__category_05 {
+    border-color: #E57562 !important;
+    color: #E57562;
+}
+
+.category_06 path.cube.cubefill,
+.category_06 svg path.cube.cubefill,
+.category_06 path.cube,
+.category_06 rect.cube,
+.category_06 .cube,
+.category_06.detailview__exitbutton path,
+.category_06.detailview__exitbutton use {
+    fill: #F1A040;
+    stroke: #F1A040;
+}
+
+.detailview__footer.category_06,
+.detailview__hero.category_06,
+.particle__category_06,
+.matrix_color_code .matrix_legend_category_06::before,
+.lctable .category_06,
+.timeline .category_06,
+.Matrix_cell ul li.category_06,
+.filtermenuitem__selected .filtermenuitem__legenditem__category_06 {
+    background-color: #F1A040 !important;
+    border-color: #F1A040;
+}
+
+.request_info_button.category_06,
+.detailview__editButton.category_06,
+.detailview__banner_sticker.category_06,
+.category_06 .slick-dots li.slick-active button:before,
+.category_06 .slick-prev:before,
+.category_06 .slick-next:before,
+.filtermenuitem__legenditem.filtermenuitem__legenditem__category_06 {
+    border-color: #F1A040 !important;
+    color: #F1A040;
+}
+
+
+.category_00 path.cube.cubefill,
+.category_00 svg path.cube.cubefill,
+.category_00 path.cube,
+.category_00 rect.cube,
+.category_00 .cube,
+.category_00.detailview__exitbutton path,
+.category_00.detailview__exitbutton use {
+    fill: #b8db13;
+;
+    stroke: #b8db13;
+}
+
+.detailview__footer.category_00,
+.detailview__hero.category_00,
+.particle__category_00,
+.matrix_color_code .matrix_legend_category_00::before,
+.lctable .category_00,
+.timeline .category_00,
+.Matrix_cell ul li.category_00,
+.filtermenuitem__selected .filtermenuitem__legenditem__category_00 {
+    background-color: #b8db13 !important;
+    border-color: #b8db13;
+}
+
+.request_info_button.category_00,
+.detailview__banner_sticker.category_00,
+.detailview__editButton.category_00,
+.category_00 .slick-dots li.slick-active button:before,
+.category_00 .slick-prev:before,
+.category_00 .slick-next:before,
+.filtermenuitem__legenditem.filtermenuitem__legenditem__category_00 {
+    border-color: #b8db13 !important;
+    color: #b8db13;
+}
+
+
+
+.request_info_button.category_01:hover,
+.detailview__editButton.category_01:hover {
+    color: #405c0c;
+}
+
+.request_info_button.category_02:hover,
+.detailview__editButton.category_02:hover {
+    color: #29529c;
+}
+
+.request_info_button.category_06:hover,
+.detailview__editButton.category_06:hover {
+    color: #bd6d0e !important;
+}
+
+.request_info_button.category_00:hover,
+.detailview__editButton.category_00:hover {
+    color: #778d0c !important;
+}
+
+.request_info_button.category_05:hover,
+.detailview__editButton.category_05:hover {
+    color: #c13720 !important;
+}
+
+.request_info_button.category_04:hover,
+.detailview__editButton.category_04:hover {
+    color: #674572 !important;
+}
+
+.request_info_button.category_03:hover,
+.detailview__editButton.category_03:hover {
+    color: #1e5d61 !important;
+}
+
+.request_info_button.category_xx:hover,
+.detailview__editButton.category_xx:hover {
+    color: #999999 !important;
+}
+.circle_Low.category_01 {
+    background-color: rgba(127, 182, 24, 0.6);
+}
+.circle_Low.category_06 {
+    background-color: rgba(241, 160, 64, 0.6);
+}
+
+.circle_Low.category_00{
+    background-color: rgba(184, 219, 19,0.6);
+}
+
+.circle_Low.category_05{
+    background-color: rgba(229, 117, 98, 0.6);
+}
+.circle_Low.category_02{
+    background-color: rgba(88, 132, 211, 0.6);
+}
+.circle_Low.category_04{
+    background-color: rgba(157, 115, 170, 0.6);
+}
+.circle_Low.category_03{
+    background-color: rgba(54, 168, 175, 0.6);
+}
+.circle_Low.category_xx {
+    background-color: rgba(204, 204, 204, 0.6);
+}
+
+
+/* --- RUBIX Cube border coloring --- */
+.detailview__content__bubble__bg.category_01 {
+    border-color: #97c049;
+}
+
+.detailview__content__bubble__bg.category_02 {
+    border-color: #7e9ed7;
+}
+
+.detailview__content__bubble__bg.category_03 {
+    border-color: #64b9bc;   
+}
+
+.detailview__content__bubble__bg.category_04 {
+    border-color: #b191b8;
+}
+
+.detailview__content__bubble__bg.category_05 {
+    border-color: #e79282;
+}
+
+.detailview__content__bubble__bg.category_06 {
+    border-color: #f0b369;
+}
+
+.detailview__content__bubble__bg.category_00 {
+    border-color: #cfeb47;
+}
+
+
+/* --- Particle tint --- */
+.particle_background_tint__category_01:before {
+    background-color: rgba(115, 173, 7, 0.7);
+}
+
+.particle_background_tint__category_02:before {
+    background-color: rgba(33, 98, 215, 0.7);
+}
+
+.particle_background_tint__category_03:before {
+    background-color: rgba(29, 142, 149, 0.7);
+}
+
+.particle_background_tint__category_04:before {
+    background-color: rgba(141, 71, 163, 0.7);
+}
+
+.particle_background_tint__category_05:before {
+    background-color: rgba(241, 87, 60, 0.7);
+}
+
+.particle_background_tint__category_06:before {
+    background-color: rgba(255, 161, 50, 0.7);
+}
+
+.particle_background_tint__category_00:before {
+    background-color: rgba(200, 240, 0, 0.7);
+}
+
+/* ##### START change filterbar size ##### */
+
+/* Edit filterbar size here for displays up to 1920 px with */
+@media (max-width: 1920px) {
+    .filters {
+        width: 212px !important; /* size of filterbar itself */
+    }
+    .filters__container {
+        width: 226px !important;  /* size of inner filterbar container, holding filterbar titles */
+    }
+
+    .filtersHidden  {
+        transform: translateX(-256px) !important; /*  Take the value from filters__container (above) and add 30px to it! */
+    }
+}
+
+/* Edit filterbar size here for displays larger than 1920 px with */
+.filters {
+    width: 11.042vw; /* size of filterbar itself */
+}
+.filters__container {
+    width: 11.22vw; /* size of inner filterbar container, holding filterbar titles */
+}
+
+.filtersHidden  {
+    transform: translateX(-13.22vw); /* only use vw here! Take the value from filters__container and add 2vw to it! */
+}
+/* ##### END change filterbar size ##### */

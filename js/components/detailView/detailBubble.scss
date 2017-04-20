@@ -1,0 +1,103 @@
+@import '../../colors.scss';
+
+
+@media (max-width: 1920px) {
+  .rubix {
+    width: 300px;
+    height: 150px;
+  }
+
+  .detailview__content__bubble__bg {
+    width: 230px;
+    height: 230px;
+    border-radius: 150px;
+    margin-top: 55px;
+  }
+
+  .detailview__content__bubble {
+    svg {
+      left: 105px;
+      top: 75px;
+    }
+  }
+}
+
+
+@media (min-width: 1921px) {
+  .rubix {
+    width: 17vw;
+    height: 9vw;
+  }
+
+  .detailview__content__bubble__bg {
+    width: 12vw;
+    height: 12vw;
+    border-radius: 12vw;
+    margin-top: 3vh;
+  }
+
+  .detailview__content__bubble {
+    svg {
+      left: 5vw;
+      top: 5vh;
+    }
+  }
+}
+
+
+// --- Disable Rubix bubble on small screens ---
+@media (max-width: 1024px) {
+  .detailview__content__bubble {
+    display: none !important;
+  }
+  .detailview__content__img {
+    display: none !important;
+  }
+}
+
+
+.detailview__content__bubble__bg  .rubix path.cube,
+.rubix  svg  path.cube {
+ fill: transparent;
+}
+
+
+.detailview__content__bubble {
+  position: relative;
+  top: -90px;
+}
+
+ 
+.detailview__content__bubble__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1em;
+  background-color: #edebe4;
+  border: 2px solid;
+}
+
+
+.detailview__content__bubble {
+  svg {
+    display: block;
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    position: absolute;
+  }
+
+  .slick-slider {
+    width: 70%;
+    margin-top: 34%;
+    margin-left: 15%;
+    .slick-icnheightimage {
+      height: 175px;
+    }
+    .slick-dots {
+      bottom: -125px;
+    }
+  }
+}

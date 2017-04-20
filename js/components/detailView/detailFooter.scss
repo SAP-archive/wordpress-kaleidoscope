@@ -1,0 +1,43 @@
+@import '../../colors.scss';
+@media (max-width: 1920px) {
+  .detailview__footer {
+    font-size: 120% !important;
+  }
+  .detailview__footer__entry__center {
+    width: 500px !important;
+  }
+}
+
+.detailview__footer {
+  min-height: 300px;
+  font-family: $geofont;
+  font-size: 1vw;
+  padding: 1.5em 0;
+  line-height: 1.4;
+  letter-spacing: 0.4px;
+  color: whitesmoke;
+  display: table;
+  .isvg {
+    margin-top: 5px;
+  }
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .detailview__footer__text {
+    margin-left: 10px;
+  }
+  .detailview__footer__entry {
+    cursor: pointer;
+  }
+}
+
+.detailview__footer__entry__left {
+  text-align: left;
+}
+
+.detailview__footer__entry__center {
+  text-align: left;
+  width: 26vw;
+  position: absolute;
+}

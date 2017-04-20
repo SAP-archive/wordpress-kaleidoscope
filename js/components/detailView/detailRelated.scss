@@ -1,0 +1,23 @@
+$mobile: "(max-width: 1023px) and (orientation: landscape),
+        (max-width: 767px) and (orientation: portrait)";
+
+$desktop: "(min-width: 1024px) and (max-width: 1920px) and (orientation: landscape),
+        (min-width: 768px) and (max-width: 1920px) and (orientation: portrait)";
+
+
+ @media #{$desktop} {
+   .detailview__related__slider {
+     .particle {
+       width: 250px !important;
+       height: 250px !important;
+     }
+   }
+ }
+ 
+ .detailview__related__slider {
+   .particle {
+     width: 10.4vw;
+     height: 10.4vw;
+     position: relative;
+   }
+ }

@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Geogrotesque';
+    src: url('fonts/3095ED_5_0.eot');
+    src: url('fonts/3095ED_5_0.eot?#iefix') format('embedded-opentype'), url('fonts/3095ED_5_0.woff2') format('woff2'), url('webfonts/3095ED_5_0.woff') format('woff'), url('fonts/3095ED_5_0.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+input {
+	font-size: 18pt;
+	font-family: "Geogrotesque", sans-serif;
+	width: 550px;
+	margin: 10px 0;
+	padding: 5px;
+}
+
+form {
+	text-align:center;
+	color: white;
+	font-family: "Geogrotesque", sans-serif;
+	font-size: 24pt;
+	margin-top: 15%;
+}
+
+textarea {
+	font-family: "Geogrotesque", sans-serif;
+	width: 550px;
+	height: 400px;
+	font-size: 18pt;
+	margin: 10px 0;
+	padding: 5px;
+}
+
+button {
+	font-family: "Geogrotesque", sans-serif;
+	color: white;
+    background: #3e82ff;
+    border: 1px solid white;
+    width: 150px;
+    height: 40px;
+    float: right;
+    font-size: 15pt;
+}
+
+.feedback-headline {
+	width: 450px;
+    margin: auto;
+    font-size: 25pt;
+    text-align: left;
+    padding-right: 100px;
+    margin-bottom: 15px;
+}
+.send-button-div {
+	width: 550px;
+    margin: auto;
+}

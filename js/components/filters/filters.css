@@ -1,0 +1,271 @@
+@media (max-width: 1920px) {
+    .filters {
+        padding: 80px 15px 40px 15px !important;
+    }
+    #sapLogo {
+        height: 31.2969px !important;
+    }
+    img#icn {
+        height: 31.2969px !important;
+        left: 80px !important;
+    }
+    .icnCreditVisible .filterAboutButton {
+        bottom: 50px !important;
+    }
+    .filters .filterMenuButton {
+        font-size: 60px !important;
+        line-height: 35px !important;
+        padding-left: 4px !important;
+    }
+    .filters.filters__overview {
+        width: 42px !important;
+    }
+    .icnCreditVisible .filters__container {
+        bottom: 80px !important;
+    }
+    .filters__container {
+        top: 120px !important;
+        bottom: 42px !important;
+    }
+    .filterLogo {
+        height: 55px !important;
+        width: 173.25px !important;
+    }
+    .filterLogoRight {
+        height: 55px !important;
+        width: 228px !important;
+        right: 8px !important;
+    }
+    .filters .filterText {
+        font-size: 18px !important;
+        padding-top: 5px !important;
+        padding-left: 24px !important;
+        left: 55px;
+        top: 78px;
+    }
+    .filterAboutButton {
+        font-size: inherit !important;
+    }
+    .filterAboutButton {
+        left: 82px !important;
+        font-size: 16px !important;
+    }
+
+    .filterTextProjects {
+       margin-left: 6px;
+    }
+}
+
+
+/* fix about button font baseline for IE,
+ has no effect on other browsers */
+
+.filterAboutButton span {
+    transform: translateY(2px);
+}
+
+
+
+@media (min-width: 1921px) {
+    .filters .filterText {
+        top: 4.5vw;
+        left: 2.7vw;
+    }
+
+    .filterTextProjects {
+        margin-left: 12px;
+    }
+}
+
+.filterLogo {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    height: 3vw;
+    cursor: pointer;
+}
+.filterLogoRight {
+    position: absolute;
+    top: 15px;
+    right: 12px;
+    width: 11vw;
+    cursor: pointer;
+}
+
+.filtersShown {
+    transform: translateX(0);
+}
+
+.filters {
+    /* Prevent the callout on tap-hold and text selection */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    padding: 5.2vw 15px 2.2vw 15px;
+    left: 0;
+    bottom: 0;
+    z-index: 4;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.9);
+    transition: transform 0.2s ease-in-out, width 0.2s ease-in-out;
+}
+
+.filters .filterMenuButton {
+    cursor: pointer;
+    padding-left: 0.4vw;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 800;
+    content: '≡';
+    color: white;
+    opacity: 0.5;
+    font-size: 3.2vw;
+    line-height: 0.6vw;
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.filters .filterText {
+    font-family: "Geogrotesque", sans-serif;
+    font-weight: 800;
+    opacity: 1;
+    color: white;
+    display: table-cell;
+    padding-top: 0.32vw;
+    padding-left: 1.3vw;
+    vertical-align: middle;
+    font-size: 0.9vw;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.filters.filters__overview .filterText {
+    opacity: 0;
+}
+
+.filters.filters__overview .filterMenuButton {
+    opacity: 1;
+}
+
+.filters.filters__overview {
+    width: 2.7vw;
+}
+
+.filters__overview .lock {
+    opacity: 0;
+}
+
+.icnCreditVisible .filters__container {
+    bottom: 2vw;
+}
+
+.filters__container {
+    color: white;
+    position: absolute;
+    top: 7.2vw;
+    margin: 0 0 0 15px;
+    padding-right: 50000px;
+    left: 0;
+    bottom: 2.2vw;
+    z-index: 4;
+    overflow-y: scroll;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.filters.filters__overview .filters__container {
+    opacity: 0;
+    display: none;
+    transform: translateX(60px);
+}
+
+#icnLogo {
+    z-index: 5;
+}
+
+#icn {
+    position: fixed;
+    z-index: 10;
+    bottom: 10px;
+    left: 3vw;
+    width: auto;
+    height: 1.4vw;
+}
+
+.filterSapLogo {
+    position: fixed;
+    z-index: 10;
+    bottom: 10px;
+    left: 5px;
+    width: auto;
+    height: 1.4vw;
+}
+
+.icnCreditVisible .filterAboutButton {
+    bottom: 3.5vh;
+    left: 5px !important;
+}
+
+.icnCreditVisible #icn,
+.icnCreditVisible .filterSapLogo {
+    bottom: 10px;
+}
+
+.filterAboutButton {
+    font-family: "Geogrotesque", sans-serif;
+    font-weight: 400;
+    /* background: linear-gradient(to right, rgba(117, 117, 117, 1) 0%, rgba(79, 74, 79, 1) 100%); */
+    white-space: pre;
+    border: 1px solid white;
+    border-radius: 0.2vw;
+    bottom: 10px;
+    left: 82px;
+    position: absolute;
+    font-size: 0.8vw;
+    left: 3.6vw;
+    left: 33%;
+    position: absolute;
+    z-index: 5;
+    color: white;
+    padding: 0px 4px;
+    width: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.8vw;
+}
+
+.filterAboutButtonLarge {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.filters.filters__overview .filterAboutButtonLarge {
+    opacity: 0;
+    transform: translateX(60px);
+}
+
+.filterAboutButtonSmall {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.filters.filters__overview .filterAboutButtonSmall {
+    opacity: 1;
+}
+
+
+/*#icnLogo {
+    position: fixed;
+    z-index: 5;
+    top: 15px;
+    left: 10px;
+    width: auto;
+    width: 160px;
+    cursor: pointer;
+}*/

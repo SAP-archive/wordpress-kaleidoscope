@@ -1,0 +1,27 @@
+/* Colors */
+
+// To change theme colors change the category variables below + change bubble_bg_category_xx.svg file
+$filters_disabled: white;
+$filters_enabled: white;
+$filters_activated: white;
+$toast_light_color: #F0F0F0;
+$toast_dark_color: #383838;
+$detail_section_odd_color: #e0deda;
+$headline_light_color: #e4e4e4;
+$headline_dark_color: #434343;
+
+/* Fonts */
+
+$geofont: "Geogrotesque",
+sans-serif;
+
+/* color mixins */
+
+@mixin bubbleBg() {
+    /* using SVG encoded as data url for background-image is not working in all browsers --> we need to create a separate svg file for each variant in img/ */
+    /* bubbleBg(gradien-from, gradient-to, background) */
+    // url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><defs> <linearGradient x1='100%' y1='0%' x2='0%' y2='100%' id='linearGradient-1'> <stop stop-color=\'" + $mycol1 + "\' offset='0%'></stop> <stop stop-color=\'" + $mycol2 + "\' offset='100%'></stop> </linearGradient> </defs> <g id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'> <circle id='Oval-1' stroke='url(#linearGradient-1)' stroke-width='2' fill=\'" + $mycol3 + "\' cx='50%' cy='50%' r='40%'></circle> </g> </svg>"
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1em;
+}

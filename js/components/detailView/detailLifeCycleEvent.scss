@@ -1,0 +1,492 @@
+@import '../../colors.scss';
+
+@mixin set_icon($backgr:"./img/start_date_category_xx.svg",$hor:50% ,$ver:50%){
+	background: url($backgr);
+	background-position: $hor $ver;
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-color: white;
+    border-color: grey;
+	
+
+}
+.timeline {
+	
+margin-top: 80px;
+ 	ul{
+		.listitem{
+		  	list-style-type: none;
+		    position: relative;
+		    width: 3px;
+		    margin: 0 auto;
+		    padding-top: 50px;
+		    clear: both; 
+		   
+
+		    .event_title{
+
+                 width: auto;
+                 height: 40px;
+                 margin: -15px;
+                 padding: -20px;
+                 text-align: center;
+                 color: white;
+                border-top-left-radius: 25px;
+                border-top-right-radius: 25;
+                border-bottom-left-radius: 0em;
+                border-bottom-right-radius: 0em;
+
+                 .title{
+                       font-size: inherit;
+                       bottom: -7px;
+                       font-weight: bold;
+                       font-style: italic;
+                       position: relative;
+                  }
+                
+    
+
+            }
+		    a{
+  
+		  	   display: inline-table;
+		  	   text-decoration: none;
+                list-style-type: none;
+                width: auto;
+		  	   background-color: #EBEBEB;
+		  	   color: black;
+		  	   position: relative;
+		  	   text-align: center;
+		  	   float: left;
+		  	   
+			}
+            p{
+                padding-top: 6px;
+            }
+            
+
+		}
+		.listitem::after {
+        
+		 content: '';
+
+		 position: absolute;
+		 left: 50%;
+		 bottom: 0;
+		 transform: translateX(-50%);
+		 top: 70px;
+		 width: 35px;
+		 height: 35px;
+		 border-radius: 50%;
+
+		  border: 2px solid red;
+
+		
+		}
+        .listitem div{
+
+            border-radius: 25px;
+
+        }
+		.listitem:nth-child(odd) div {
+
+		  left: 45px;
+		}
+		
+		.listitem:nth-child(even) div {
+		 left: -470px;
+
+		}
+
+		
+		 .container {
+           
+ 			position: relative;
+  			bottom: 0;
+  			width: 400px;
+  			padding: 15px;
+ 			background: white;
+            bottom: -15px;
+            color: grey;
+ 			text-align: left;
+ 			 -webkit-box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+             -moz-box-shadow:     0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			box-shadow:          0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+		.container::before {
+		  content: '';
+		  position: absolute;
+		  bottom: 7px;
+		  width: 0;
+		  height: 0;
+		  border-style: solid;
+
+
+		}
+        .listitem:nth-child(odd) div::before {
+          left: -15px;
+          border-width: 9px 16px 8px 0;
+          top: 30px;
+          border-color: transparent transparent transparent transparent;
+        }
+
+        .listitem:nth-child(even) .container::before {
+         right: -15px;
+         top: 30px;
+         border-width: 8px 0 8px 16px;
+         border-color: transparent transparent transparent transparent;
+         }
+		
+		.listitem:nth-child(odd) .date {
+		float: left;
+
+		padding-top: 25px;
+		left: -180px;
+		width: 200px;
+		position: absolute;
+        font-size: inherit;
+        font-weight: bold;
+        font-style: italic;
+
+
+		 color: grey;
+
+		}
+		.listitem:nth-child(even) .date {
+		float: right;
+		padding: 25px 0px 0px 30px;
+
+		position: absolute;
+		color: grey;
+		width: 200px;
+        font-size: inherit;
+        font-weight: bold;
+        font-style: italic;
+
+		}
+		.bmi_council_meeting_category_00{
+			@extend .listitem;
+		}
+		.bmi_council_meeting_category_00::after{
+			@include set_icon("./wp-content/themes/kaleidoscope/img/bmi_council_meeting_category_00.svg")	
+		
+		}
+		.bmi_council_meeting_category_01{
+			@extend .listitem;
+		}
+		.bmi_council_meeting_category_01::after{
+			@include set_icon("./wp-content/themes/kaleidoscope/img/bmi_council_meeting_category_01.svg")	
+		
+		}
+		.bmi_council_meeting_category_02{
+			@extend .listitem;
+		}
+		.bmi_council_meeting_category_02::after{
+			@include set_icon("./wp-content/themes/kaleidoscope/img/bmi_council_meeting_category_02.svg")
+		
+		}
+		.bmi_council_meeting_category_03{
+			@extend .listitem;
+		}
+		.bmi_council_meeting_category_03::after{
+			@include set_icon("./wp-content/themes/kaleidoscope/img/bmi_council_meeting_category_03.svg")	
+		
+		}
+		.bmi_council_meeting_category_04{
+			@extend .listitem;
+		}
+		.bmi_council_meeting_category_04::after{
+			@include set_icon("./wp-content/themes/kaleidoscope/img/bmi_council_meeting_category_04.svg")	
+		
+		}
+		.bmi_council_meeting_category_05{
+			@extend .listitem;
+		}
+		.bmi_council_meeting_category_05::after{
+			@include set_icon("./wp-content/themes/kaleidoscope/img/bmi_council_meeting_category_05.svg")	
+		
+		}
+		.bmi_council_meeting_category_xx{
+			@extend .listitem;
+		}
+		.bmi_council_meeting_category_xx::after{
+			@include set_icon("./wp-content/themes/kaleidoscope/img/bmi_council_meeting_category_xx.svg")	
+		
+		}
+		.start_date_category_00{
+        	@extend .listitem;
+        }
+        .start_date_category_00::after{
+        	@include set_icon("./wp-content/themes/kaleidoscope/img/start_date_category_00.svg",70% ,50%)
+
+        
+        }
+        .start_date_category_01{
+        	@extend .listitem;
+        }
+        .start_date_category_01::after{
+        	@include set_icon("./wp-content/themes/kaleidoscope/img/start_date_category_01.svg",70% ,50%)
+
+        
+        }
+        .start_date_category_02{
+        	@extend .listitem;
+        }
+        .start_date_category_02::after{
+        	@include set_icon("./wp-content/themes/kaleidoscope/img/start_date_category_02.svg",70% ,50%)
+        	background-position: 60% 50%;
+        
+        }
+        .start_date_category_03{
+        	@extend .listitem;
+        }
+        .start_date_category_03::after{
+        	@include set_icon("./wp-content/themes/kaleidoscope/img/start_date_category_03.svg",70% ,50%)	
+        
+        }
+        .start_date_category_04{
+        	@extend .listitem;
+        }
+        .start_date_category_04::after{
+        	@include set_icon("./wp-content/themes/kaleidoscope/img/start_date_category_04.svg",70% ,50%)	
+        
+        }
+        .start_date_category_05{
+        	@extend .listitem;
+        }
+        .start_date_category_05::after{
+        	@include set_icon("./wp-content/themes/kaleidoscope/img/start_date_category_05.svg",70% ,50%)	
+        
+        }
+        .start_date_category_xx{
+        	@extend .listitem;
+        }
+        .start_date_category_xx::after{
+        	@include set_icon("./wp-content/themes/kaleidoscope/img/start_date_category_xx.svg",70% ,50%)	
+        
+        }
+        .kick-off_meeting_category_00{
+         	@extend .listitem;
+         }
+         .kick-off_meeting_category_00::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/kick-off_meeting_category_00.svg")	
+         
+         }
+         .kick-off_meeting_category_01{
+         	@extend .listitem;
+         }
+         .kick-off_meeting_category_01::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/kick-off_meeting_category_01.svg")	
+         
+         }
+         .kick-off_meeting_category_02{
+         	@extend .listitem;
+         }
+         .kick-off_meeting_category_02::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/kick-off_meeting_category_02.svg")
+         
+         }
+         .kick-off_meeting_category_03{
+         	@extend .listitem;
+         }
+         .kick-off_meeting_category_03::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/kick-off_meeting_category_03.svg")	
+         
+         }
+         .kick-off_meeting_category_04{
+         	@extend .listitem;
+         }
+         .kick-off_meeting_category_04::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/kick-off_meeting_category_04.svg")	
+         
+         }
+         .kick-off_meeting_category_05{
+         	@extend .listitem;
+         }
+         .kick-off_meeting_category_05::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/kick-off_meeting_category_05.svg")	
+         
+         }
+         .kick-off_meeting_category_xx{
+         	@extend .listitem;
+         }
+         .kick-off_meeting_category_xx::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/kick-off_meeting_category_xx.svg")	
+         
+         }
+         
+         .bmi_decision_body_meeting_category_00{
+         	@extend .listitem;
+         }
+         .bmi_decision_body_meeting_category_00::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/decision_body_meeting_category_00.svg")	
+         
+         }
+         .bmi_decision_body_meeting_category_01{
+         	@extend .listitem;
+         }
+         .bmi_decision_body_meeting_category_01::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/decision_body_meeting_category_01.svg")	
+         
+         }
+         .bmi_decision_body_meeting_category_02{
+         	@extend .listitem;
+         }
+         .bmi_decision_body_meeting_category_02::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/decision_body_meeting_category_02.svg")
+         
+         }
+         .bmi_decision_body_meeting_category_03{
+         	@extend .listitem;
+         }
+         .bmi_decision_body_meeting_category_03::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/decision_body_meeting_category_03.svg")	
+         
+         }
+         .bmi_decision_body_meeting_category_04{
+         	@extend .listitem;
+         }
+         .bmi_decision_body_meeting_category_04::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/decision_body_meeting_category_04.svg")	
+         
+         }
+         .bmi_ecision_body_meeting_category_05{
+         	@extend .listitem;
+         }
+         .bmi_decision_body_meeting_category_05::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/decision_body_meeting_category_05.svg")	
+         
+         }
+         .bmi_decision_body_meeting_category_xx{
+         	@extend .listitem;
+         }
+         .bmi_decision_body_meeting_category_xx::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/decision_body_meeting_category_xx.svg")	
+         
+         }
+         .status_change_category_00{
+         	@extend .listitem;
+         }
+         .status_change_category_00::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/status_change_category_00.svg")	
+         
+         }
+         .status_change_category_01{
+         	@extend .listitem;
+         }
+         .status_change_category_01::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/status_change_category_01.svg")	
+         
+         }
+         .status_change_category_02{
+         	@extend .listitem;
+         }
+         .status_change_category_02::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/status_change_category_02.svg")
+         
+         }
+         .status_change_category_03{
+         	@extend .listitem;
+         }
+         .status_change_category_03::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/status_change_category_03.svg")	
+         
+         }
+         .status_change_category_04{
+         	@extend .listitem;
+         }
+         .status_change_category_04::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/status_change_category_04.svg")	
+         
+         }
+         .status_change_category_05{
+         	@extend .listitem;
+         }
+         .status_change_category_05::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/status_change_category_05.svg")	
+         
+         }
+         .status_change_category_xx{
+         	@extend .listitem;
+         }
+         .status_change_category_xx::after{
+         	@include set_icon("./wp-content/themes/kaleidoscope/img/status_change_category_xx.svg")	
+         
+         }
+            
+         
+
+
+	}
+
+}
+.Links{
+
+ 	display: inline-block;
+ 	text-align: right;
+ 	float: left;
+ 	margin: 10px;
+
+}
+.event_icon{
+    height: 100px;
+    width: 100px;
+    display: block;
+    z-index: 4;
+}
+.soe{
+	
+	width: 90%;
+
+
+	float: right;
+}
+@media screen and (max-width: 900px) {
+  .timeline ul li .container {
+    width: 230px;
+  }
+  .timeline ul li:nth-child(even) .container {
+    left: -322px; /*250+45-6*/
+  }
+}
+
+.underline_link {
+  
+  display: inline-block;
+  vertical-align: center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  white-space: nowrap;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+
+  
+
+
+
+}
+.underline_link:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: grey;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+
+
+}
+.underline_link:hover:before, .underline_link:focus:before, .underline_link:active:before {
+  left: 0;
+  right: 0;
+}

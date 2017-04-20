@@ -1,0 +1,47 @@
+@import '../../colors.scss';
+.filtertag {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    padding: 3px 10px;
+    padding-right: 25px;
+    border-radius: 3px;
+    margin: 5px;
+    color: white;
+    position: relative;
+    line-height: 1.4;
+    background: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.filtertag.filtertag__clearall {
+    padding: 3px 10px;
+    background-color: #8b8b8b;
+}
+
+.filtertag__filtertitle {
+    vertical-align: middle;
+    font-weight: 100;
+    font-size: 10;
+    font-family: "Geogrotesque", sans-serif;
+    cursor: pointer;
+}
+
+.fitlertag__remove {
+    position: absolute;
+    top: -1px;
+    right: 5px;
+    font-size: 23px;
+    display: inline-block;
+}
+
+.filtertag__legenditem {
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    left: -4px;
+    border-radius: 50%;
+    display: none;
+}

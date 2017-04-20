@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg class="detailIcon" viewBox="0 0 220 220" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>icons copy 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Copy-19" transform="translate(-404.000000, -2522.000000)">
+            <g id="icons-copy-5" transform="translate(404.000000, 2522.000000)" fill="#FFFFFF">
+                <g id="Page-1">
+                    <path d="M110.149347,219.853118 C170.603266,219.853118 219.608198,170.795821 219.608198,110.277303 C219.608198,49.7587844 170.603266,0.701487811 110.149347,0.701487811 C49.6954285,0.701487811 0.690497275,49.7587844 0.690497275,110.277303 C0.690497275,170.795821 49.6954285,219.853118 110.149347,219.853118 L110.149347,219.853118 Z" id="Stroke-8"></path>
+                </g>
+            </g>
+            <g id="flag" transform="translate(451.000000, 2578.000000)" fill="#000000">
+                <rect class="cube" id="Rectangle-1" x="0" y="6.85714286" width="48" height="48.0285714" rx="2"></rect>
+                <path class="cube" d="M73.1911784,14.3585973 C72.8998616,13.2888723 73.5224425,12.6709296 74.5898867,12.9807447 L130.670071,29.25746 C131.733873,29.5662179 131.966359,30.4467865 131.177721,31.2358933 L90.6388824,71.7988626 C89.8554482,72.5827632 88.9862993,72.358801 88.6928734,71.2813317 L73.1911784,14.3585973 Z" id="Rectangle-1-Copy" transform="translate(102.382802, 42.583215) rotate(-315.000000) translate(-102.382802, -42.583215) "></path>
+                <ellipse class="cube" id="Oval-3" cx="62.0487805" cy="97.0571429" rx="26.9268293" ry="26.9428571"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

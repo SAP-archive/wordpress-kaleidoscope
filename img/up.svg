@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg class="footerIcon" viewBox="0 0 39 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6 (26304) - http://www.bohemiancoding.com/sketch -->
+    <title>up</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="up" transform="translate(19.500000, 19.500000) rotate(-90.000000) translate(-19.500000, -19.500000) translate(1.000000, 1.000000)" stroke="whitesmoke">
+            <path d="M18.3218177,36.6436353 C28.4406782,36.6436353 36.6436353,28.4406782 36.6436353,18.3218177 C36.6436353,8.20295718 28.4406782,0 18.3218177,0 C8.20295718,0 0,8.20295718 0,18.3218177 C0,28.4406782 8.20295718,36.6436353 18.3218177,36.6436353 Z" id="Oval-12"></path>
+            <path d="M14.0747608,8 L24.7481432,18.6733825 L14,29.4215257" id="Path-624"></path>
+        </g>
+    </g>
+</svg>

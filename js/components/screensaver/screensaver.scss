@@ -1,0 +1,104 @@
+.screenSaver {
+  width: 100%;
+  height: 100%;
+  background-size: contain !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 6;
+  transition: background-image 1s linear;
+}
+
+.screenSaverBackground {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+
+.screenSaver_Hide_Animation {
+  animation-name: hide_animation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards !important;
+}
+
+@keyframes hide_animation {
+  0%   {opacity: 1;}
+  99% {opacity: 0;}
+  100% {opacity: 0; z-index:0;  }
+}
+
+.screenSaver_Show_Animation {
+  animation-name: show_animation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards !important;
+}
+
+@keyframes show_animation {
+  0%   {z-index:5; opacity: 0;}
+  100% {opacity: 1; }
+}
+
+
+.screensaver__button {
+  position: fixed;
+  z-index: 3;
+  width: auto;
+  opacity: 1;
+  cursor: pointer;
+  display: block;
+}
+
+.screensaver__button_inactive {
+  opacity: 0.2;
+  cursor: default;
+}
+
+
+@media (max-width: 1920px){
+  .screensaver__button {
+    height: 30px;
+    width: 30px;
+    top: 15px;
+  }
+
+  .screensaver__back {
+    right: 105px;
+  }
+
+  .screensaver__forward {
+    right: 60px;
+  }
+
+  .screensaver__exit {
+    right: 15px;
+    height: 36px !important;
+    width: 36px !important;
+    top: 12px;
+  }
+}
+
+@media (min-width: 1921px){
+  .screensaver__button {
+    height: 2.2vw;
+    width: 2.2vw;
+    top: 1vh;
+  }
+
+  .screensaver__back {
+    right: 6.7vw;
+  }
+
+  .screensaver__forward {
+    right: 3.8vw;
+  }
+
+  .screensaver__exit {
+    right: 0.5vw;
+    height: 2.8vw;
+    width: 2.8vw;
+    top: 0.5vh;
+  }
+}

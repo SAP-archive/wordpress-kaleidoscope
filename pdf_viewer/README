@@ -1,0 +1,3 @@
+NOTICE: to make the viewer usable in kiosk mode, some pdfjs files have been changed:
+  - to disable the open new file, print file in web/viewer.js, web/viewer.html
+  - to disable the opening of external links in build/pdf.js

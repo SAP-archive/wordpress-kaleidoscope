@@ -1,0 +1,111 @@
+
+.overview__container {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview__inner {
+  width: 80vw;
+  height: 40vh;
+  // background-color: #404040;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 1vw;
+  padding: 1vw;
+}
+
+.slick-slide {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.overview__particle-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top:1vh;
+  padding-bottom: 1vh;
+}
+
+.overview__overview-particle {
+  text-decoration: none;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color:white;
+}
+
+.overview__overview-particle-inner {
+  width: 18vw;
+  height: 18vw;
+  border-radius: 9vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overview__overview-particle-title {
+  color: white;
+  font-family: "Geogrotesque", sans-serif;
+  font-weight: 600;
+  padding: 0.5vw;
+}
+
+@media (max-width: 1920px){
+  .overview__overview-particle-title {
+    font-size: 2.5vh;
+  }
+}
+
+@media (min-width: 1921px){
+  .overview__overview-particle-title {
+    font-size: 3vh;
+  }
+}
+
+.overview__particle-button {
+  color: white;
+  width:14vw;
+  height: 4vh;
+  border-radius: 1vh;
+  font-family: "Geogrotesque", sans-serif;
+  font-weight: 600;
+  margin-top: 1vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+@media (max-width: 1920px) {
+  .overview_logo {
+      height: 57.45px !important;
+      width: 165.15px !important;
+  }
+}
+
+// @media (min-width: 1921px) {
+//   .overview_logo {
+//       height: 57.45px !important;
+//       width: 165.15px !important;
+//   }
+// }
+
+.overview_logo {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    height: 3vw;
+    cursor: pointer;
+}

@@ -1,0 +1,148 @@
+@import '../../colors.scss';
+
+.detailLinks {
+  clear: both;
+}
+
+.emptyLinkNoPointer {
+  cursor: default;
+}
+
+@media (min-width: 667px) and (max-width: 1279px) {
+  .detailLinks {
+    ul {
+      a {
+        span:not(.isvg) {
+          width: 75% !important;
+          padding-left: 5px !important;
+          line-height: 16px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1920px) {
+  .detailLinks {
+    ul {
+      a {
+        span:not(.isvg) {
+          width: 100% !important;
+          padding-left: 5px !important;
+          line-height: 16px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 666px) {
+  .detailLinks ul a span {
+    line-height: 20px !important;
+  }
+}
+
+@media (max-width: 1920px) {
+    .detailLinks span.function {
+      font-size: 12pt !important;
+      float:left;
+      clear:left;
+    }
+    .detailLinks span.title {
+        font-size: 14pt !important;
+        float:left;
+        clear:left;
+    }
+  }
+
+  .detailLinks {
+    h4 {
+      font-family: $geofont;
+      font-size: 120%;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid grey;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      line-height: 20px;
+      a {
+        position: relative;
+        color: inherit;
+        text-decoration: none;
+        vertical-align: middle;
+        display: block;
+        margin-bottom: 10px;
+        &:active {
+          color: inherit;
+        }
+        span {
+          width: calc(100% - 2.4vw);
+          padding-left: 0.5em;
+          line-height: 1vw;
+          vertical-align: middle;
+          display: inline-block;
+        }
+        span.isvg.loaded {
+          width: 30px;
+          vertical-align: middle;
+          padding-left: 0;
+        }
+      }
+      li {
+        padding: 7px 0;
+      }
+    }
+
+  }
+
+
+.detailLinks span.function {
+    font-weight: 100;
+    white-space: nowrap;
+    font-size: 0.9vw;
+    margin-top: 0px;
+}
+
+.detailLinks span.title {
+    font-weight: 500;
+    font-size: 1.1vw;
+    padding-top: 5pt;
+}
+
+.detailLinks p.linkTitle {
+    float: right;
+    width: 85%;
+    margin: 0;
+}
+
+
+@media (max-width: 666px){
+
+  .ContactPartnerLogo {
+      display: none !important;
+  }
+}
+
+@media (min-width: 667px) and (max-width: 1279px){
+  .ContactPartnerLogo {
+      position: absolute;
+      left: 80%;
+      // top: -1vw;
+      // max-width: 10em;
+      max-height: 5.5vh;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+  }
+}
+
+@media (min-width: 1280px){
+  .ContactPartnerLogo {
+      float: left;
+      position: absolute;
+      left: 150%;
+      // top: -1vw;
+      max-height: 3.5vh;
+      filter: grayscale(100%);
+  }
+}

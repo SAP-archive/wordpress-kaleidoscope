@@ -1,0 +1,493 @@
+$category_01: #5884D3;
+$category_02: #36A8AF;
+$category_00: #7FB618;
+$category_03: #9D73AA;
+$category_04: #A8A8A8;
+$category_05: #F1A040;
+$category_xx: #CCCCCC;
+
+
+.matrix_wrapper_alternative {
+  display: none;
+}
+
+.matrix_wrapper_alternative_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.matrix_wrapper_alternative_content {
+  color: white;
+}
+
+@media (max-width: 768px) and (orientation: portrait){
+  .matrix_wrapper {
+    display: none;
+  }
+
+  .matrix_wrapper_alternative {
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .matrix_wrapper {
+    overflow: scroll;
+  }
+
+  .exit_matrix .detailIcon {
+    max-width: 38px !important;
+  }
+
+  .exit_matrix {
+    top: 0.3vh !important;
+  }
+}
+
+.Matrix_List_Line {
+  border-radius: 2vh;
+  color: white;
+  padding-left: 1.25vh;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  padding-right: 1.25vh;
+}
+
+.mat {
+  z-index: 10;
+  display: block;
+  position: absolute;
+  .toggle_bubble {
+    -moz-box-shadow: inset 0vh 0.1vh 0vh 0vh #ffffff;
+    -webkit-box-shadow: inset 0vh 0.1vh 0vh 0vh #ffffff;
+    box-shadow: inset 0vh 0.1vh 0vh 0vh  #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+    background: -moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background: -webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background: -o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background: -ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0);
+    background-color: #ffffff;
+    -moz-border-radius: 0.6vh;
+    -webkit-border-radius: 0.6vh;
+    border-radius: 0.6vh;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #666666;
+    font-family: Arial;
+    font-size: 1.5vh;
+    font-weight: bold;
+    padding: 0.6vh 2.4vh;
+    text-decoration: none;
+    text-shadow: 0vh 0.1vh 0vh #ffffff;
+    top: 2vh;
+    left: 2vh;
+    z-index: 11;
+  }
+  .toggle_bubble:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+    background: -moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background: -webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background: -o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background: -ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff', GradientType=0);
+    background-color: #f6f6f6;
+  }
+
+}
+
+.login_icon {
+  position: fixed;
+  z-index: 3;
+  top: 1.8vh;
+  right: 8vh;
+  width: 2.5vh;
+  height: 2.5vh;
+  opacity: 1;
+  cursor: pointer;
+
+}
+
+
+.matrix_icon {
+  position: fixed;
+  z-index: 3;
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 1920px){
+  .matrix_icon {
+    top: 20px;
+    right: 50px;
+  }
+
+  .matrix_icon svg {
+      width: 20px !important;
+      height: 20px !important;
+  }
+}
+
+@media (min-width: 1921px){
+  .matrix_icon {
+    top: 15px;
+    right: 3vw;
+    padding: 0.2vw;
+  }
+
+  .matrix_icon svg {
+      width: 1.6vw !important;
+      height: 1.6vw !important;
+  }
+}
+
+
+.matrix_wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.matrix_wrapper_fix_boxes {
+  padding: 0.5%;
+  margin: 0;
+  height:100%;
+  width: 100%;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: column nowrap;
+  justify-content: left;
+  align-items: flex-start;
+  white-space: normal;
+}
+
+.Matrix {
+  font-size: 1.6vh;
+  width: 99%;
+  height: 88%;
+  border-top: 0.1vh solid white;
+
+  .Matrix_description_row {
+    min-height: 5vh;
+    border-bottom: 0.1vh solid white;
+    border-top: none;
+    border-right: 0.1vh solid white;
+    .Matrix_cell {
+      border-top:none;
+    }
+  }
+  .innerScrollWrapper {
+    overflow-y: scroll;
+    max-height: 92%;
+    height:100%;
+    border-bottom: 0.1vh solid white;
+  }
+  .innerScrollWrapper .Matrix_row:first-child .Matrix_cell {
+    border-top:none;
+  }
+
+  .innerScrollWrapper .Matrix_row .Matrix_description_cell:first-child, .emptyDescriptionCell {
+    max-width: 10vw;
+  }
+
+  .Matrix_row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    border-right: 0.1vh solid white;
+    -webkit-flex-flow: row nowrap;
+    justify-content: flex-start;
+    color: white;
+
+    .Matrix_description_cell span.number_of_elements {
+      font-weight: normal;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .Matrix_description_cell:first-child {
+
+    }
+
+    .Matrix_description_row {
+      .Matrix_description_cell {
+        flex: 1;
+      }
+    }
+
+
+    .Matrix_cell {
+      border: 0.1vh solid white;
+      border-top: none;
+      border-right-width: 0px;
+      padding: 0.5vh 0.5vh 0 0.5vh;
+      flex: 1;
+      ul {
+        text-align: left;
+        font-weight: 300;
+        padding-left: 0;
+        margin:0;
+        list-style-position: outside;
+        list-style-type:none;
+        li {
+          line-height: 2vh;
+          white-space: normal;
+          margin: 0 0 0.5vh 0;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .Matrix_description_cell {
+      background-color: rgba(255, 255, 255, 0.2);
+      height: inherit;
+      font-size: 1.4vh;
+      line-height: 1.5vh;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: 600;
+      flex: 1;
+    }
+  }
+}
+
+.exit_matrix {
+  position: absolute;
+  top: 1vh;
+  right: 1vh;
+  cursor: pointer;
+}
+
+
+.matrix_sidebar {
+  font-size: 1.5vh;
+  width: 100%;
+  white-space: normal;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-flow: row;
+  justify-content: flex-start;
+}
+
+.matrix_axis_selection select {
+  font-size: 1.5vh;
+  display: inline-block;
+  width: auto;
+  float: right;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 0.3vh;
+}
+
+.matrix_axis_selection select option:last-child {
+  color: #E57562;
+}
+
+.matrix_axis_selection label {
+  color: white;
+  display: block;
+  width: 3vw;
+  float: left;
+  padding-right: 0.5vw;
+  clear: left;
+}
+
+.matrix_color_code h4, .matrix_font_code h4 {
+  padding: 0.2vh 0;
+  margin: 0;
+}
+
+
+.matrix_color_code, .matrix_font_code, .show_inactive_projects, .matrix_axis_selection {
+  border: 0.1vh solid white;
+  color: white;
+  align-self: flex-start;
+  font-weight:300;
+  padding: 0.5%;
+  clear: both;
+  margin:0 1% 0 0;
+
+  .matrix_legend_category {
+    line-height: 2vh;
+    margin: 1vh 0 1vh 3vh;
+    justify-content: flex-start;
+  }
+
+  .matrix_legend_category::before {
+    content: '';
+    display: inline-block;
+    width: 1.8vh;
+    height: 1.8vh;
+    -moz-border-radius: 1vh;
+    -webkit-border-radius: 1vh;
+    -ms-border-radius: 1vh;
+    border-radius: 1vh;
+    vertical-align: baseline;
+    margin-bottom: -0.2vh;
+    margin-left: -2.2vh;
+  }
+}
+
+.matrix_color_code {
+  display: flex;
+}
+
+.show_inactive_projects {
+  display: flex;
+  flex-direction: column
+}
+
+.show_inactive_projects .checkbox_description {
+  color: white;
+  [type="checkbox"] {
+    vertical-align: baseline;
+    margin: 0 0.5vh;
+    width: 1.3vh;
+    height: 1.3vh;
+    margin-top: -0.2vh;
+  }
+}
+
+.clearBoth {
+  width: 100%;
+  clear: both;
+}
+
+@media print {
+  @page {
+    size: 297mm 210mm;
+  }
+
+  .matrix_wrapper .Matrix .Matrix_row .Matrix_cell {
+    border: 1px solid black !important;
+    min-height:15px !important;
+  }
+
+  .matrix_wrapper .Matrix .Matrix_description_cell {
+    background: #b9b9b9;
+    -webkit-print-color-adjust: exact;
+  }
+  .matrix_wrapper .Matrix .Matrix_row {
+    page-break-inside:avoid;
+    page-break-after:auto;
+  }
+
+  .matrix_wrapper .Matrix .Matrix_description_row .Matrix_description_cell {
+    background: #b9b9b9;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .matrix_wrapper .Matrix .Matrix_description_row .Matrix_description_cell:first-child {
+    background: #b9b9b9;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .matrix_wrapper .Matrix {
+    overflow: auto !important;
+    font-size: 12px;
+    line-height: 14px;
+    page-break-inside:auto;
+  }
+  .matrix_wrapper .Matrix .Matrix_row .Matrix_cell ul {
+    padding-left: 20px !important;
+  }
+
+  .matrix_wrapper .Matrix .Matrix_row .Matrix_cell ul li {
+    line-height: 14px !important;
+  }
+
+  .exit_matrix {
+    display:none !important;
+  }
+
+  .matrix_wrapper {
+    overflow:visible !important;
+  }
+
+  #icnPortfolio {
+    visibility: visible;
+    overflow: visible !important;
+    position: absolute !important;
+  }
+
+  .blur {
+    display:none !important;
+  }
+
+  .blur__overlay {
+    background: white !important;
+  }
+
+  .matrix_color_code {
+    color: black !important;
+    border-color: black !important;
+  }
+
+  .matrix_font_code {
+    color: black !important;
+    border-color: black !important;
+  }
+
+  .matrix_axis_selection {
+    border-color: black !important;
+    color: black !important;
+  }
+
+  .matrix_axis_selection label {
+    color: black !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .matrix_wrapper .Matrix {
+    font-size: 15px !important;
+    width: auto !important;
+    float: left !important;
+  }
+
+  .Matrix .Matrix_row .Matrix_cell {
+    min-width: 200px !important;
+    font-size: 14px !important;
+  }
+
+  .matrix_color_code, .matrix_font_code {
+    min-width: 150px !important;
+  }
+
+  .Matrix_description_cell {
+    font-size: 14px !important;
+    min-width: 200px !important;
+  }
+
+  .Matrix .Matrix_row .Matrix_cell ul {
+    padding-left: 20px !important;
+  }
+
+  .Matrix .Matrix_row .Matrix_cell ul li {
+    line-height: 20px;
+  }
+
+  .Matrix_description_cell {
+    line-height:22px;
+  }
+
+  .feedback {
+    display: none !important;
+  }
+
+}

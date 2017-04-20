@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ICN Portfolio Overview</title>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="/style.css" type="text/css" media="screen, print" />
+    <style>
+    @media (max-width: 1920px) {
+        #feedbackButton {
+            width: 35px !important
+        }
+    }
+
+    #feedbackButton {
+        position: fixed;
+        z-index: 10;
+        bottom: 10px;
+        right: 17px;
+        width: 2.2vw;
+        height: auto;
+    }
+
+    .playpause {
+        background: url('img/playbutton.png');
+    }
+
+    @font-face {
+        font-family: 'Benton Sans';
+        src: url('fonts/BentonSans-Normal.eot');
+        src: url('fonts/BentonSans-Normal.eot?#iefix') format('embedded-opentype'), url('fonts/BentonSans-Normal.woff') format('woff'), url('fonts/BentonSans-Normal.ttf') format('truetype'), url('fonts/BentonSans-Normal.svg#CreativeBlockBBBold') format('svg');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Benton Sans';
+        src: url('fonts/BentonSans-Book.eot');
+        src: url('fonts/BentonSans-Book.eot?#iefix') format('embedded-opentype'), url('fonts/BentonSans-Book.woff') format('woff'), url('fonts/BentonSans-Book.ttf') format('truetype'), url('fonts/BentonSans-Book.svg#CreativeBlockBBBold') format('svg');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Benton Sans';
+        src: url('fonts/BentonSans-Bold.eot');
+        src: url('fonts/BentonSans-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/BentonSans-Bold.woff') format('woff'), url('fonts/BentonSans-Bold.ttf') format('truetype'), url('fonts/BentonSans-Bold.svg#CreativeBlockBBBold') format('svg');
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Benton Sans';
+        src: url('fonts/BentonSans-Light.eot');
+        src: url('fonts/BentonSans-Light.eot?#iefix') format('embedded-opentype'), url('fonts/BentonSans-Light.woff') format('woff'), url('fonts/BentonSans-Light.ttf') format('truetype'), url('fonts/BentonSans-Light.svg#CreativeBlockBBBold') format('svg');
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Geogrotesque';
+        src: url('fonts/Geogrotesque-SemiBold.eot');
+        src: url('fonts/Geogrotesque-SemiBold.eot?#iefix') format('embedded-opentype'), url('fonts/Geogrotesque-SemiBold.woff') format('woff'), url('fonts/Geogrotesque-SemiBold.ttf') format('truetype'), url('fonts/Geogrotesque-SemiBold.svg#CreativeBlockBBBold') format('svg');
+        font-weight: 600;
+        font-style: normal;
+    }
+    /*@font-face {
+        font-family: 'Geogrotesque';
+        src: url('fonts/3095ED_5_0.eot');
+        src: url('fonts/3095ED_5_0.eot?#iefix') format('embedded-opentype'), url('fonts/3095ED_5_0.woff2') format('woff2'), url('webfonts/3095ED_5_0.woff') format('woff'), url('fonts/3095ED_5_0.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }*/
+
+    @font-face {
+        font-family: 'Geogrotesque';
+        src: url('fonts/Geogrotesque-UltraLight.eot');
+        src: url('fonts/Geogrotesque-UltraLight.eot?#iefix') format('embedded-opentype'), url('fonts/Geogrotesque-UltraLight.woff') format('woff'), url('fonts/Geogrotesque-UltraLight.ttf') format('truetype'), url('fonts/Geogrotesque-UltraLight.svg#CreativeBlockBBBold') format('svg');
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "slick";
+        src: url("fonts/slick.eot");
+        src: url("fonts/slick.eot?#iefix") format("embedded-opentype"), url("fonts/slick.woff") format("woff"), url("fonts/slick.ttf") format("truetype"), url("fonts/slick.svg#slick") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "arrows";
+        src: url("fonts/arrows.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="icnPortfolio" role="main"></div>
+    <!-- Dummy Piwik -->
+    <script type="text/javascript">
+    var _paq = _paq || [];
+    window.icnThemePath = '/';
+            window.portfolioLogoPath = 'http://mo-7828821ab.mo.sap.corp/wp-content/uploads/2016/07/icn-1.svg';
+            window.portfolio_logo_right = false;
+            window.portfolio_showSapLogo = true;
+            window.portfolio_factSheetItems = ['portfolio_area','project_state','lob','industry','location','contact_person'];
+            window.portfolio_factSheetItemsLocked = ['portfolio_area','project_state','industry','location'];
+            window.portfolio_searchString = ['title','description','tags','portfolio_area','project_state','industry','location','contact_person','partners'];
+            window.portfolio_detailViewSections = ['challenge','solution'];
+            window.portfolio_searchStringLocked = ['title','description','tags','portfolio_area','project_state','industry','location'];
+            window.portfolio_coloredByElement = 'portfolio_area';
+            window.portfolio_showEditButton = false;
+            window.portfolio_showSearchButton = true;
+            window.portfolio_showMatrixButton = false;
+            window.portfolio_matrix_xaxis = 'project_state';
+            window.portfolio_matrix_yaxis = 'location';
+            window.portfolio_show_matrix_fontsize_dimension = true;
+            window.portfolio_fullscreen_button = true;
+            window.portfolio_matrix_fontsize_dimension = 'none';
+            window.portfolio_showFeedbackButton = true;
+            window.portfolio_backgroundImage = false;
+            window.portfolio_enableImgLightbox = false;
+            window.portfolio_filterAsRadioButtons = true;
+            window.temporarilyDisableTracking = false;
+            window.icnAllProjects = [];
+            window.lockEnabled = true;
+            window.showCredit = false;
+            window.feedbackUrl = '/wp-content/themes/kaleidoscope/mail-feedback.php';
+            window.screensaverImagePath = 'img/innoday_screensaver.jpg';
+            window.portfolio_screensaverImages = [
+              window.screensaverImagePath,
+              "http://mo-7828821ab.mo.sap.corp/wp-content/uploads/2016/11/ICN_Postkarte_Backside_HQ_01.jpg",
+              "http://mo-7828821ab.mo.sap.corp/wp-content/uploads/2016/11/ICN_Postkarte_Backside_HQ_02.jpg"];
+            window.lockTimeInSeconds = 3000;
+            window.updatedTimeInDays = 10;
+            window.matrix_filters_excluded_x = [];
+            window.matrix_filters_excluded_y = [];
+            window.detailCaptions = {
+        AT_A_GLANCE: 'At a glance'
+        , TIME_SPAN: 'Laufzeit'
+        , CHALLENGE: 'Challenge'
+        , SOLUTION: 'Solution'
+        , ADD_INFO: 'Additional Information'
+        , LINKS: 'Links'
+        , CONTACTS: 'Contacts'
+        , PROJECT_LEAD: 'Project Lead'
+        , BUSINESS_DEVELOPER: 'Business Developer'
+        , PARTNER: 'Partner'
+        , PROMOTER: 'Promoter'
+        , DOWNLOADS: 'Downloads'
+        , MORE_PROJECTS: 'More Projects'
+        , BACK: 'back to overview'
+        , TOP: 'to the top'
+        , SINCE: 'since'
+        , PROJECT_STATE: 'State'
+        , INDUSTRY: 'Industry'
+        , INDUSTRIES: 'Industries'
+        , LOCATION: 'Location'
+        , LOCATIONS: 'Locations'
+        , PORTFOLIO_AREA: 'Portfolio Area'
+        , PROJECT_FORMAT: 'Industry'
+        , START_DATE : 'Start'
+    };
+            window.portfolio_kiosk_password = 'abc123';
+            window.portfolio_filter_rule = "AND"; // "OR"
+            window.portfolio_filter_button_caption = "FILTER PROJECTS";
+            window.matrixFilters = {'industry': [], 'location' : [], 'project_state' :  ['Product', 'Validation', 'Incubation'], 'technology' : [], 'portfolio_area' : [], 'contact_person_0_contact_type' : []};
+            window.mainFilters = [{
+            title: 'portfolio_area',
+            caption: 'portfolio area',
+            isActive: true,
+            items: {
+                'Customer-led Innovation': 'Explore, validate and realize high value projects in new markets or with new technologies together with strategic partners.',
+                'Future Enterprise Applications': 'Enable companies to successfully lead the next economic revolution by developing game-changing business applications to process intangible assets, provide personalized/contextual user-assistance and manage new business models.',
+                'Intrapreneurship Program': 'Enable employees to act as entrepreneurs within SAP and transform game-changing ideas into profitable businesses in new markets.',
+                'Machine Learning': 'Make existing SAP solutions smarter and build new Machine Learning-based solutions that put enterprise software into a new era.',
+                'Personalized Medicine': 'Pioneer game-changing solutions to make personalized medicine a reality: give deeper insight into medical and omics data, support more effective and efficient actions taken for patients and enable healthcare professionals to collaborate in a business network.',
+                'Smart Cities': 'Bridging city needs, business models and technologies by creating smart city applications and platforms to improve sustainable urban life.'
+            }
+        },
+        {
+            title: 'project_state',
+            caption: 'project state',
+            items: {
+                'Validation': 'In the validation phase our teams are creating proof of concepts and evaluate product/market fit.',
+                'Incubation': 'During the incubation phase our teams are developing a product in close collaboration with our Co-Innovation partners.',
+                'Product': 'These projects are products on the SAP price list - including substages, e.g. Early Adoption status.'
+            }
+        },
+        {
+            title: 'industry',
+            caption: 'industries',
+            items: []
+        },
+        {
+            title: 'location',
+            caption: 'locations',
+            items: []
+        },
+   {
+            title: 'technology',
+            caption: 'technology',
+            items: []
+        }
+    ];
+            window.idleScrollEnabled = true;
+            window.portfolio_showContactFunction = true;
+            window.portfolio_lockSidebar = false;
+            window.portfolio_showPDFOverlay = true;
+            window.lastPiwikAction = "";
+
+
+            window.icnAllProjects.push({
+                    title:              "DEMO PROJECT 1",
+                    slug:               "demo-project-1",
+                    date:               "2016-07-27 12:51:58",
+                    tags:               '[{"term_id":28,"name":"Analytics","slug":"analytics","term_group":0,"term_taxonomy_id":28,"taxonomy":"post_tag","description":"","parent":0,"count":1,"filter":"raw"},{"term_id":24,"name":"HANA","slug":"hana","term_group":0,"term_taxonomy_id":24,"taxonomy":"post_tag","description":"","parent":0,"count":2,"filter":"raw"},{"term_id":25,"name":"Healthcare","slug":"healthcare","term_group":0,"term_taxonomy_id":25,"taxonomy":"post_tag","description":"","parent":0,"count":1,"filter":"raw"},{"term_id":27,"name":"Oncology","slug":"oncology","term_group":0,"term_taxonomy_id":27,"taxonomy":"post_tag","description":"","parent":0,"count":1,"filter":"raw"},{"term_id":26,"name":"Research","slug":"research","term_group":0,"term_taxonomy_id":26,"taxonomy":"post_tag","description":"","parent":0,"count":1,"filter":"raw"}]',
+                    imageUrl:           "",
+                    editLink:           "",
+                    slide_template : "default",
+cubo_postmeta : {"portfolio_layout_settings":"global","portfolio_layout":"one_column","page_builder_settings":"global"},
+cubo_layout : {"post-portfolio-263":{"sidebars":{"left":"gumm-default-sidebar-left-1","right":"gumm-default-sidebar-right-1"}}},
+cubo_layout_components : {"content":{"E1D2078D-89D6-4220-91AB-A1AE54FAEF0A":{"basename":"single_portfolio_layout","settings":{"widthRatio":"1","mediaCrop":"full","centerSlides":"true","aspectRatio":"3","sliderAutoplay":"0","layout":"one_column_wide","htmlElementId":"single-portfolio-layout-element-E1D2078D-89D6-4220-91AB-A1AE54FAEF0A"}}}},
+start_date : "January 1, 2012",
+end_date : "",
+project_state : "Product",
+portfolio_area : ["Personalized Medicine"],
+location : ["Potsdam"],
+industry : "Healthcare",
+featured_image : "19",
+onepager : false,
+onepager_kiosk : false,
+description : "text abc",
+gallery : [],
+contact_person : [{"contact_type":"Project Lead","contact_name":"John Doe","contact_email":"john@doe.com","show_contact":true}],
+partners : [{"contact_type":"co-inno","partner_name":"ABC Company","partner_url":"https:\/\/www.example.org\/","partner_logo":false,"partner_contacts":false}],
+demo_link : "http:\/\/www.example.org",
+other_links : [{"link_title":"Homepage","link_url":"https:\/\/www.example.org"}],
+hide_featured_image : "0",
+contact_person_0_contact_type : "Project Lead",
+contact_person_0_contact_name : "John Doe",
+contact_person_0_contact_email : "john@doe.com",
+contact_person_1_contact_type : "Business Developer",
+contact_person_1_contact_name : "Jane Doe",
+contact_person_1_contact_email : "jane@doe.com",
+partners_0_contact_type : "co-inno",
+partners_0_partner_name : "ABC Company",
+partners_0_partner_url : "https:\/\/www.example.org\/",
+partners_0_partner_logo : false,
+partners_0_partner_contacts : false,
+other_links_0_link_title : "Homepage",
+other_links_0_link_url : "https:\/\/www.example.org",
+tagline : "Making everything better",
+challenge : "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,<\/p>\n",
+solution : "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,<\/p>\n",
+bubble_background : {},
+jam_link : "",
+source_link : "",
+contact_person_0_show_contact : true,
+contact_person_1_show_contact : false,
+                    visibility: "public"
+                });    </script>
+    <script type="text/javascript" src="bundle.js"></script>
+
+    <script type="text/javascript">
+        if(navigator.userAgent.match(/MSIE [1-9]\./)){
+            var msg = document.createElement("p");
+            msg.appendChild(document.createTextNode("Unfortunately, Internet Explorer versions 9 and older are not supported."));
+            var main = document.getElementById("icnPortfolio");
+            main.appendChild(msg);
+        }
+    </script>
+</body>
+
+</html>

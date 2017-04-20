@@ -1,0 +1,172 @@
+@import 'colors.scss';
+
+html,
+body,
+#icnPortfolio {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Benton Sans', sans-serif;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0, 01em;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  color: #434343;
+  background-color: whitesmoke;
+  // background-color: #edebe4;
+
+  /* Prevent native touch events on Windows otherwise iscroll&touch is not working on edge and ie11 */
+  -ms-touch-action: none;
+  touch-action: none;
+
+}
+
+
+/* 300: Light;
+   100: UltraLight;
+   400: Normal;
+   500: Book;
+   600: SemiBold;
+   700: Book;
+   900: Black; */
+
+#icnPortfolio {
+  position: fixed
+}
+
+*:focus {
+  outline: none;
+}
+
+#icn_portfolio_app.inverted-mode {
+    filter: invert(100%);
+}
+
+.accessible-mode *:focus {
+  outline-style: solid;
+  outline-color: #E57562;
+}
+.accessible-mode .detailview__footer,
+.accessible-mode .detailview__hero,
+.accessible-mode .matrix_color_code,
+.accessible-mode .lctable,
+.accessible-mode .timeline ,
+.accessible-mode .Matrix_cell ul li,
+.accessible-mode .filtermenuitem__selected,
+.accessible-mode .particle__inner,
+.accessible-mode .particle__inner-background,
+.accessible-mode .detailview__heroImage,
+.accessible-mode .detailview__footer,
+.accessible-mode .request_info_button,
+.accessible-mode .detailview__editButton,
+.accessible-mode.filtermenuitem__legenditem {
+  background: #4a4a4a !important;
+  border-color: #4a4a4a !important;
+}
+
+.accessible-mode .slick-dots li.slick-active button:before,
+.accessible-mode button.slick-prev:before,
+.accessible-mode button.slick-next:before {
+  border-color: black;
+  color: black;
+}
+
+.accessible-mode .detailview {
+  background: white;
+}
+
+.accessible-mode .detailview__hero h1, .detailview__hero h2 {
+  color: white !important;
+}
+
+.accessible-mode .detailview__exitbutton use {
+  color: #4a4a4a;
+  fill: black !important;
+  stroke: white !important;
+}
+
+.accessible-mode .detailview__exitbutton svg g g path {
+  fill: white !important;
+  stroke: white !important;
+}
+
+.accessible-mode .detailview__footer__text {
+  color: white !important;
+}
+
+
+.accessible-mode svg g g g g path, .accessible-mode svg cube, .accessible-mode svg ellipse {
+  fill: black !important;
+  stroke: black !important;
+}
+
+.accessible-mode svg g g g path, .accessible-mode svg cube {
+  fill: white !important;
+  stroke: white !important;
+}
+
+.accessible-mode .detailview__footer__entry svg g g g path {
+   fill: black !important;
+   stroke: black !important;
+ }
+
+.accessible-mode .detailview__footer__entry svg g  g g path:last-child {
+  fill: white !important;
+  stroke: white !important;
+}
+
+.accessible-mode .detailview__heroImage {
+  border:none;
+}
+
+.kaleidoscope_toast {
+  z-index: 9;
+  display: none;
+  width: 300px;
+  height: 20px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  bottom: 10px;
+  font-family: 'Benton Sans', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+  -moz-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+  box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+}
+
+.light_toast {
+  background-color: $toast_light_color;
+  color: black;
+}
+
+.dark_toast {
+  background-color: $toast_dark_color;
+  color: $toast_light_color;
+}
+
+@keyframes toastAnimation {
+  /* flame pulses */
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-toast {
+  opacity: 1;
+  animation: toastAnimation 4s;
+}

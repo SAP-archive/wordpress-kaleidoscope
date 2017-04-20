@@ -1,0 +1,166 @@
+  @media (max-width: 1920px) {
+    .feedback__icon {
+      height: 30px !important;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .feedback__icon {
+      height: 30px !important;
+    }
+
+    .feedbackWrapper input {
+      width: calc(100% - 5vw) !important;
+      font-size: 16pt !important;
+    }
+
+    .feedbackWrapper textarea {
+      width: calc(100% - 5vw) !important;
+      height: 180px !important;
+      font-size: 16pt !important;
+    }
+
+    .feedbackWrapper button {
+      width: 150px;
+      height: 40px;
+      margin-right: calc(5vw + 4px) !important;
+    }
+
+    .feedback-headline {
+      width: 90vw !important;
+      margin-left: 5vw !important;
+      margin-right: 5vw !important;
+      padding-right: 0 !important;
+    }
+    .feedback-headline-extra-space {
+      margin-top: 10vh !important;
+    }
+
+    .feedback-send-button-div {
+      width: 100vw !important;
+    }
+  }
+
+  .feedback__icon {
+    position: fixed;
+    z-index: 2;
+    bottom: 15px;
+    right: 15px;
+    width: auto;
+    height: 2.2vw;
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  .feedback__box {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .feedback__box-icon {
+    position: absolute;
+    opacity: 0.2;
+    height: 60px;
+    display: block;
+    top: 50%;
+    margin-top: -34px;
+    left: 150px;
+  }
+  
+  .feedback__box-close {
+    top: 50%;
+    margin-top: -80px;
+    right: 150px;
+    position: absolute;
+    z-index: 999;
+    display: block;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .feedbackWrapper {
+    margin: auto;
+    /*width: 650px;*/
+    width: 100%;
+    margin-top: 10px;
+    z-index: 10;
+    position: relative;
+  }
+  
+  .feedbackScroller {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 90vh;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  
+  .feedbackWrapper input {
+    font-size: 18pt;
+    font-family: "Geogrotesque", sans-serif;
+    width: 550px;
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 3px;
+  }
+  
+  .feedbackWrapper form {
+    text-align: center;
+    color: white;
+    font-family: "Geogrotesque", sans-serif;
+    font-size: 234pt;
+    /*margin-top: 10%; No margin because touch keyboard needs space */
+  }
+  
+  .feedbackWrapper textarea {
+    font-family: "Geogrotesque", sans-serif;
+    width: 550px;
+    height: 400px;
+    font-size: 18pt;
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 3px;
+  }
+  
+  .feedbackWrapper button {
+    font-family: "Geogrotesque", sans-serif;
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+    width: 150px;
+    height: 40px;
+    float: right;
+    font-size: 15pt;
+    cursor: pointer;
+  }
+  
+  .feedback-headline {
+    width: 450px;
+    margin: auto;
+    font-size: 25pt;
+    text-align: left;
+    padding-right: 100px;
+    margin-bottom: 15px;
+    line-height: 2.4rem;
+    color: white;
+  }
+  
+  .feedback-send-button-div {
+    width: 550px;
+    margin: auto;
+  }

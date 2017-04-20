@@ -1,0 +1,54 @@
+@media (max-width: 1920px) {
+  .activefilters__active {
+    font-size: 16px !important;
+    width: calc(100% - 280px) !important;
+  }
+  .activefilters p {
+    font-size: 16px !important;
+  }
+}
+
+.activefilters {
+  position: fixed;
+  top: -200px;
+  transition: top 0.3s ease-in-out;
+  font-weight: 100;
+  z-index: 2;
+  padding: 10px;
+}
+
+.activefilters__active {
+  background-color: whitesmoke;
+  top: 0;
+  left: 12.042vw;
+  font-size: 0.84vw;
+  padding-bottom: 0;
+  padding-top: 9px;
+  width: calc(100% - 12vw);
+}
+
+.activefilters__filter {
+  position: absolute;
+  padding: 10px;
+  font-family: "Geogrotesque", sans-serif;
+  font-weight: 100;
+  width: 330px;
+}
+
+.activefilters h3 {
+  cursor: pointer;
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+.activefilters p {
+  clear: both;
+  line-height: 1.5;
+  font-size: 0.84vw;
+  margin: 50px 5px 0;
+}
+
+.activefilters__filter-active h3 {
+  text-decoration: underline;
+}

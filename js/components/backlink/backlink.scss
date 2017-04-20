@@ -1,0 +1,25 @@
+
+@media (max-width: 1920px){
+  .backlink__linkicon {
+    height: 30px !important;
+    transform: translateX(-45px);
+  }
+}
+
+@media (min-width: 1921px){
+  .backlink__linkicon {
+    transform: translateX(calc(-3vw + 15px));
+  }
+}
+
+.backlink__linkicon {
+  position: fixed;
+  z-index: 3;
+  bottom: 15px;
+  right: 15px;
+  width: auto;
+  height: 2.2vw;
+  opacity: 1;
+  cursor: pointer;
+  display:block;
+}
