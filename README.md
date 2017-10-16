@@ -18,8 +18,12 @@ You will need a wordpress instance with an Advanced Custom Fields Pro plugin.
 Download and Installation
 -------------------------
 
-Clone this directory into wordpress wp-content/themes directory and use as a theme together with Advanced Custom Fields Pro Plugin to configure the content fields. 
+Please see our [Installation Guide](installation/Installation%20Guide%20Kaleidoscope.docx) for the installation procedure.
 
+Support
+-------
+
+If you need any support, have any question or have found a bug, please report it in the [GitHub bug tracking system](https://github.com/SAP/wordpress-kaleidoscope/issues). 
 
 License
 -------
