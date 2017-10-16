@@ -18,7 +18,7 @@ You will need a wordpress instance with an Advanced Custom Fields Pro plugin.
 Download and Installation
 -------------------------
 
-Please see our [Installation Guide](installation/Installation%20Guide%20Kaleidoscope.docx) for the installation procedure.
+Please see our [Installation Guide](installation/Installation%20Guide%20Kaleidoscope.docx) and the necessary additional files in the same [directory](installation/) for the installation procedure.
 
 Support
 -------
