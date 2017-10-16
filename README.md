@@ -1,20 +1,25 @@
-# ICN Portfolio 
+ICN Kaleidoscope Wordpress theme
+================================
 
-## Install and Run offline version for testing only
 
-```bash
-$ npm install
-$ npm start
-```
+Description
+-----------
 
-goto localhost:8080
+This wordpress theme can be used to display project information and filter them according to specific filter categories, such as locations, portfolio areas, industries etc.
 
-## Update build for deploy
+SCREENSHOT
 
-```bash
-$ webpack
-```
+Requirements
+------------
 
+You will need a wordpress instance with an Advanced Custom Fields Pro plugin.
+
+Download and Installation
+-------------------------
 
 Clone this directory into wordpress wp-content/themes directory and use as a theme together with Advanced Custom Fields Pro Plugin to configure the content fields. 
 
+
+License
+-------
+see [License](LICENSE) file
