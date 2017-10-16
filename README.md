@@ -7,7 +7,8 @@ Description
 
 This wordpress theme can be used to display project information and filter them according to specific filter categories, such as locations, portfolio areas, industries etc.
 
-SCREENSHOT
+![screenshot](installation/screenshot.png)
+
 
 Requirements
 ------------
