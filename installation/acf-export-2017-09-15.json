@@ -1,0 +1,1199 @@
+  [
+    {
+        "key": "group_569556a6b7275",
+        "title": "Portfolio Projects",
+        "fields": [
+            {
+                "key": "field_56d7fde596ded",
+                "label": "Tagline",
+                "name": "tagline",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_57e921cae76f8",
+                "label": "Tagline Color Light",
+                "name": "tagline_color_light",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_58823dd6984af",
+                "label": "SAP Leonardo branded Project",
+                "name": "sap_clea_branded_project",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "administrator"
+                ],
+                "choices": {
+                    "no": "Not applicable",
+                    "blue": "Yes - black style",
+                    "white": "Yes - white style"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "save_other_choice": 0,
+                "default_value": "",
+                "layout": "horizontal",
+                "return_format": "value"
+            },
+            {
+                "key": "field_58f76f30406f1",
+                "label": "Banner Text",
+                "name": "banner_sticker_content",
+                "type": "text",
+                "instructions": "If required entere here a short information text. e.g.: \"Find us at both XY\".\r\nAttention: Do not use more than 40 characters here.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_58f76fe0406f2",
+                "label": "Invert banner text color",
+                "name": "invert_banner_text_color",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_56955418bd03d",
+                "label": "At a glance",
+                "name": "description",
+                "type": "wysiwyg",
+                "instructions": "What is the business challenge?\r\nWhat is the solution or vision?",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "visual",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_56d6f91971ee7",
+                "label": "The challenge",
+                "name": "challenge",
+                "type": "wysiwyg",
+                "instructions": "What is the business challenge?",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "visual",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_56d6f92a71ee8",
+                "label": "Our solution",
+                "name": "solution",
+                "type": "wysiwyg",
+                "instructions": "What is the solution or vision?",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "visual",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_56955a1cb4ec7",
+                "label": "Project Information",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_5694c3f8062f9",
+                "label": "Portfolio Area",
+                "name": "portfolio_area",
+                "type": "select",
+                "instructions": "Please select the portfolio area under which your project is currently running",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "Future of Work": "Future of Work",
+                    "Strategic Projects": "Strategic Projects",
+                    "Personalized Medicine": "Personalized Medicine",
+                    "Machine Learning": "Machine Learning",
+                    "Intrapreneurship & SAP.iO": "Intrapreneurship & SAP.iO",
+                    "Customer-led Innovation": "Customer-led Innovation",
+                    "Blockchain": "Blockchain",
+                    "Applied Research": "Applied Research"
+                },
+                "default_value": [
+
+                ],
+                "allow_null": 0,
+                "multiple": 1,
+                "ui": 1,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_5694c3d5062f8",
+                "label": "Project State",
+                "name": "project_state",
+                "type": "select",
+                "instructions": "<b>Exploration<\/b>: During the exploration phase our teams conduct research on new technologies and market trends identified as strategically relevant for SAP. <br\/>\r\n<b>Validation<\/b>: In the validation phase our teams are creating proof of concepts and evaluate product\/market fit. <br\/>\r\n<b>Incubation<\/b>: During the incubation phase our teams are developing a product and establishing its go-to-market approach. <br\/>\r\n<b>Product<\/b>: These projects are products on the SAP price list - including substages, e.g. Early Adoption status. <br\/>\r\n<b>Inactive<\/b>: These projects are neither products nor staffed with any ICN resources. <br\/>",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "Exploration": "Exploration",
+                    "Validation": "Validation",
+                    "Incubation": "Incubation",
+                    "Product": "Product",
+                    "Inactive": "Inactive"
+                },
+                "default_value": [
+
+                ],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 1,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_5694c4e4062fb",
+                "label": "Industry",
+                "name": "industry",
+                "type": "checkbox",
+                "instructions": "Please select an applicable industry or select “cross-industry”",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Consumer": "Consumer",
+                    "Discrete Manufacturing": "Discrete Manufacturing",
+                    "Energy and Natural Resources": "Energy and Natural Resources",
+                    "Financial Services": "Financial Services",
+                    "Public Services": "Public Services",
+                    "Other Industries": "Other Industries",
+                    "Cross Industry": "Cross Industry"
+                },
+                "default_value": [
+
+                ],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "allow_custom": 0,
+                "save_custom": 0
+            },
+            {
+                "key": "field_580e1b2a943c4",
+                "label": "Line of Business",
+                "name": "lob",
+                "type": "checkbox",
+                "instructions": "Please select an applicable Line of Business.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "Asset Management": "Asset Management",
+                    "Commerce": "Commerce",
+                    "Finance": "Finance",
+                    "Human Resources": "Human Resources",
+                    "Manufacturing": "Manufacturing",
+                    "Marketing": "Marketing",
+                    "R&D\/Engineering": "R&D\/Engineering",
+                    "Sales": "Sales",
+                    "Service": "Service",
+                    "Sourcing and Procurement": "Sourcing and Procurement",
+                    "Supply Chain": "Supply Chain",
+                    "Sustainability": "Sustainability",
+                    "Travel and Expense Management": "Travel and Expense Management",
+                    "Health Management": "Health Management"
+                },
+                "allow_custom": 0,
+                "save_custom": 0,
+                "default_value": [
+
+                ],
+                "layout": "horizontal",
+                "toggle": 0,
+                "return_format": "value"
+            },
+            {
+                "key": "field_5694c44b062fa",
+                "label": "ICN Location",
+                "name": "location",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Potsdam": "Potsdam",
+                    "Walldorf": "Walldorf",
+                    "Dresden": "Dresden",
+                    "St. Gallen": "St. Gallen",
+                    "Palo Alto": "Palo Alto",
+                    "Raʿanana": "Raʿanana",
+                    "Nanjing": "Nanjing",
+                    "Singapore": "Singapore",
+                    "Bangalore": "Bangalore",
+                    "Brisbane": "Brisbane",
+                    "Berlin": "Berlin",
+                    "Bucharest": "Bucharest"
+                },
+                "default_value": [
+
+                ],
+                "layout": "horizontal",
+                "toggle": 0,
+                "return_format": "value",
+                "allow_custom": 0,
+                "save_custom": 0
+            },
+            {
+                "key": "field_569559f5b4ec6",
+                "label": "Dates",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_5694c388062f6",
+                "label": "Start Date",
+                "name": "start_date",
+                "type": "date_picker",
+                "instructions": "Please select the start date of the project",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": 50,
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "F j, Y",
+                "return_format": "F j, Y",
+                "first_day": 1
+            },
+            {
+                "key": "field_5694c3bb062f7",
+                "label": "End Date",
+                "name": "end_date",
+                "type": "date_picker",
+                "instructions": "Please select the end date of the project. If the project is still ongoing, you can either leave this field empty or add the planned end-date",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": 50,
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "F j, Y",
+                "return_format": "F j, Y",
+                "first_day": 1
+            },
+            {
+                "key": "field_56955a45b4ec8",
+                "label": "Assets",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_568e62b3fc675",
+                "label": "PowerPoint OnePager",
+                "name": "onepager",
+                "type": "file",
+                "instructions": "Please upload a One Pager for internal purposes",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "uploadedTo",
+                "min_size": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_568e62cffc676",
+                "label": "PowerPoint OnePager - Kiosk Version",
+                "name": "onepager_kiosk",
+                "type": "file",
+                "instructions": "Please upload a One Pager for external purposes. Please make sure that customer\/confidential information is anonymized",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "uploadedTo",
+                "min_size": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_56955add4774e",
+                "label": "Gallery",
+                "name": "gallery",
+                "type": "gallery",
+                "instructions": "Please share screenshots, screencasts and demo videos",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "min": 0,
+                "max": "",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "insert": "append"
+            },
+            {
+                "key": "field_56d6f96b77479",
+                "label": "Bubble Background",
+                "name": "bubble_background",
+                "type": "image_crop",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "crop_type": "hard",
+                "target_size": "thumbnail",
+                "width": "",
+                "height": "",
+                "preview_size": "thumbnail",
+                "force_crop": "no",
+                "save_in_media_library": "yes",
+                "retina_mode": "no",
+                "save_format": "object",
+                "library": "uploadedTo"
+            },
+            {
+                "key": "field_56955b0c4774f",
+                "label": "Contacts",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_56955759db608",
+                "label": "Contact Person",
+                "name": "contact_person",
+                "type": "repeater",
+                "instructions": "Please select contact persons for further information",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "field_569557abdb60a",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Contact",
+                "sub_fields": [
+                    {
+                        "key": "field_5695577cdb609",
+                        "label": "Contact Type",
+                        "name": "contact_type",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "user_roles": [
+                            "all"
+                        ],
+                        "choices": {
+                            "Project Lead": "Project Lead",
+                            "Business Developer": "Business Developer",
+                            "Product Owner": "Product Owner",
+                            "Solution Owner": "Solution Owner"
+                        },
+                        "default_value": [
+
+                        ],
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "ui": 1,
+                        "ajax": 0,
+                        "return_format": "value",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_569557abdb60a",
+                        "label": "Contact Name",
+                        "name": "contact_name",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": "",
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "key": "field_569557b7db60b",
+                        "label": "Contact Email",
+                        "name": "contact_email",
+                        "type": "email",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_56955b1e47750",
+                "label": "Co-Innovation Partners \/ Customers",
+                "name": "partners",
+                "type": "repeater",
+                "instructions": "Please share information on Co-Innovation Partners. Please note: Information access will be password protected",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Contact",
+                "sub_fields": [
+                    {
+                        "key": "field_56955b1e47751",
+                        "label": "Contact Type",
+                        "name": "contact_type",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "co-inno": "Co-Innovation Partner",
+                            "customer": "Customer"
+                        },
+                        "default_value": [
+
+                        ],
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "ui": 1,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "disabled": 0,
+                        "readonly": 0,
+                        "return_format": "value"
+                    },
+                    {
+                        "key": "field_56955b1e47752",
+                        "label": "Partner Name",
+                        "name": "partner_name",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": "",
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "key": "field_56955b1e47753",
+                        "label": "Partner URL",
+                        "name": "partner_url",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "http(s):\/\/"
+                    },
+                    {
+                        "key": "field_56955b4447754",
+                        "label": "Partner Logo",
+                        "name": "partner_logo",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_569ce9a41d708",
+                        "label": "Partner Contacts",
+                        "name": "partner_contacts",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Add Row",
+                        "sub_fields": [
+                            {
+                                "key": "field_569ce9e31d709",
+                                "label": "Contact Name",
+                                "name": "p_contact_name",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": "",
+                                "readonly": 0,
+                                "disabled": 0
+                            },
+                            {
+                                "key": "field_569ce9fc1d70b",
+                                "label": "Contact E-Mail",
+                                "name": "p_contact_e-mail",
+                                "type": "email",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_56955b6947755",
+                "label": "Links",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_56955b7547756",
+                "label": "Demo Link",
+                "name": "demo_link",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "http(s):\/\/"
+            },
+            {
+                "key": "field_56b9c068cef94",
+                "label": "Jam Link",
+                "name": "jam_link",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "http(s):\/\/"
+            },
+            {
+                "key": "field_56b9c080cef95",
+                "label": "Source Code Link",
+                "name": "source_link",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "http(s):\/\/"
+            },
+            {
+                "key": "field_56955b8147757",
+                "label": "Other Links",
+                "name": "other_links",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "field_56955b8e47758",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Link",
+                "sub_fields": [
+                    {
+                        "key": "field_56955b8e47758",
+                        "label": "Link Title",
+                        "name": "link_title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": "",
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "key": "field_56955b9b47759",
+                        "label": "Link URL",
+                        "name": "link_url",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "http(s):\/\/"
+                    }
+                ]
+            },
+            {
+                "key": "field_57cd37416f9dc",
+                "label": "Tech Stacks",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_57cd375d6f9dd",
+                "label": "Technology",
+                "name": "technology",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Row",
+                "sub_fields": [
+                    {
+                        "key": "field_57cd377c6f9de",
+                        "label": "Technology Name",
+                        "name": "technology_name",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_57cd37966f9df",
+                        "label": "Logo",
+                        "name": "logo",
+                        "type": "image_crop",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "crop_type": "hard",
+                        "target_size": "custom",
+                        "width": 128,
+                        "height": 128,
+                        "preview_size": "medium",
+                        "force_crop": "yes",
+                        "save_in_media_library": "yes",
+                        "retina_mode": "yes",
+                        "save_format": "object",
+                        "library": "all"
+                    }
+                ]
+            },
+            {
+                "key": "field_569ceb3678bf5",
+                "label": "",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 1
+            },
+            {
+                "key": "field_569ceaef78bf4",
+                "label": "Mandatory fields",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "<span style=\"color:#f00\">Fields that are marked with a red asterisk are mandatory<\/span>",
+                "new_lines": "",
+                "esc_html": 0
+            },
+            {
+                "key": "field_57ea88b252ed8",
+                "label": "Timeline",
+                "name": "lifecycle",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Row",
+                "sub_fields": [
+                    {
+                        "key": "field_57ea88c852ed9",
+                        "label": "Milestone Name",
+                        "name": "milestone",
+                        "type": "text",
+                        "instructions": "Select from the following Milestones",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_57ea88eb52eda",
+                        "label": "Milestone Date",
+                        "name": "milestone_date",
+                        "type": "date_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "display_format": "F j, Y",
+                        "return_format": "F j, Y",
+                        "first_day": 1
+                    },
+                    {
+                        "key": "field_57ea890452edb",
+                        "label": "Summary",
+                        "name": "summary",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_57ea891b52edc",
+                        "label": "Links",
+                        "name": "links",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Add Row",
+                        "sub_fields": [
+                            {
+                                "key": "field_57ea894a52edd",
+                                "label": "Link Url",
+                                "name": "link_url",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_57ea895852ede",
+                                "label": "Link Title",
+                                "name": "link_title",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "portfolio"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt",
+            "custom_fields",
+            "discussion",
+            "comments",
+            "format",
+            "page_attributes",
+            "categories"
+        ],
+        "active": 1,
+        "description": ""
+    }
+]

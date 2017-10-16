@@ -1,0 +1,204 @@
+div#wpcsv table th {
+	width: 17em;
+	vertical-align: top;
+	font-weight: bold;
+}
+
+div#wpcsv div#cpk_wpcsv_left {
+	width: 70%;
+	float: left;
+	display: inline-block;
+	position: relative;
+}
+
+div#wpcsv div#cpk_wpcsv_sidebar {
+	width: 25%;
+	float: left;
+	display: inline-block;
+	margin-left: 1em;
+	border: 1px solid #bbb;
+	background-color: #ddd;
+	padding: 1em;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+div#wpcsv fieldset {
+	border: 1px solid black;
+}
+
+div#wpcsv table.wpcsv {
+	text-align: left;
+	border: 1px solid black;
+	background-color: white;
+}
+
+div#wpcsv table.wpcsv tr td {
+	padding: 5px;
+	padding-left: 10px;
+}
+
+div#wpcsv table.wpcsv tr th {
+	padding: 5px;
+	padding-left: 10px;
+	border-bottom: 1px solid black;
+	background-color: #dddddd;
+}
+
+div#wpcsv .red {
+	color: red;
+}
+
+div#wpcsv div#progressbar_holder {
+	background-color: #1a1a1a;
+	height: auto;
+	width: auto;
+	padding: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+	-webkit-box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+	box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+}
+
+.stripes {
+	-webkit-background-size: 30px 30px;
+	-moz-background-size: 30px 30px;
+	background-size: 30px 30px;			
+	background-image: -webkit-gradient(linear, left top, right bottom,
+						color-stop(.25, rgba(255, 255, 255, .15)), color-stop(.25, transparent),
+						color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .15)),
+						color-stop(.75, rgba(255, 255, 255, .15)), color-stop(.75, transparent),
+						to(transparent));
+	background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+						transparent 75%, transparent);
+	background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+						transparent 75%, transparent);
+	background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+						transparent 75%, transparent);
+	background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+						transparent 75%, transparent);
+	background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+						transparent 75%, transparent);            
+	
+	-webkit-animation: animate-stripes 3s linear infinite;
+	-moz-animation: animate-stripes 3s linear infinite;       		
+}
+
+@-webkit-keyframes animate-stripes { 
+	0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+
+@-moz-keyframes animate-stripes {
+	0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+
+div#wpcsv div#progressbar {
+	height: 1em;
+}
+
+div#wpcsv div#download_link {
+	display: none;
+	padding: 1em;
+}
+
+div#wpcsv p#nothing-to-export {
+	display: none;
+}
+
+div#wpcsv hr {
+	width: 98%;
+	margin-left: 0;
+}
+
+div#wpcsv div#export_wrapper {
+	width: 80%;
+}
+
+div#wpcsv input#start_export {
+	text-align: left;
+}
+
+div#wpcsv div#errors {
+	display: none;
+}
+
+div#wpcsv div#progressbar ui-widget-header {
+	background: none;
+	background-color: #0074F8;
+	border-color: #0074F8;
+}
+
+div#wpcsv blockquote {
+	border: none;
+}
+
+div#wpcsv h3 {
+	margin-top: 0;
+}
+
+input.wpcsv-save-all-button {
+	position: absolute;
+	right: 0;
+}
+
+input.wpcsv-save-all-button.upper {
+	top: 5px; 
+}
+
+/* Tabs */
+
+div#wpcsv-settings-tabs ul li {
+	display: inline;
+	margin-right: 1em;
+}
+
+div#wpcsv-settings-tabs ul li a {
+	text-decoration: none;
+}
+
+/* Filters */
+
+div#wpcsv-settings-tabs fieldset legend {
+  padding: 0 0.5em;
+}
+
+div#wpcsv-settings-tabs fieldset {
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	padding: 1em 1em;
+	margin-bottom: 1em;
+	width: auto;
+	display: inline-block;
+	clear: both;
+}
+
+div#wpcsv-settings-tabs fieldset div.status {
+	width: 100px;
+	padding: 0 1em;
+}
+
+/* Frontend Shortcode */
+
+fieldset#wpcsv-frontend-download {
+	border: 2px solid #999;
+	border-radius: 4px;
+	padding: 1em;
+}
+
+fieldset#wpcsv-frontend-download legend {
+	padding: 0 0.5em;
+}
+
+input.wpcsv-date {
+	width: 7em;
+	font-size: 10px;
+	padding: 0.5em;
+}
