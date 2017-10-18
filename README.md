@@ -10,11 +10,6 @@ This wordpress theme can be used to display project information and filter them 
 ![screenshot](installation/screenshot.png)
 
 
-Requirements
-------------
-
-You will need a wordpress instance with an Advanced Custom Fields Pro plugin.
-
 Download and Installation
 -------------------------
 
@@ -68,7 +63,7 @@ Download wordpress installation files from e.g. https://wordpress.org/latest.tar
 
 Once wordpress is installed, access the backend http://hostname/wp-admin and go to the plugins page. Make sure the plugins listed below are installed. You will need a license for Advanced Custom Fields Pro.
 
-**SCREENSHOT**
+![screenshot](installation/plugins.png)
 
 When ACF pro is installed, use file ["acf-export-xxxx-xx-xx.json"](installation/acf-export-2017-09-15.json) to upload and import the field descriptions.
 
