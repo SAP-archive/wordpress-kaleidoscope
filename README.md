@@ -80,8 +80,12 @@ cd kaleidoscope
 webpack
 ```
 
-
 Depending on your host system, some additional steps may be necessary. When everything is set up correctly, you will see Kaleidoscope serving the projects you defined in wordpress under http(s)://hostname/.
+
+### Configuration of the Kaleidoscope theme
+
+You will need to set a couple of options in the theme settings (Appareance -> Theme Config) in order to have it up and running including filters. As a first starting point in this repository there is a snapshot of the [Theme Config page](installation/Theme%20Config%20‹%20—%20WordPress.htm) included, which can be a starting point for your custom Kaleidoscope page.
+
 
 Support
 -------
