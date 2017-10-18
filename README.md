@@ -61,12 +61,13 @@ Download wordpress installation files from e.g. https://wordpress.org/latest.tar
 
 ### Wordpress configuration 
 
-Once wordpress is installed, access the backend http://hostname/wp-admin and go to the plugins page. Make sure the plugins listed below are installed. You will need a license for Advanced Custom Fields Pro.
+Once wordpress is installed, access the backend http://hostname/wp-admin and go to the plugins page. Make sure the plugins listed below are installed. You will need to purchase a license for Advanced Custom Fields Pro.
 
 ![screenshot](installation/plugins.png)
 
 When ACF pro is installed, use file ["acf-export-xxxx-xx-xx.json"](installation/acf-export-2017-09-15.json) to upload and import the field descriptions.
 
+Using the Custom Post Type UI plugin, you will need to create a new post type "portfolio". This can be done in the wordpress backend under CPT UI -> Add new post type. When this has been successfully created, a new entry "Portfolio" in the navigation bar shows up, where you can now start to enter project data.
 
 ### Installation of Kaleidoscope theme
 
