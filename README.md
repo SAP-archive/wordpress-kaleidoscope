@@ -13,7 +13,7 @@ This wordpress theme can be used to display project information and filter them 
 Download and Installation
 -------------------------
 
-In this section, you will find basic installation instructions. Please see our detailed [Installation Guide](installation/Installation%20Guide%20Kaleidoscope.docx) and the necessary additional files in the same [directory](installation/) for the installation procedure.
+In this section, you will find basic installation instructions. Please see our detailed [Installation Guide](https://github.com/SAP/wordpress-kaleidoscope/raw/master/installation/Installation%20Guide%20Kaleidoscope.docx) and the additional files in [this directory](installation/) that will be needed during the installation procedure.
 
 ### Prerequisites
 
@@ -94,4 +94,5 @@ If you need any support, have any question or have found a bug, please report it
 
 License
 -------
-see [License](LICENSE) file
+Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
+This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the [LICENSE](LICENSE) file.
