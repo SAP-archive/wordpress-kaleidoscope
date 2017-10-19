@@ -14,7 +14,6 @@
                 width: 35px !important
             }
         }
-
             #feedbackButton {
                 position: fixed;
                 z-index: 10;
@@ -112,6 +111,7 @@
             window.portfolioLogoPath = '<?php echo get_option('portfolio_logo'); ?>';
             window.portfolio_logo_right = <?= get_option('portfolio_logo_right') ?>;
             window.screensaverImagePath = '<?php echo get_option('screensaver_image'); ?>';
+			window.portfolio_detailViewShowCube = <?php echo get_option('portfolio_detailViewShowCube', 'true'); ?>;
             window.portfolio_showSapLogo = <?php echo get_option('portfolio_showSapLogo', 'true'); ?>;
             window.portfolio_filter_rule = <?php echo get_option('portfolio_filterRule'); ?>;
             window.portfolio_filter_button_caption = '<?= get_option('portfolio_filterButtonCaption') ?>';
@@ -123,6 +123,7 @@
             window.portfolio_searchStringLocked = <?php echo get_option('portfolio_searchStringLocked'); ?>;
             window.portfolio_coloredByElement = '<?php echo get_option('portfolio_coloredByElement' , 'portfolio_area'); ?>';
             window.portfolio_showEditButton = <?php echo get_option('portfolio_showEditButton', 'false')?>;
+            window.portfolio_showCopyLinkButton = <?php echo get_option('portfolio_showCopyLinkButton', 'true')?>;
             window.portfolio_showSearchButton = <?php echo get_option('portfolio_showSearchButton', 'false')?>;
             window.portfolio_showMatrixButton = <?php echo get_option('portfolio_showMatrixButton', 'false')?>;
             window.portfolio_matrix_xaxis = '<?php echo get_option('portfolio_matrix_xaxis', 'project_state')?>';
@@ -137,6 +138,7 @@
             window.portfolio_enableMailToLink = <?php echo get_option('portfolio_enableMailToLink', 'false')?>;
             window.portfolio_fullscreen_button = <?php echo get_option('portfolio_matrix_show_fullscreen_button', 'false')?>;
             window.lockEnabled = <?php echo get_option('lockEnabled', 'false')?>;
+            window.showFilterTags = <?php echo get_option('showFilterTags', 'false')?>;
             window.showCredit = <?php echo get_option('enableCredit', 'false')?>;
             window.feedbackUrl = '<?= get_option('portfolio_feedback_url') ?>';
             window.lockTimeInSeconds = <?php echo get_option('lockTimeInSeconds', '0')?>;
@@ -153,7 +155,15 @@
             window.portfolio_showPDFOverlay = <?php echo get_option('portfolio_showPDFOverlay', 'false')?>;
             window.temporarilyDisableTracking = false;
             window.lastPiwikAction = "";
-
+            try {
+                if(localStorage.getItem('justSwitchedLock')) {
+                    localStorage.setItem('justSwitchedLock', false);
+                } else {
+                    localStorage.setItem('locked', <?php echo get_option('portfolio_default_kiosk_mode', 'false')?>);
+                }
+            } catch (e) {
+                window.alert("Local Storage not supported. This might have several reasons. Please make sure you are not running Safari in private mode.");
+            }
             if ((window.portfolio_filter_rule != "AND") && (window.portfolio_filter_rule != "OR")){
               window.portfolio_filter_rule = "AND";
             }
@@ -198,7 +208,7 @@
                     }
                      //$formattedValue=json_encode(maybe_unserialize($value[0]));
                      $formattedValue= json_encode(get_field($key, $post->ID));
-                            echo "$key : $formattedValue,\n";
+                            echo "\"$key\" : $formattedValue,\n";
                         }
                     }
 
