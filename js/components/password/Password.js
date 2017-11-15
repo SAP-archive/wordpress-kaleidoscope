@@ -66,6 +66,9 @@ export default class Password extends React.Component {
         event.preventDefault();
 
         if (this.state.passwordTerm === window.portfolio_kiosk_password) {
+            this.setState({
+                passwordTerm: ''
+            });
             Actions.trigger(ActionTypes.SWITCH_LOCK);
         }
     }

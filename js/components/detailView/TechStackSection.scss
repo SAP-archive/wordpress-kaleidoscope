@@ -3,15 +3,16 @@
       .technology_stack_item {
         width: 128px !important;
         height: 190px !important;
-        margin: 7px !important
+        margin: 17px !important;
       }
       .technology_stack_item_title {
         height: 62px !important;
-        font-size: 16px !important;
+        font-size: 13px !important;
       }
       .technology_stack_item_logo {
-          text-align: center;
-          height: calc( 100% - 62px) !important
+        text-align: center;
+        height: calc( 100% - 63px) !important;
+        border-radius: 10px;
       }
   }
   
@@ -30,16 +31,17 @@
     text-align: center;
     height: 3vw;
     font-size: 0.6vw;
-    background: gray;
-    color: white;
-    line-height: 1.4;
-    padding: 0.5vw;
+    color: rgb(79, 79, 79);
+    line-height: 1.2;
+    padding: 0.8vw;
   }
   
   .technology_stack_item_logo {
       text-align: center;
       background: white;
       height: calc( 100% - 3vw);
+      overflow: hidden;
+      border-radius: 10px;
   }
   
   .technology_stack_item_logo img {

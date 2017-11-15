@@ -383,15 +383,6 @@ export default class Matrix extends React.Component {
                 </div>;
             }
         }
-        let matrixButton = "";
-        if (window.portfolio_showMatrixButton && !AppStore.isLocked()) {
-            matrixButton = <span onClick={this.onToggleMatrix} style={iconStyles}>
-                                <Isvg
-                                    src={window.icnThemePath + 'img/grid-three-up.svg'}
-                                    className="matrix_icon"
-                                />
-                            </span>;
-        }
 
         let XAxisSelectionFilters = [];
         let YAxisSelectionFilters = [];
@@ -412,8 +403,6 @@ export default class Matrix extends React.Component {
 
         return (
             <div style={matStyle} className="mat printing_background">
-                {matrixButton}
-
                 {(() => {
                     if (AppStore.matrixIsVisible()) {
                         return (

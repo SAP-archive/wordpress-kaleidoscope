@@ -10,8 +10,8 @@ module.exports = {
     },
     resolve: {
   		alias: {
-  			'react': 'preact-compat',
-  			'react-dom': 'preact-compat',
+  			'react': 'react',
+  			'react-dom': 'react-dom',
   		}
     },
     module: {

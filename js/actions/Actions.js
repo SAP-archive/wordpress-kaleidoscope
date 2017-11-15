@@ -195,7 +195,12 @@ let Actions = {
             data: {}
         });
     },
-
+    CONTACT_ALL() {
+        AppDispatcher.dispatch({
+            actionType: ActionTypes.CONTACT_ALL,
+            data: {}
+        });
+    },
     CHECK_EMAIL() {
         AppDispatcher.dispatch({
           actionType: ActionTypes.CHECK_EMAIL,

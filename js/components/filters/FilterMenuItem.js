@@ -5,6 +5,7 @@ import Actions from "../../actions/Actions";
 import { ActionTypes } from "../../constants/constants";
 import AppStore from "../../stores/AppStore";
 import { projects } from "../../stores/projects";
+import PropTypes from 'prop-types';
 
 export default class FilterMenuItem extends React.Component {
 
@@ -23,11 +24,15 @@ export default class FilterMenuItem extends React.Component {
 
     componentDidMount() {
         setTimeout(() => {
-            if (this.refs.filtermenuitemDisplay) {
-                this.display = this.refs.filtermenuitemDisplay.style.display;
+            if (this.filtermenuitemDisplay) {
+                this.display = this.filtermenuitemDisplay.style.maxHeight;
             }
             this.setState({ mounted: true });
         }, 5);
+    }
+
+    componentWillUnmount() {
+        this.filtermenuitemDisplay.style.maxHeight = '0';
     }
 
     render() {
@@ -38,19 +43,18 @@ export default class FilterMenuItem extends React.Component {
         let display;
         if (this.state.mounted) {
             if (this.props.isActive || this.props.isSelected) {
-                display = 'block';
+                display = '100px';
             } else {
-                display = 'none';
+                display = '0';
             }
         }
         if (this.props.subFilterTitle) {
-
             let allSelectedFilters = this.props.allSelectedFilters;
             let selfFilter = Array({filterTitle: this.props.title, subFilter: this.props.subFilterTitle });
             if ((this.count === undefined )|| (!AppStore.isSearching() && !AppStore.getFilterOverview() && !AppStore.getShowNoResults())){
-            if (allSelectedFilters.length == 0 ){
+            if (allSelectedFilters.length === 0 ){
               this.count = projects.countFilterResults(selfFilter);
-            } else if(window.portfolio_filterAsRadioButtons){
+            } else if(window.portfolio_filterAsRadioButtons || window.portfolio_filter_rule === 'OR'){
 
                 let otherFilters = allSelectedFilters.filter(function(currentFilter){
                   return selfFilter[0].filterTitle !== currentFilter.filterTitle;
@@ -60,24 +64,33 @@ export default class FilterMenuItem extends React.Component {
             } else {
                 this.count = projects.countFilterResults(selfFilter.concat(allSelectedFilters));
             }
-            if (clickable) filterItemClasses += ' filtermenuitem__possible';
             if(window.portfolio_filterAsRadioButtons) {
                 filterItemClasses += ' filtermenuitem__asRadioButtons';
             }
         }
 
+        if(this.count > 0 || this.props.isSelected) {
+            clickable = true;
+        } else if(this.count === 0 && !this.props.isSelected) {
+                clickable = false;
+        }
+        if (clickable) {
+            filterItemClasses += ' filtermenuitem__possible';
+        }
+
         return (
-          <div className="filtermenuitem__height" style={{display: display}} ref='filtermenuitemDisplay'>
+          <div className="filtermenuitem__height" style={{maxHeight: display}}
+               ref={(input) => {this.filtermenuitemDisplay = input;}}>
             <div tabIndex="2" className={filterItemClasses}
-                 onClick={clickable && this.onClick}
-                 onKeyDown={clickable && this.onKeyDown}>
+                 onClick={clickable ? this.onClick : null}
+                 onKeyDown={clickable ? this.onKeyDown : null}>
                 <span className={"filtermenuitem__legenditem "+this.legendClass}>
                     <span className={"filtermenuitem__legenditem-inner "+this.legendClass}/>
                 </span>
                 <span className="filtermenuitem__filtertitle">{this.props.subFilterTitle}</span>
 
 
-                  {(() => { if (this.count > 0 && window.portfolio_filter_rule == "AND")  {
+                  {(() => { if (this.count > 0)  {
                       return (
                           <span className="filtermenuitem__filtercount">
                             {this.count}
@@ -116,6 +129,6 @@ export default class FilterMenuItem extends React.Component {
 }
 
 FilterMenuItem.propTypes = {
-    title: React.PropTypes.string.isRequired,
-    subFilterTitle: React.PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    subFilterTitle: PropTypes.string.isRequired
 };

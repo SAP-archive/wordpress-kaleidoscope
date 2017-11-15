@@ -7,6 +7,7 @@ import AppStore from '../../stores/AppStore';
 
 import MainFilter from './MainFilter';
 import Lock from "../lock/Lock";
+import Search from '../search/Search';
 
 
 export default class Filters extends React.Component {
@@ -19,6 +20,7 @@ export default class Filters extends React.Component {
         this.onClickFilterMenuButton = this.onClickFilterMenuButton.bind(this);
         this.onKeyDownFilterMenuButton = this.onKeyDownFilterMenuButton.bind(this);
         this.onFilterContainerAnimationEnd = this.onFilterContainerAnimationEnd.bind(this);
+        this.onToggleSearch = this.onToggleSearch.bind(this);
     }
 
     componentDidMount() {
@@ -90,22 +92,32 @@ export default class Filters extends React.Component {
         if(document.getElementById('filters_container') && classes.indexOf("filters__overview") < 0) {
             document.getElementById('filters_container').style.display = 'block';
         }
+
+        let iconStyles = {
+            display: this.props.project ? 'none' : (window.portfolio_showSearchButton ? 'block' : 'none')
+        };
+
+        let filtersContainerStyle = {
+            visibility: AppStore.isSearching() ? "hidden" : "visible"
+        }
+
+        let filterButtonClass = this.props.overview || AppStore.isSearching() ? "" : "closing";
+        let searchButtonClass = AppStore.isSearching() ? "closing" : "";
+
         return (
             <div className={`filters ${classes}`}  onClick={this.onClick}>
-                {headerLogo}
                 {(() => {
                     if (!window.portfolio_lockSidebar) {
                         return (
-                            <div>
-                                <a tabIndex="1" className="filterMenuButton"
-                                   onKeyDown={this.onKeyDownFilterMenuButton}
-                                   onClick={this.onClickFilterMenuButton}>≡</a>
-                                <span className="filterText"><span>{window.portfolio_filter_button_caption}</span></span>
+                            <div className={`filter-menu-button animated_button ${filterButtonClass}`}
+                                 onKeyDown={this.onKeyDownFilterMenuButton}
+                                 onClick={this.onClickFilterMenuButton}>
+                                {window.portfolio_filter_button_caption}
                             </div>
                         )
                     }
-                })()}
-                <div className="filters__container"
+                })()}              
+                <div className="filters__container" style={filtersContainerStyle} 
                      onTransitionEnd={this.onFilterContainerAnimationEnd}
                      id="filters_container">
                     {
@@ -121,6 +133,26 @@ export default class Filters extends React.Component {
                         })
                     }
                 </div>
+                {(() => {
+                    if (window.portfolio_showMatrixButton) {
+                        return (
+                                <div 
+                                    className = "matrix__button animated_button" 
+                                    onClick = { this.onToggleMatrix }>
+                                    MATRIX
+                                    </div>
+                            )
+                    }
+                })()}
+                <div
+                style = { iconStyles }
+                className = {`search__icon animated_button ${searchButtonClass}`}
+                onClick = { this.onToggleSearch }
+                >SEARCH
+                </div>
+                <Search project={this.state.currentProject} searchTerm={this.state.searchTerm} />
+
+                <div className="filters__gradient filters__container"/>
                 {aboutButtonLarge}
                 {lock}
                 {sapLogo}
@@ -129,11 +161,13 @@ export default class Filters extends React.Component {
         );
     }
     onFilterContainerAnimationEnd(event) {
+        /*
         if(event.propertyName === 'opacity') {
             if(window.getComputedStyle(event.target)[event.propertyName] == 0) {
                 event.target.style.display = 'none';
             }
         }
+        */
     }
 
     onKeyDownFilterMenuButton(event) {
@@ -147,7 +181,11 @@ export default class Filters extends React.Component {
     onClickFilterMenuButton(oEvent) {
         oEvent.stopPropagation();
         if (!window.portfolio_lockSidebar) {
-            Actions.trigger(ActionTypes.TOGGLE_FILTER, !this.props.overview);
+            if (AppStore.isSearching()) {
+                Actions.trigger(ActionTypes.TOGGLE_SEARCH); 
+            } else {
+                Actions.trigger(ActionTypes.TOGGLE_FILTER, !this.props.overview);
+            }
         }
         if (AppStore.getLockedFilters().length === 0) {
             Actions.trigger(ActionTypes.CLEAR_FILTERS);
@@ -188,4 +226,21 @@ export default class Filters extends React.Component {
             document.getElementById('filters_container').style.display = 'block';
         }
     }
+
+
+    onToggleSearch(e) {
+        if (e.shiftKey) {
+            Actions.trigger(ActionTypes.TOGGLE_MATRIX);
+        } else {
+            Actions.trigger(ActionTypes.TOGGLE_SEARCH);
+            if (AppStore.isSearching()) {
+                Actions.trigger(ActionTypes.TOGGLE_FILTER, !this.props.overview);
+            }
+        }
+    }
+
+    onToggleMatrix(e) {
+        Actions.trigger(ActionTypes.TOGGLE_MATRIX);
+    }
+
 }

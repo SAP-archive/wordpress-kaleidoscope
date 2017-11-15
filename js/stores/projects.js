@@ -53,25 +53,56 @@ if (localStorage.getItem('locked') === 'true') {
     });
 }
 
+// set bubble color group order to order of filter items in filterbar
+var filterIndexToSortBubblesBy;
+
+for(var i = 0; i< window.mainFilters.length; i++) {
+	if (mainFilters[i].title==window.portfolio_coloredByElement) {
+		filterIndexToSortBubblesBy = i;
+		break;
+	}
+}
+
+var filterOrder = Object.keys(mainFilters[filterIndexToSortBubblesBy]["items"]);
+
 projects.sort(function(a, b) {
+  /*
+    if (a.title.toLowerCase() > b.title.toLowerCase()) {
+      return 1;
+    } else if (a.title.toLowerCase() < b.title.toLowerCase()) {
+      return -1;
+    }
+    return 0;
+
+    */
+
     if (Array.isArray(a[window.portfolio_coloredByElement]) && Array.isArray(b[window.portfolio_coloredByElement])) {
-        if (a[window.portfolio_coloredByElement][0] > b[window.portfolio_coloredByElement][0]) return 1;
-        if (a[window.portfolio_coloredByElement][0] < b[window.portfolio_coloredByElement][0]) return -1;
-    } else {
-        if (!a[window.portfolio_coloredByElement]) {
-            a[window.portfolio_coloredByElement] = ['DRAFT'];
-        }
-        if (!b[window.portfolio_coloredByElement]) {
-            b[window.portfolio_coloredByElement] = ['DRAFT'];
-        }
-        if (a[window.portfolio_coloredByElement] > b[window.portfolio_coloredByElement]) {
+        if (filterOrder.indexOf(a[window.portfolio_coloredByElement][0]) > filterOrder.indexOf(b[window.portfolio_coloredByElement][0])) {
+          return 1;
+        } else if (filterOrder.indexOf(a[window.portfolio_coloredByElement][0]) < filterOrder.indexOf(b[window.portfolio_coloredByElement][0])) {
+          return -1;
+        } else {
+          if (a.title > b.title) {
             return 1;
-        }
-        if (a[window.portfolio_coloredByElement] < b[window.portfolio_coloredByElement]) {
+          } else if (a.title < b.title) {
             return -1;
+          }
+        }
+    } else {
+        if (filterOrder.indexOf(a[window.portfolio_coloredByElement]) > filterOrder.indexOf(b[window.portfolio_coloredByElement])) {
+            return 1;
+        } else if (filterOrder.indexOf(a[window.portfolio_coloredByElement]) < filterOrder.indexOf(b[window.portfolio_coloredByElement])) {
+            return -1;
+        } else {
+            if (a.title > b.title) {
+                return 1;
+            } else if (a.title < b.title) {
+                return -1;
+            }
         }
     }
     return 0;
+    
 });
 
 // build filters object
@@ -209,7 +240,16 @@ projects.initParticles = function() {
             proj[filterGroup].forEach(function(filter) {
                 if (filter) {
                     if (typeof filter === "object") {
-                        filter = filter[filterGroup + "_name"]
+                        if (mainFilters[mainFilters.map(function(e) { return e.title; }).indexOf(filterGroup)].filter_attribute == undefined) {
+                          filter = filter[filterGroup + "_name"];
+                        } else {
+                          var filterItem = mainFilters[mainFilters.map(function(e) { return e.title; }).indexOf(filterGroup)];
+                          if (filterItem.filter_key && filterItem.filter_value && filter[filterItem.filter_key] == filterItem.filter_value) {
+                            filter = filter[filterItem.filter_attribute];
+                          } else {
+                            return;
+                          }
+                        }
                     }
                     if (!filters[filterGroup][filter]) {
                         filters[filterGroup][filter] = [];
@@ -434,7 +474,7 @@ projects.reorderProjectParticles = function(filterOffset = 0) {
     width = windowWidth / 2;
     height = windowHeight / 2;
     minDim = width > height ? height : width;
-    domWidth = windowWidth - filterOffset - 2 * SCROLL_PADDING();
+    domWidth = windowWidth - filterOffset - 2.5 * SCROLL_PADDING();
     numCols = Math.round(domWidth / (PARTICLE_SIZE() * 0.98));
     secondRownumCols = Math.round(domWidth / (PARTICLE_SIZE() * 0.93));
     numRows = Math.ceil(projects.length / numCols);
@@ -508,16 +548,7 @@ projects.alignProjectsToFilterBar = function(oIScroller, filterOverview) {
         filterOffset = filterOffset / 2;
     }
 
-    if (!filterOverview) { //true if filterbar visible
-        //find closest particle to filterbar
-        // projects.forEach(function(item, posIndex) {
-        //     minDist = Math.min(item.nextLeft - filterOffset + scrollerX - particleSize, minDist);
-        // });
-        projects.reorderProjectParticles(filterOffset);
-    } else {
-        // filterbar not visible
-        projects.reorderProjectParticles(0);
-    }
+    projects.reorderProjectParticles(filterOffset);
 }
 
 // place projects according to the applied filter
@@ -527,10 +558,11 @@ projects.reorgProjects = function(visibleProjects, iScroll) {
     if (filterNodes && filterNodes[0]){
       filterOffset = filterNodes[0].offsetWidth;
     }
-    var activeFilter = document.getElementsByClassName("activefilters")[0];
-    if (activeFilter) {
-        activeFilter.style.left = filterOffset + "px";
-    }
+    // var activeFilter = document.getElementsByClassName("activefilters")[0];
+    // if (activeFilter) {
+    //     activeFilter.style.left = filterOffset + "px";
+    // }
+
     filterOffset = filterOffset + 80;
     // 1. make non visible projects invisible
     projects.forEach(function(proj, index) {

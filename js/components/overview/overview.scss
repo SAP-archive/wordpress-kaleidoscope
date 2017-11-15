@@ -1,6 +1,6 @@
 
 .overview__container {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 1);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -9,15 +9,299 @@
   align-items: center;
 }
 
+@keyframes appFadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#icn_portfolio_overviewapp {
+  animation: appFadein 4s linear;
+}
+
+.overview__iframe_container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  z-index: 1000;
+  background-color: black;
+}
+
+
+@keyframes iframefadein {
+  0%   { 
+    opacity: 0; 
+    visibility: visible;
+  }
+  50%   { 
+    opacity: 0; 
+    visibility: visible;
+  }
+  100% { 
+    opacity: 1; 
+    visibility: visible;
+  }
+}
+
+@keyframes iframefadeout {
+  0%   { 
+    opacity: 1; 
+    visibility: visible;
+  }
+  50%   { 
+    opacity: 0; 
+    visibility: visible;
+  }
+  100% { 
+    opacity: 0; 
+    visibility: visible;
+  }
+}
+
+.iframevisible {
+  animation: iframefadein 1s linear;
+}
+
+.iframehidden {
+  animation: iframefadeout 1s linear;
+}
+
+
+
+.overview__overview-particle-title_headline {
+    hyphens: none;
+    text-align: left;
+    border-bottom: 7px solid white;
+    padding-bottom: 14px;
+    font-size: 4vh;
+    line-height: 4.5vh;
+}
+
+.overview__overview-particle-title_description {
+    font-weight: 100;
+    font-size: 1.25vh;
+    text-align: left;
+    line-height: 2vh;
+    margin-top: -1vh;
+    hyphens: none;
+    letter-spacing: 0.4px;
+}
+
+
+
+
+.drone_clicked .drone_flash {
+    background: radial-gradient(white 0%, rgba(243, 206, 205, 0.4) 35%, rgba(88, 88, 88, 0.3) 60%, transparent 70%) !important;
+    transform: scale(15);
+    width: 3vw;
+    height: 3vw;
+    z-index: 100;
+    animation: droneFlash 0.25s linear;
+    position: absolute;
+    top: 0.7vw;
+    left: 0.5vw;
+    opacity: 0;
+}
+
+@keyframes droneFlash {
+  0%  {opacity: 0}
+  10%  {opacity: 1}
+  20% {opacity: 0}
+  60% {opacity: 0}
+  65% {opacity: 1}
+  70% {opacity: 0}
+  100% {opacity: 0}
+}
+
+.heli_clicked {
+  top: -20vw !important;
+}
+
+.overview__iframe_close_button {
+    position: absolute;
+    top: 5vw;
+    left: 1vw;
+    width: 2.5vw;
+    height: 2.5vw;
+    background-color: #272727;
+    border-radius: 100vw;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 2.5vw;
+    border: 2px solid #aaa;
+    cursor: pointer;
+}
+
+@media (max-width: 1920px) {
+  .overview__iframe_close_button {
+      top: 100px;
+      left: 20px;
+      width: 55px;
+      height: 55px;
+      font-size: 11px;
+      text-align: center;
+      line-height: 55px;
+  }
+}
+
+.overview__iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.overview__helicopter {
+    background-image: url(/wp-content/themes/kaleidoscope/img/overview/helicopter.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 6vw;
+    height: 6vw;
+    top: 15vh;
+    left: 40vw;
+    position: absolute;
+    transition: left 2.5s linear, top 1s ease-in-out;
+}
+
+img.overview__overview-particle-logo {
+    width: 100%;
+}
+
+.overview__drone {
+    background-image: url(/wp-content/themes/kaleidoscope/img/overview/drone.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 3.5vw;
+    height: 3.5vw;
+    top: 15vh;
+    left: 40vw;
+    position: absolute;
+    transition: left 2.5s ease-in-out, top 2.5s ease-in-out;
+}
+
+.overview__cloud {
+    background-size: 100%;
+    width: 8vh;
+    height: 8vh;
+    top: 8vh;
+    left: 36vw;
+    position: absolute;
+    background-repeat: no-repeat;
+    transition: all 2.5s linear;
+    backface-visibility: hidden;
+}
+
+.cloud_single {
+    background-image: url(/wp-content/themes/kaleidoscope/img/overview/cloud_single.png);
+}
+
+.cloud_formation {
+    background-image: url(/wp-content/themes/kaleidoscope/img/overview/cloud_formation.png);
+}
+
+.overview__logo {
+    background: url(/wp-content/themes/kaleidoscope/img/sap.png);
+    background-size: auto 100%;
+    height: 5vh;
+    top: 5vh;
+    left: 5vw;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.overview__logo span {
+    color: white;
+    position: relative;
+    left: 13vh;
+    margin-top: 0;
+    font-size: 1.4vh;
+    line-height: 1.8vh;
+    display: block;
+}
+
+.overview__logo h3 {
+    color: white;
+    left: 13vh;
+    position: relative;
+    margin-top: -2vh;
+    margin-bottom: 0;
+    font-size: 5.5vh;
+}
+
+.no_transition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+
+.overview__bottom {
+    background: url(/wp-content/themes/kaleidoscope/img/overview/background_illustrations.png);
+    background-size: auto 100%;
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+    height: 30%;
+    animation: bottomslidein 1s linear;
+}
+
+@keyframes bottomslideout {
+  0%   { 
+    bottom: 0px
+  }
+  50%   { 
+    bottom: -30%; 
+  }
+  100% { 
+    bottom: -30%;
+  }
+}
+
+@keyframes bottomslidein {
+  0%   { 
+    bottom: -30%
+  }
+  50%   { 
+    bottom: -30%; 
+  }
+  100% { 
+    bottom: 0px;
+  }
+}
+
+
+.overview__bottom.hidden {
+    animation: bottomslideout 1s linear;
+}
+
+.overview__overview-particle-title_description:after {
+    content: 'Discover';
+    font-size: 1.12vh;
+    display: table;
+    border: 5px solid white;
+    border-radius: 25px;
+    padding: 6px;
+    margin-top: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: black;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1.2vh;
+}
+
 .overview__inner {
   width: 80vw;
-  height: 40vh;
-  // background-color: #404040;
+/*  height: 40vh; */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   border-radius: 1vw;
   padding: 1vw;
+  position: absolute;
+  top: 25vh;
+  pointer-events: none;
 }
 
 .slick-slide {
@@ -26,17 +310,41 @@
   justify-content: center;
 }
 
+.overview__particle-group.selected .overview__overview-particle-inner{
+    /* transform: scale(15); 
+    z-index: 100;*/
+    animation: particlezoom 1s ease-in-out;
+}
+
+@keyframes logo-fadeout {
+  0%   { opacity: 1; }
+  10%   { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes logo-fadein {
+  0%   { opacity: 0; }
+  80%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+.overview__particle-group.selected img {
+  animation: logo-fadeout 1s linear;
+}
+
+.overview__particle-group img {
+  animation: logo-fadein 1s linear;
+}
+
 .overview__particle-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top:1vh;
-  padding-bottom: 1vh;
+    background: rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 50px 0px rgba(0,0,0,1);
 }
 
 .overview__overview-particle {
   text-decoration: none;
+  pointer-events: auto;
 }
 
 .slick-prev:before,
@@ -45,32 +353,40 @@
 }
 
 .overview__overview-particle-inner {
-  width: 18vw;
-  height: 18vw;
-  border-radius: 9vw;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    width: 25vh;
+    height: 25vh;
+    border-radius: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    border-color: white;
+    color: #000;
+    transform: scale(1);
+    /* animation: particlezoomout 1s linear*/
 }
+
+@keyframes particlezoom {
+  0% { transform: scale(1); }
+  10% { transform: scale(1.1); }
+  15% { transform: scale(0.95); }
+  20% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes particlezoomout {
+  0% { transform: scale(15); }
+  80% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+
 
 .overview__overview-particle-title {
-  color: white;
-  font-family: "Geogrotesque", sans-serif;
-  font-weight: 600;
-  padding: 0.5vw;
-}
-
-@media (max-width: 1920px){
-  .overview__overview-particle-title {
-    font-size: 2.5vh;
-  }
-}
-
-@media (min-width: 1921px){
-  .overview__overview-particle-title {
-    font-size: 3vh;
-  }
+    color: white;
+    font-family: "Benton Sans", sans-serif;
+    font-weight: 600;
 }
 
 .overview__particle-button {
@@ -85,27 +401,4 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
-
-
-@media (max-width: 1920px) {
-  .overview_logo {
-      height: 57.45px !important;
-      width: 165.15px !important;
-  }
-}
-
-// @media (min-width: 1921px) {
-//   .overview_logo {
-//       height: 57.45px !important;
-//       width: 165.15px !important;
-//   }
-// }
-
-.overview_logo {
-    position: absolute;
-    top: 15px;
-    left: 10px;
-    height: 3vw;
-    cursor: pointer;
 }

@@ -11,7 +11,6 @@ import Actions from "./actions/Actions";
 import { ActionTypes } from "./constants/constants";
 
 import Blur from './components/blur/Blur';
-import Search from './components/search/Search';
 import Feedback from './components/feedback/Feedback';
 import Password from './components/password/Password';
 import NoResults from './components/noResults/NoResults';
@@ -66,7 +65,11 @@ class ICNPortfolioApp extends React.Component {
         setTimeout(() => {
             if (window.kioskMode && localStorage.getItem('locked') === 'false') {
                 Actions.trigger(ActionTypes.SWITCH_LOCK);
-                localStorage.setItem('locked', !locked);
+                try {
+                    localStorage.setItem('locked', !locked);
+                } catch(e) {
+                    console.log(e);
+                }
             }
         }, (window.lockTimeInSeconds !== undefined ? window.lockTimeInSeconds : 60) * 1000);
 
@@ -74,6 +77,11 @@ class ICNPortfolioApp extends React.Component {
         document.that = this;
         document.addEventListener("mousedown", this._handleClick);
         document.addEventListener("keydown", this._handleKeyDown);
+        Actions.trigger(ActionTypes.RESIZE);
+
+        window.addEventListener('message', function(e) {
+            console.log(e.data);
+        });
     }
 
     componentWillUnmount() {
@@ -123,6 +131,7 @@ class ICNPortfolioApp extends React.Component {
                               size={this.state.particlesScroller}
                               isIE={this.props.isIE}
                                />
+                          <div className='kaleidoscope_toast animate-toast dark_toast'>Toast Message</div>
                         </div>
                     )
 
@@ -137,9 +146,14 @@ class ICNPortfolioApp extends React.Component {
                   }
                 })()}
 
+
+                <img id="icnLogo"
+                              alt="Innovation Center Network"
+                              src={window.portfolioLogoPath}
+                              className="filterLogo"
+                              />
                 <Backlink link={AppRouter.getBacklink()} />
 
-                <Search project={this.state.currentProject} searchTerm={this.state.searchTerm} />
 
                 <Matrix project={this.state.currentProject} />
                 

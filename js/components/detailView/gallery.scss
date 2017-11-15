@@ -111,6 +111,17 @@
   max-width: 100%;
   margin: auto;
   display: inherit;
+  cursor: pointer;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.slick-icnheightvideo {
+  width: 100%;
 }
 
 .slick-icnimagewidth {
@@ -242,6 +253,22 @@
     height: auto;
     border: 1px solid transparent;
   }
+}
+
+@keyframes imageGrowth {
+  from {height: 25%; top: 37.5%}
+  to {height: 70%; top: 5%}
+}
+
+
+.slick-fullscreenImage {
+  height: 70%;
+  top: 5%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  animation: imageGrowth;
+  animation-duration: 0.3s;
 }
 
 .slick-arrow.slick-hidden {

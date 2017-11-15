@@ -60,7 +60,11 @@ class AppRouter extends EventEmitter {
             if (item) {
                 var aItem = item.split("=");
                 if (aItem[0].toLowerCase() === "public") {
-                    localStorage.setItem('locked', aItem[1]);
+                    try {
+                        localStorage.setItem('locked', aItem[1]);
+                    } catch(e) {
+                        console.log(e);
+                    }
                 } else if (aItem[0].toLowerCase() === "search") {
                     let sDecoded = decodeURIComponent(aItem[1]);
                     Actions.trigger(ActionTypes.PERFORM_SEARCH, sDecoded);
@@ -69,15 +73,14 @@ class AppRouter extends EventEmitter {
                     var overViewArray = aItem[1].split("|");
                     var aOverViewData = [];
                     AppStore.setOverview(true);
-                    for (var i = 0; i < overViewArray.length; i += 2) {
-                        if (overViewArray[i] && overViewArray[i + 1]) {
-                            aOverViewData.push({
+                    for (var i = 0; i < overViewArray.length; i += 4) {
+                        aOverViewData.push({
                                 title: decodeURIComponent(overViewArray[i]),
                                 url: decodeURIComponent(overViewArray[i + 1]),
+                                logo: decodeURIComponent(overViewArray[i + 2]),
+                                description: decodeURIComponent(overViewArray[i + 3]),
                                 overviewParticle: true
-                            });
-
-                        }
+                        });
                     }
                     AppStore.setOverviewData(aOverViewData);
 

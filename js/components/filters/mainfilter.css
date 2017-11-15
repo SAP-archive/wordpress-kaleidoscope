@@ -1,6 +1,6 @@
 @media (max-width: 1920px) {
   .mainfilter__title {
-    font-size: 110% !important;
+    font-size: 14px !important;
   }
   .mainfilter__triangle {
     border-width: 8.7px 5px 0 5px !important;
@@ -11,20 +11,18 @@
   text-align: left;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   padding: 10px 0;
-  margin-right: 15px;
+  margin: 0 15px;
 }
 
 .mainfilter__title {
-  position: relative;
-  text-transform: capitalize;
-  padding: 5px 0;
-  font-weight: 100;
-  font-family: "Geogrotesque", sans-serif;
-  font-weight: 700;
-  font-size: 0.92vw;
-  letter-spacing: 0.2px;
-  color: white;
-  cursor: pointer;
+    position: relative;
+    text-transform: capitalize;
+    padding: 5px 0;
+    font-weight: 400;
+    font-size: 0.92vw;
+    letter-spacing: 0.8px;
+    color: #c2c2c2;
+    cursor: pointer;
 }
 
 .mainfilter__triangle {
@@ -36,7 +34,7 @@
   height: 0;
   border-style: solid;
   border-width: 0.45vw 0.3vw 0 0.3vw;
-  border-color: #ffffff transparent transparent transparent;
+  border-color: #c2c2c2 transparent transparent transparent;
   transform: rotate(-90deg);
   transition: transform .2s;
 }

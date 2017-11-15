@@ -47,10 +47,10 @@ export default class Particle extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         let distX = nextProps.focus.centerX - nextProps.project.nextLeft,
-            distY = nextProps.project.nextTop - nextProps.focus.centerY,
-            dist = distX * distX + distY * distY;
-        this.newScale = 1 - (dist / (nextProps.focus.size));
-        this.newScale += 0.2;
+            distY = nextProps.project.nextTop - nextProps.focus.centerY;
+        let dist = distY * distY;
+        this.newScale = 1 - (dist * 0.5 / (nextProps.focus.size));
+        //this.newScale += 0.2;
         this.newScale = this._clamp(this.newScale, SCALE_MIN, SCALE_MAX);
         let scaleChanged = (this.scale !== this.newScale);
         let positionChanged = this.top !== nextProps.project.nextTop || this.left !== nextProps.project.nextLeft;

@@ -4,6 +4,7 @@ import React from "react";
 import Actions from "../../actions/Actions";
 import { ActionTypes } from "../../constants/constants";
 
+import PropTypes from 'prop-types';
 
 export default class Blur extends React.Component {
 
@@ -71,5 +72,5 @@ export default class Blur extends React.Component {
 }
 
 Blur.propTypes = {
-    blur: React.PropTypes.bool.isRequired
+    blur: PropTypes.bool.isRequired
 };

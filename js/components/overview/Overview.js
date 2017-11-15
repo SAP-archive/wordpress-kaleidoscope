@@ -9,10 +9,19 @@ import { PARTICLE_SIZE } from './OverviewParticle';
 import Actions from "../../actions/Actions";
 import AppStore from '../../stores/AppStore';
 
+import SkyAnimation from './SkyAnimation';
+import PropTypes from 'prop-types';
 export default class Overview extends React.Component {
+
 
     constructor(props) {
         super(props);
+
+        this.state = {
+          currentIframe: ""
+        };
+
+        this.handleIframeClose = this.handleIframeClose.bind(this);
     }
 
     componentDidMount() {
@@ -20,6 +29,17 @@ export default class Overview extends React.Component {
 
     componentDidUpdate() {
 
+    }
+
+    handleIframeClose() {
+      this.setState({
+        currentIframe: ""
+      });
+
+      var iframes = document.getElementsByTagName("iframe");
+      for (var i = 0; i<iframes.length; i++) {
+        iframes[i].contentWindow.postMessage('Hello World', 'http://localhost');
+      }
     }
 
     render() {
@@ -30,43 +50,63 @@ export default class Overview extends React.Component {
             arrows: true,
             infinite: false,
             speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 2,
+            slidesToScroll: 2,
         };
 
+        let overviewBottomClasses = this.state.currentIframe != "" ? "hidden" : "";
+
         return (
+
           <div className='overview__container'>
 
-            <img id="icnLogo"
-                alt="Innovation Center Network"
-                src={window.icnThemePath + "img/ICP_logo.png"}
-                className="overview_logo"
-                style={{cursor:"default"}}
-                />
+              {
+                      overviewData.map((oProject, iIndex) => {
 
-            <img src={window.icnThemePath + 'img/logo_gray.svg'} alt="SAP" id="sapLogo" className="filterSapLogo"/>
+                            let style = {
+                              opacity: this.state.currentIframe == oProject.url ? 1 : 0,
+                              visibility: this.state.currentIframe == oProject.url ? "visible" : "hidden"
+                            }
+                            let iFrameClass = this.state.currentIframe == oProject.url ? "iframevisible" : "iframehidden";
+
+
+                            return (
+                              <div className={`overview__iframe_container ${iFrameClass}`} style={style} key={iIndex}>
+                                <iframe src={oProject.url} className='overview__iframe' />
+                                <div className="overview__iframe_close_button" onClick={this.handleIframeClose}>
+                                  HOME
+                                </div>
+                              </div>
+                            );
+                        })
+              }
+
+              <div className={`overview__bottom ${overviewBottomClasses}`}></div>
+
+              <SkyAnimation animating={this.state.currentIframe == ""} />
 
               <div className='overview__inner'>
-                  <Slider {...sliderSettings} ref="slider" className="overview__slider">
                     {
                       overviewData.map((oProject, iIndex) => {
                         oProject.overviewCat = (iIndex%6 < 10) ? ("0" + iIndex % 6) : iIndex % 6;
                         oProject.slug = oProject.url;
 
                             return (
-                              <div key={iIndex}>
                                   <OverviewParticle
                                       project={oProject}
                                       index={iIndex}
                                       key={iIndex}
                                       focus={this.state}
                                       isIE={this.props.isIE}
-                                      target={oProject.url} />
-                              </div>
+                                      target={oProject.url} 
+                                      overview={this}
+                                      />
                             );
                         })
                     }
-                  </Slider>
+              </div>
+              <div className='overview__logo'>
+                <h3>Explore what we do.</h3>
               </div>
           </div>
         );
@@ -76,6 +116,5 @@ export default class Overview extends React.Component {
 
 
 Overview.propTypes = {
-    // areas: React.PropTypes.array.isRequired,
-    size: React.PropTypes.object.isRequired
+    size: PropTypes.object.isRequired
 };

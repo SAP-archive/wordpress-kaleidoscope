@@ -2,6 +2,7 @@
   .activefilters__active {
     font-size: 16px !important;
     width: calc(100% - 280px) !important;
+    left: 280px !important;
   }
   .activefilters p {
     font-size: 16px !important;
@@ -18,9 +19,8 @@
 }
 
 .activefilters__active {
-  background-color: whitesmoke;
   top: 0;
-  left: 12.042vw;
+  left: 12vw;
   font-size: 0.84vw;
   padding-bottom: 0;
   padding-top: 9px;
@@ -46,7 +46,8 @@
   clear: both;
   line-height: 1.5;
   font-size: 0.84vw;
-  margin: 50px 5px 0;
+  margin: 0px 50px 0px 5px;
+  color: #ddd;
 }
 
 .activefilters__filter-active h3 {

@@ -5,13 +5,13 @@ PDFJS.workerSrc = require('pdfjs-dist/build/pdf.worker.js');
 
 PDFJS.disableWorker = false;
 
+var Isvg = require('react-inlinesvg');
 
 import React from "react";
 import Slider from 'react-slick';
-import DetailLightBox from "./DetailLightBox.js";
-
 
 import AppStore from '../../stores/AppStore';
+import VideoPlayer from './VideoPlayer.js';
 
 export default class Gallery extends React.Component {
 
@@ -19,26 +19,68 @@ export default class Gallery extends React.Component {
         super(props);
         this.state = {
             slideIndex: 0,
-        }
+            fullscreenMode: false
+        };
+        window.galleryMouseMove = false;
         this.renderPDFPreview = this.renderPDFPreview.bind(this);
+        this.handleFullScreenClick = this.handleFullScreenClick.bind(this);
     }
 
     componentDidUpdate() {
         // this.refs.slider.currentSlide = 0;
     }
 
-    handleVideoClick(oEvent) {
-        let oVideoElement = oEvent.target.parentNode.children[1];
-        let oOverlayElement = oEvent.target.parentNode.children[0];
-        if (oVideoElement.paused) {
-            oVideoElement.play();
-            AppStore.setIsVideoPlaying(true);
-            oOverlayElement.style.display = 'none';
-        } else {
-            oVideoElement.pause();
-            AppStore.setIsVideoPlaying(false);
-            oOverlayElement.style.display = 'block';
+    static preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault) {
+            e.preventDefault();
+            e.stopPropagation();
         }
+        e.returnValue = false;
+    }
+
+    static nodeUsesClass(node, classList) {
+        classList.forEach((className) => {
+            if(node.classList.contains(className)) {
+                return true;
+            }
+        });
+        return false;
+    }
+
+    handleFullScreenClick(oEvent, forceProcessing = false) {
+       
+        const controlElements = ['INPUT', "LI", "BUTTON", "VIDEO"];
+        const classList = ['playpause', 'video_controls_bar', 'slick-dots'];
+        if(forceProcessing || !window.galleryMouseMove && !controlElements.includes(oEvent.target.nodeName) && !Gallery.nodeUsesClass(oEvent.target, classList)) {
+            const targetRow =  document.getElementById('gallery-container').parentNode.parentNode;
+            const sizingParentWrapper = targetRow.parentNode.parentNode;
+            if (this.state.fullscreenMode) {
+                document.getElementById('detail-view-exit-button-wrapper').style.display = 'block';
+                document.getElementById('fullscreen-view-exit-button-wrapper').style.display = 'none';
+                sizingParentWrapper.classList.remove("wrapper-fix-row-fullscreen");
+                targetRow.classList.remove("row-fullscreen");
+                targetRow.removeEventListener("click", this.handleFullScreenClick);
+                window.onwheel = null; // modern standard
+                window.onmousewheel = document.onmousewheel = null; // older browsers, IE
+                window.ontouchmove  = null; // mobile
+            } else {
+                document.getElementById('detail-view-exit-button-wrapper').style.display = 'none';
+                document.getElementById('fullscreen-view-exit-button-wrapper').style.display = 'block';
+                targetRow.classList.add("row-fullscreen");
+                sizingParentWrapper.classList.add("wrapper-fix-row-fullscreen");
+                targetRow.addEventListener("click", this.handleFullScreenClick);
+                window.onwheel = Gallery.preventDefault; // modern standard
+                window.onmousewheel = document.onmousewheel = Gallery.preventDefault; // older browsers, IE
+                window.ontouchmove  = Gallery.preventDefault; // mobile
+            }
+            this.setState({
+                fullscreenMode: !this.state.fullscreenMode,
+            });
+          oEvent.stopPropagation();
+          oEvent.preventDefault();
+        } 
+        window.galleryMouseMove = false;
     }
 
     renderPDFPreview(url, key){
@@ -118,118 +160,123 @@ export default class Gallery extends React.Component {
             adaptiveHeight: false,
             arrows: arrow,
             infinite: false,
+            draggable: true,
+            initialSlide: this.state.slideIndex,
             speed: 800,
             slidesToShow: 1,
-            slidesToScroll: 1,
-            slickGoTo: this.state.slideIndex
+            slidesToScroll: 1
         };
-
+        const category = AppStore.getPortfolioCategory(this.props.project.portfolioAreaClass);
         return (
-            <div className="gallery-container">
-
-            <Slider {...settings} ref="slider">
-            {
-                this.props.gallery.map(function(media, index) {
-                    if (media.type === 'image') {
-                      if (media.filename && media.filename.split("__DEMO").length > 1) {
-                        return (
-                            <div key={index}>
-                                <div className="slick-icnimagewidth">
-                                    <div className="wrapper">
-                                        <a target="_blank" href={media.description}>
-                                            <div className="demoOverlay">Demo</div>
-                                        </a>
-                                        <img className="slick-icnheightimage" src={media.url}/>
+            <div className="gallery-container" id="gallery-container"
+                 onMouseDown={() => {window.galleryMouseMove = false;}}
+                 onMouseMove={() => {window.galleryMouseMove = true;}}
+                 onClick={this.handleFullScreenClick}>
+                <div onClick={this.handleFullScreenClick} tabIndex="1"
+                     style={{display: 'none'}} id="fullscreen-view-exit-button-wrapper">
+                    <div className={`detailview__exitbutton ${category}`} onClick={this.onExit}>
+                        <Isvg src={window.icnThemePath + 'img/exit.svg'}/>
+                        <span className="detailview__exitbutton__overlay" onClick={this.handleFullScreenClick} />
+                    </div>
+                </div>
+                <Slider {...settings} ref="slider">
+                {
+                    this.props.gallery.map(function(media, index) {
+                        if (media.type === 'image') {
+                          if (media.filename && media.filename.split("__DEMO").length > 1) {
+                            return (
+                                <div key={index}>
+                                    <div className="slick-icnimagewidth">
+                                        <div className="wrapper">
+                                            <a target="_blank" href={media.description}>
+                                                <div className="demoOverlay">Demo</div>
+                                            </a>
+                                            <img className="slick-icnheightimage" src={media.url}/>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        );
-                      } else if (media.filename && media.filename.split("__VIMEO").length > 1) {
-                        return (
-                          <div key={index}>
-                            <div className="slick-icnimagewidth">
-                              <div className="wrapper">
-                                <div onClick={that.handleVimeoClick} className="playpause">
-                                  <a target="_blank" className="vimeoPlayPause" href={media.description}></a></div>
-                                  <a target="_blank" href={media.description}><img className="slick-icnheightimage" src={media.url} /></a>
+                            );
+                          } else if (media.filename && media.filename.split("__VIMEO").length > 1) {
+                            return (
+                              <div key={index}>
+                                <div className="slick-icnimagewidth">
+                                  <div className="wrapper">
+                                    <div onClick={that.handleVimeoClick} className="playpause">
+                                      <a target="_blank" className="vimeoPlayPause" href={media.description}></a></div>
+                                      <a target="_blank" href={media.description}><img className="slick-icnheightimage" src={media.url} /></a>
+                                    </div>
                                 </div>
-                            </div>
-                          </div>
-                          );
-                        } else {
+                              </div>
+                              );
+                            } else {
+                              return (
+                                <div key={index}>
+                                  <div className="slick-icnimagewidth">
+                                    <img className="slick-icnheightimage" src={media.url} onClick={that.handleFullScreenClick} />
+                                  </div>
+                                </div>
+                                );
+                              }
+
+                        } else if (media.type === 'video') {
+                            var standalone = window.navigator.standalone,
+                                userAgent = window.navigator.userAgent.toLowerCase(),
+                                safari = /safari/.test( userAgent ),
+                                ios = /iphone|ipod|ipad/.test( userAgent );
+                            return (
+                                <div key={index}>
+                                    <div className="wrapper">
+                                        <VideoPlayer
+                                            media={media}
+                                            activateFullscreen={that.handleFullScreenClick}
+                                            isFullscreen={that.state.fullscreenMode}/>
+                                    </div>
+                                    <div className="slick-slide-caption">
+                                        {media.caption}
+                                    </div>
+                                </div>
+                            );
+                        } else if (media.type === 'pdf' || media.type === 'application') {
+                          let canvas_style = {
+                            maxWidth: "100%",
+                            maxHeight: "100%",
+                            display: "inline",
+                            cursor: "pointer"
+                          };
+
+                          let canvas_container_style = {
+                            width:"100%",
+                            height:"100%",
+                            textAlign:"center",
+                            position: "relative"
+                          };
+
+                          let canvas_id = "pdf_canvas_"+index;
+                          let canvas_object = <canvas id={canvas_id} height={"400px"} width={"700px"} style={canvas_style}></canvas>;
+                          let isSmallDisplay = window.innerWidth < 500;
+                          if (isSmallDisplay){
+                            canvas_object =  <canvas id={canvas_id} height={"400px"} width={"700px"} style={canvas_style}></canvas>;
+                          }
+
                           return (
                             <div key={index}>
-                              <div className="slick-icnimagewidth">
-                                <img className="slick-icnheightimage" src={media.url} />
+                              <div style={canvas_container_style}>
+                                {canvas_object}
+                                  {(() => {
+                                      if (window.portfolio_showPDFOverlay) {
+                                          return (<div className="canvasOverlay">PDF</div>);
+                                      }
+                                  })()}
+                              </div>
+                              <div className="slick-slide-caption">
+                                  {media.caption}
                               </div>
                             </div>
-                            );
-                          }
-                   
-                    } else if (media.type === 'video') {
-                        var standalone = window.navigator.standalone,
-                            userAgent = window.navigator.userAgent.toLowerCase(),
-                            safari = /safari/.test( userAgent ),
-                            ios = /iphone|ipod|ipad/.test( userAgent );
-                        return (
-                            <div key={index}>
-                                <div className="wrapper">
-                                    <div onClick={that.handleVideoClick} className="playpause"> </div>
-                                    {(() => {
-                                      if(!AppStore.isOniPadApp)  { //prohibit history manipulation in case of being displayed within an iOS app (not safari)
-                                        return(<video onClick={that.handleVideoClick} className="slick-icnheightvideo" src={media.url} controls muted />);
-                                      } else {
-                                        return(<video onClick={that.handleVideoClick} className="slick-icnheightvideo" src={media.url} controls />);
-                                      }
-                                    })()}
-                                </div>
-                                  <div className="slick-slide-caption">
-                                    {media.caption}
-                                  </div>
-                            </div>
-                        );
-                    } else if (media.type === 'pdf' || media.type === 'application') {
-                      let canvas_style = {
-                        maxWidth: "100%",
-                        maxHeight: "100%",
-                        display: "inline",
-                        cursor: "pointer"
-                      };
-
-                      let canvas_container_style = {
-                        width:"100%",
-                        height:"100%",
-                        textAlign:"center",
-                        position: "relative"
-                      };
-
-                      let canvas_id = "pdf_canvas_"+index;
-                      let canvas_object = <canvas id={canvas_id} height={"400px"} width={"700px"} style={canvas_style} onClick={(oEvent) => that.props.openHandler(oEvent, media)}></canvas>;
-                      let isSmallDisplay = window.innerWidth < 500;
-                      if (isSmallDisplay){
-                        canvas_object =  <canvas id={canvas_id} height={"400px"} width={"700px"} style={canvas_style} onClick={() => {window.open(media.url, "_blank");}}></canvas>;
-                      }
-
-                      return (
-                        <div key={index}>
-                          <div style={canvas_container_style}>
-                            {canvas_object}
-                              {(() => {
-                                  if (window.portfolio_showPDFOverlay) {
-                                      return (<div className="canvasOverlay">PDF</div>);
-                                  }
-                              })()}
-                          </div>
-                          <div className="slick-slide-caption">
-                              {media.caption}
-                          </div>
-                        </div>
-                      );
-                    }
-                })
-            }
-        </Slider>
-
+                          );
+                        }
+                    })
+                }
+            </Slider>
         </div>);
     }
 }

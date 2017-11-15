@@ -213,10 +213,10 @@ export default class DetailView extends React.Component {
         }
 
         return (
-            <div className="detailviewWrapper">
+            <div className="detailviewWrapper" onMouseDown={() => {window.galleryMouseMove = false;}}>
               {editButton}
 
-              <div onClick={this.onExit} tabIndex="1">
+              <div onClick={this.onExit} tabIndex="1" id="detail-view-exit-button-wrapper">
                 <div className={`detailview__exitbutton ${category}`} onClick={this.onExit}>
                   <Isvg src={window.icnThemePath + 'img/exit.svg'}/>
                   <span className="detailview__exitbutton__overlay" onClick={this.onExit} />
@@ -225,7 +225,7 @@ export default class DetailView extends React.Component {
 
               <DetailLightBox closeHandler={this.closeLightbox} visibility={this.state.lightboxVisible} media={this.state.media}/>
 
-              <div className={`detailview ${hiddenClass} ${category}`} onClick={this.onExit} ref="scrollView" style={styles}>
+              <div className={`detailview ${hiddenClass} ${category}`} onClick={this.onExit} ref="scrollView" id="detailview-main-container" style={styles}>
                 <div className="detailview__scrollcontainer" onClick={(e)=>e.stopPropagation()}>
                   <div className={`detailview__hero ${category}`}>
                       <div className="detailview__heroImage row" style={heroStyle}>
@@ -296,7 +296,10 @@ export default class DetailView extends React.Component {
                       {(() => { if (project.gallery) { return (
                         <div className="detailview__content__section row">
                             <div className="detailview__content__gallery gr-8 prefix-2 suffix-2">
-                                <Gallery gallery={project.gallery} dotsVisible={dotsVisibleGallerySection} openHandler={this.openLightBox} />
+                                <Gallery gallery={project.gallery}
+                                         dotsVisible={dotsVisibleGallerySection}
+                                         openHandler={this.openLightBox}
+                                         project={project} />
                             </div>
                         </div>
                       ) } })()}
@@ -304,10 +307,8 @@ export default class DetailView extends React.Component {
                       {detailSections}
 
                       {/* --- Technology Stack --- */}
-                      {(() => { if ((!this.props.locked || !window.lockEnabled) && this.props.project.technology )  {
-                          return (
-                              <TechStackSection technology={this.props.project.technology}/>
-                      ) } })()}
+                      <TechStackSection technology={this.props.project.technology}/>
+
 
                       {/* --- Onepager downloads or links in kiosk mode --- */}
                       {(() => { if ((!this.props.locked || !window.lockEnabled) && (allLinks.length > 0 || allContacts.length > 0 || allPartners.length > 0 || allPromoters.length > 0 || allDownloads.length > 0 || partnerLogos.length > 0)) { return (
@@ -330,22 +331,14 @@ export default class DetailView extends React.Component {
                         </div>
                       ); } else { return (
                         <div className="detailview__content__section detailview__content__section__small">
-                            <div className="row">
-                                <div className={`request_info_button request_info_button_left ${category}`} onClick={()=> {
+                            <div className="row" style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                                <div className={`request_info_button ${category}`} onClick={()=> {
                                   if(!AppStore.isOniPadApp()) {
                                     this.onToggleFeedback({category:AppStore.getPortfolioCategory(project.portfolioAreaClass),title:project.title,slug:project.slug,contacts:JSON.stringify(project.contact_person),interest:'info',col:window.getComputedStyle(document.getElementsByTagName("h1")[0]).color});
                                   } else {
                                     alert("Requesting more information is not possible on the iPad app.");
                                   }}}>
                                     <span className="typeform-share button" data-mode="1">Request more information</span>
-                                </div>
-                                <div className={`request_info_button request_info_button_right ${category}`} onClick={()=> {
-                                  if(!AppStore.isOniPadApp()) {
-                                    this.onToggleFeedback({category:AppStore.getPortfolioCategory(project.portfolioAreaClass),title:project.title,slug:project.slug,contacts:JSON.stringify(project.contact_person),interest:'coinnovate',col:window.getComputedStyle(document.getElementsByTagName("h1")[0]).color});
-                                  } else {
-                                    alert("Requesting more information is not possible on the iPad app.");
-                                  }}}>
-                                    <span className="typeform-share button" data-mode="1">Co-innovate with us</span>
                                 </div>
                             </div>
                         </div>
@@ -367,10 +360,12 @@ export default class DetailView extends React.Component {
     }
 
     onExit() {
-        if(AppStore.isMatrix_DetailView()){
-            Actions.trigger(ActionTypes.EXIT_MATRIX_DETAIL_VIEW);
-        }else{
-             Actions.trigger(ActionTypes.EXIT_DETAIL_VIEW);
+        if(!window.galleryMouseMove) {
+            if (AppStore.isMatrix_DetailView()) {
+                Actions.trigger(ActionTypes.EXIT_MATRIX_DETAIL_VIEW);
+            } else {
+                Actions.trigger(ActionTypes.EXIT_DETAIL_VIEW);
+            }
         }
     }
 

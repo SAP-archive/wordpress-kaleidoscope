@@ -23,8 +23,9 @@ export default class Search extends React.Component {
             searchTerm: ''
         };
         allSuggestions = window.icnAllProjects.map(function(x) {
-          return {text: x.title}
+            return { text: x.title }
         });
+        
         this.onChange = this.onChange.bind(this);
         this.onSearch = this.onSearch.bind(this);
         this.onToggleSearch = this.onToggleSearch.bind(this);
@@ -47,65 +48,62 @@ export default class Search extends React.Component {
 
     componentDidUpdate() {
         setTimeout((() => {
-          if (this.refs.search && this.refs.search.input){
-            this.refs.search.input.focus();
-          }
+            if (this.refs.search && this.refs.search.input) {
+                this.refs.search.input.focus();
+            }
         }));
     }
 
     getSuggestions(value) {
-      const inputValues = value.value.trim().toLowerCase(); //.split(" ");
-      const inputLength = value.value.trim().length;
-      return inputLength === 0 ? [] : allSuggestions.map(function(sug){
+        const inputValues = value.value.trim().toLowerCase().split(" ");
+        const inputLength = value.value.trim().length;
+        return inputLength === 0 ? [] : allSuggestions.map(function(sug) {
             let searchTitle = sug.text.toLowerCase().replace(/[^a-zA-Z +]/g, "").replace(/\s\s+/g, ' ').split(" ");
             let searchKeywords = [];
-            if (sug.keywords){
-              searchKeywords = sug.keywords.map(word => (word.toLowerCase()));
+            if (sug.keywords) {
+                searchKeywords = sug.keywords.map(word => (word.toLowerCase()));
             }
             let searchWords = searchTitle.concat(searchKeywords);
             let anyLetter = false;
             // use each word separately:
-            // inputValues.forEach(function(inputWord){
-            //   anyLetter = (anyLetter || searchWords.some( word => (word.slice(0, inputWord.length) == inputWord)));
-            // })
-            anyLetter = searchWords.find(word => (word.slice(0, inputLength) == inputValues));
+            inputValues.forEach(function(inputWord){
+              anyLetter = (anyLetter || searchWords.some( word => (word.slice(0, inputWord.length) == inputWord)));
+            })
+            // anyLetter = searchWords.find(word => (word.indexOf(inputValues) >= 0));
 
-            if (anyLetter){
-              return {
-                text: sug.text,
-                keyword: (searchTitle.indexOf(anyLetter) >= 0) ? null : anyLetter,
-              }
+            if (anyLetter) {
+                return {
+                    text: sug.text,
+                    keyword: (searchTitle.indexOf(anyLetter) >= 0) ? null : anyLetter,
+                }
             }
-          }
-        ).filter(function(sug){
-          return sug !== undefined;
+        }).filter(function(sug) {
+            return sug !== undefined;
+        }).sort(function(a, b) {
+          return a.text<b.text?-1:(b.text<a.text?1 : 0);
         });
     }
 
     getSuggestionValue(suggestion) {
-      return suggestion.text;
+        return suggestion.text;
     }
 
-    onSuggestionsFetchRequested(value){
-      this.suggestions = this.getSuggestions(value);
+    onSuggestionsFetchRequested(value) {
+        this.suggestions = this.getSuggestions(value);
     }
 
-  // Autosuggest will call this function every time you need to clear suggestions.
-    onSuggestionsClearRequested(){
-      this.suggestions = [];
+    // Autosuggest will call this function every time you need to clear suggestions.
+    onSuggestionsClearRequested() {
+        this.suggestions = [];
     }
 
     renderSuggestion(suggestion) {
 
-      if (suggestion.keyword){
-        return (
-          <span>{suggestion.text} <span className="search__suggestion_keyword">{suggestion.keyword}</span></span>
-        );
-      } else {
-        return (
-          <span>{suggestion.text}</span>
-        );
-      }
+        if (suggestion.keyword) {
+            return ( <span> { suggestion.text } <span className = "search__suggestion_keyword" > { suggestion.keyword } </span></span > );
+        } else {
+            return <span> { suggestion.text } </span>;
+        }
 
     }
 
@@ -114,7 +112,8 @@ export default class Search extends React.Component {
         if (typeof _paq !== "undefined") {
             _paq.push(['trackSiteSearch', suggestion.text, false, false]);
         }
-        Actions.trigger(ActionTypes.INIT_DETAIL_VIEW, window.icnAllProjects.filter(function(x) { return x.title == suggestion.text }).shift());
+        Actions.trigger(ActionTypes.INIT_DETAIL_VIEW, window.icnAllProjects.filter(function(x) {
+            return x.title == suggestion.text }).shift());
     }
 
     render() {
@@ -122,68 +121,44 @@ export default class Search extends React.Component {
             display: this.state.searching && window.portfolio_showSearchButton ? 'block' : 'none'
         };
 
-        let iconStyles = {
-            display: this.props.project ? 'none' : (window.portfolio_showSearchButton ? 'block' : 'none')
-        };
+
         let inputProps = {
-          placeholder: "Search...",
-          value: this.state.searchTerm,
-          onChange: this.onSearch,
-          className: "search__box-input"
+            placeholder: "Search...",
+            value: this.state.searchTerm,
+            onChange: this.onSearch,
+            className: "search__box-input"
         };
 
 
-        return (
-            <div className="search">
-                <img src={`${window.icnThemePath}img/search.svg`}
-                     style={iconStyles}
-                     className="search__icon"
-                     onClick={this.onToggleSearch} />
+        return ( 
+            <div className = "search" >
+                <div className = "search__box" style = { styles } >
+                    <form onSubmit = { this.onSearchSubmit }
+                    className = "search__box-form"
+                    autoComplete = "off" >
+                    <Autosuggest suggestions = { this.suggestions }
+                    getSuggestionValue = { this.getSuggestionValue }
+                    onSuggestionSelected = { this.onSuggestionSelected }
+                    onSuggestionsFetchRequested = { this.onSuggestionsFetchRequested }
+                    onSuggestionsClearRequested = { this.onSuggestionsClearRequested }
+                    alwaysRenderSuggestions = {true}
+                    renderSuggestion = { this.renderSuggestion }
+                    inputProps = { inputProps }
+                    ref = "search" />
 
-                <div className="search__box" style={styles}>
-                    <form onSubmit={this.onSearchSubmit} className="search__box-form" autoComplete="off">
-                        <Autosuggest
-                            suggestions={this.suggestions}
-                            getSuggestionValue={this.getSuggestionValue}
-                            onSuggestionSelected={this.onSuggestionSelected}
-                            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-                            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                            renderSuggestion={this.renderSuggestion}
-                            inputProps={inputProps}
-                            ref="search"
-                        />
+                     </form>
 
-                        <img src={`${window.icnThemePath}img/search.svg`}
-                             style={iconStyles}
-                             className="search__icon"
-                             onClick={this.onToggleSearch} />
-                    </form>
-
-                    {/* search button */}
-                    <div className="search__send-button__div">
-                        <button className="search__send-button" onClick={this.onSearchSubmit} type="submit">
-                        <img src={`${window.icnThemePath}img/search_grey.svg`}
-                            className="search__icon__button" />
-                        </button>
-                      </div>
-
-                      <div onClick={this.onClearSearch}>
-                        <div className="detailview__exitbutton" onClick={this.onClearSearch}>
-                          <Isvg src={window.icnThemePath + 'img/exit.svg'}/>
-                          <span className="detailview__exitbutton__overlay" onClick={this.onClearSearch}></span>
-                        </div>
-                      </div>
+                    <div className = "search__send-button__div" >
+                        <button 
+                            className = "search__send-button"
+                            onClick = { this.onSearchSubmit }
+                            type = "submit" >
+                            <img src = { `${window.icnThemePath}img/search_grey.svg` } className = "search__icon__button" / >
+                        </button> 
                     </div>
-                  </div>
+                </div> 
+            </div>
         );
-    }
-
-    onToggleSearch(e) {
-        if(e.shiftKey) {
-            Actions.trigger(ActionTypes.TOGGLE_MATRIX);
-        } else {
-            Actions.trigger(ActionTypes.TOGGLE_SEARCH);
-        }
     }
 
     onChange() {
@@ -191,6 +166,14 @@ export default class Search extends React.Component {
             searching: AppStore.isSearching(),
             searchTerm: AppStore.getSearchTerm()
         });
+    }
+
+    onToggleSearch(e) {
+        if (e.shiftKey) {
+            Actions.trigger(ActionTypes.TOGGLE_MATRIX);
+        } else {
+            Actions.trigger(ActionTypes.TOGGLE_SEARCH);
+        }
     }
 
     onSearch(event) {

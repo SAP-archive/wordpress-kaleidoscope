@@ -13,11 +13,13 @@
     "core-js": "^2.4.1",
     "events": "^1.1.0",
     "latinize": "^0.2.0",
-    "preact": "^6.3.0",
-    "preact-compat": "^3.7.1",
-    "react-autosuggest": "^6.0.4",
-    "react-inlinesvg": "^0.5.4",
-    "react-slick": "0.14.2"
+    "react": "^16.0.0-0",
+    "react-dom": "^16.0.0-0",
+    "react-autosuggest": "^9.3.0",
+    "react-inlinesvg": "^0.6.0",
+    "react-slick": "^0.15.4",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.4.5",

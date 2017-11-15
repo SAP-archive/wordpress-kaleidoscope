@@ -6,9 +6,12 @@ import IScroll from '../../vendor/iscroll'
 
 import Particle from '../particle/Particle';
 
-import { PARTICLE_SIZE } from '../../constants/constants';
+import { PARTICLE_SIZE,ActionTypes } from '../../constants/constants';
+
 import Actions from "../../actions/Actions";
 import AppStore from '../../stores/AppStore';
+
+import PropTypes from 'prop-types';
 
 export default class ParticleScroller extends React.Component {
 
@@ -47,25 +50,19 @@ export default class ParticleScroller extends React.Component {
         });
         AppStore.setIScroll(this._iScroll);
 
-        /*
-        TRIED TO CATCH KEYDOWN EVENT TO SCALE BUBBLES/PROJECTS WHILE SCROLLING VIA KEYBOARD => NOT WORKING
-        document.body.addEventListener('keydown', function() {
-            that.handleScroll.bind(that)(this.x, this.y);
-        });*/
+        document.body.onkeydown = function() {
+            that.handleScroll.bind(that)(that._iScroll.x, that._iScroll.y);
+        };
 
         this._iScroll.on('scroll', function() {
             that.handleScroll.bind(that)(this.x, this.y);
         });
 
         // trigger update on first mount
-        requestAnimationFrame(() => {
-            this.setState({
-                centerY: this.height,
-                centerX: this.width,
-                size: this.props.size.size,
-            });
-        });
-        this.props.projects.alignProjectsToFilterBar(this._iScroll, AppStore.getFilterOverview());
+        // wait 1 second before triggering the update, shall fix the sporadic problems with initial scroll position
+        window.setTimeout(function(){
+            Actions.trigger(ActionTypes.TOGGLE_FILTER, true);
+        }, 1000);
     }
 
     componentDidUpdate() {
@@ -142,6 +139,6 @@ export default class ParticleScroller extends React.Component {
 
 
 ParticleScroller.propTypes = {
-    projects: React.PropTypes.array.isRequired,
-    size: React.PropTypes.object.isRequired
+    projects: PropTypes.array.isRequired,
+    size: PropTypes.object.isRequired
 };

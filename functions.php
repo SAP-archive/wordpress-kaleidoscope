@@ -75,6 +75,12 @@
       	<input type="text" name="lockEnabled" id="lockEnabled" value="<?php echo get_option('lockEnabled'); ?>" />
       <?php
   }
+  function display_showFilterTags_element()
+  {
+    ?>
+        <input type="text" name="showFilterTags" id="showFilterTags" value="<?php echo get_option('showFilterTags'); ?>" />
+      <?php
+  }
   function display_lockTimeInSeconds_element()
   {
   	?>
@@ -101,10 +107,16 @@
         <?php echo htmlspecialchars(get_option('portfolio_logo'), ENT_QUOTES, 'UTF-8'); ?>
      <?php
   }
-  function logo_align_right() 
+  function logo_align_right()
   {
     ?>
         <input type="text" name="portfolio_logo_right" id="portfolio_logo_right" value="<?php echo get_option('portfolio_logo_right'); ?>" />
+      <?php
+  }
+  function default_kiosk_mode()
+  {
+    ?>
+        <input type="text" name="portfolio_default_kiosk_mode" id="portfolio_default_kiosk_mode" value="<?php echo get_option('portfolio_default_kiosk_mode'); ?>" />
       <?php
   }
   function screensaver_display()
@@ -183,6 +195,12 @@
           <input type="text" name="portfolio_showEditButton" id="portfolio_showEditButton" value="<?php echo get_option('portfolio_showEditButton'); ?>" />
       <?php
   }
+  function display_showCopyLinkButton_element()
+  {
+      ?>
+          <input type="text" name="portfolio_showCopyLinkButton" id="portfolio_showCopyLinkButton" value="<?php echo get_option('portfolio_showCopyLinkButton'); ?>" />
+      <?php
+  }
   function display_showSearchButton_element()
   {
       ?>
@@ -242,6 +260,12 @@
           <textarea name="portfolio_detailViewSections" class="large-text" cols="50" rows="10"  id="portfolio_detailViewSections"><?php echo get_option('portfolio_detailViewSections'); ?></textarea>
       <?php
   }
+  function display_detailViewShowCube_element()
+  {
+      ?>
+          <input type="text" name="portfolio_detailViewShowCube" id="portfolio_detailViewShowCube" value="<?php echo get_option('portfolio_detailViewShowCube'); ?>" />
+      <?php
+  }
   function display_showSapLogo_element()
   {
       ?>
@@ -254,11 +278,11 @@
           <input type="text" name="portfolio_filterRule" id="portfolio_filterRule" value="<?php echo get_option('portfolio_filterRule'); ?>" />
       <?php
   }
-  function display_filterButtonCaption_element() 
+  function display_filterButtonCaption_element()
   {
       ?>
           <input type="text" name="portfolio_filterButtonCaption" id="portfolio_filterButtonCaption" value="<?php echo get_option('portfolio_filterButtonCaption'); ?>" />
-      <?php    
+      <?php
   }
   function display_idleScroll_element()
   {
@@ -338,6 +362,7 @@
     add_settings_field("portfolio_pagetitle", "Title of page", "display_pagetitle_element", "theme-options", "general");
     add_settings_field("portfolio_logo", "Logo", "logo_display", "theme-options", "general");
     add_settings_field("portfolio_logo_right", "Logo Align Right", "logo_align_right", "theme-options", "general");
+    add_settings_field("portfolio_default_kiosk_mode", "Set per default in kiosk mode?", "default_kiosk_mode", "theme-options", "general");
   	add_settings_field("portfolio_kiosk_password", "Password (for changeing operation mode)", "display_password_element", "theme-options", "general");
   	add_settings_field("portfolio_feedback_url", "URL (for mail-feedback.php)", "display_feedbackurl_element", "theme-options", "general");
     add_settings_field("portfolio_analytic", "Analytic-Code-Snippet", "display_analytic_element", "theme-options", "general");
@@ -347,6 +372,7 @@
     add_settings_field("portfolio_searchStringLocked", "Allowed Items in Search (Kiosk-Mode)", "display_searchStringLocked_element", "theme-options", "general");
     add_settings_field("portfolio_coloredByElement", "Filter for colour discrimination", "display_coloredByElement_element", "theme-options", "general");
     add_settings_field("portfolio_showEditButton", "Show Edit Button", "display_showEditButton_element", "theme-options", "general");
+    add_settings_field("portfolio_showCopyLinkButton", "Show CopyLink Button", "display_showCopyLinkButton_element", "theme-options", "general");
     add_settings_field("portfolio_showSearchButton", "Show Search Button", "display_showSearchButton_element", "theme-options", "general");
     add_settings_field("portfolio_showFeedbackButton", "Show Feedback Button", "display_showFeedbackButton_element", "theme-options", "general");
     add_settings_field("portfolio_backgroundImage", "Enable Background Image", "display_background_image", "theme-options", "general");
@@ -359,6 +385,7 @@
     add_settings_field("portfolio_showSapLogo", "Enable SAP Logo", "display_showSapLogo_element", "theme-options", "general");
     add_settings_field("portfolio_filterRule", "Filter rule ('AND'/'OR')", "display_filterRule_element", "theme-options", "general");
     add_settings_field("portfolio_filterButtonCaption", "Filter Button Caption", "display_filterButtonCaption_element", "theme-options", "general");
+    add_settings_field("showFilterTags", "Show Filter Tags", "display_showFilterTags_element", "theme-options", "general");
 
     add_settings_field("idleScrollEnabled", "Enable Idle-Scrolling", "display_idleScroll_element", "theme-options", "general");
     add_settings_field("portfolio_enableMailToLink", "Enable 'emailable' Contacts", "display_enableMailToLink", "theme-options", "general");
@@ -376,6 +403,7 @@
     add_settings_field("portfolio_factSheetItems", "Factsheet Items", "display_factSheetItems_element", "theme-options", "project");
     add_settings_field("portfolio_factSheetItemsLocked", "Factsheet Items (Kiosk-Mode)", "display_factSheetItemsLocked_element", "theme-options", "project");
     add_settings_field("portfolio_detailViewSections", "Items in Detail-View", "display_detailViewSections_element", "theme-options", "project");
+    add_settings_field("portfolio_detailViewShowCube", "Show Cube Icons in Content Sections?", "display_detailViewShowCube_element", "theme-options", "project");
     add_settings_field("portfolio_enableImgLightbox", "Enable LightBox for Gallery", "display_enableImgLightbox_element", "theme-options", "project");
     add_settings_field("portfolio_showContactFunction", "Show function of contacts", "display_showContactFunction_element", "theme-options", "project");
     add_settings_field("portfolio_showPDFOverlay", "Display Overlay on PDFs", "display_showPDFOverlay", "theme-options", "project");
@@ -385,6 +413,7 @@
     register_setting("general", "portfolio_pagetitle");
     register_setting("general", "portfolio_logo", "handle_logo_upload");
     register_setting("general", "portfolio_logo_right");
+    register_setting("general", "portfolio_showContactFunction");
     register_setting("general", "portfolio_kiosk_password");
     register_setting("general", "portfolio_analytic");
     register_setting("general", "portfolio_feedback_url");
@@ -395,6 +424,7 @@
     register_setting("general", "portfolio_searchStringLocked");
     register_setting("general", "portfolio_coloredByElement");
     register_setting("general", "portfolio_showEditButton");
+    register_setting("general", "portfolio_showCopyLinkButton");
     register_setting("general", "portfolio_showSearchButton");
     register_setting("general", "portfolio_showFeedbackButton");
     register_setting("general", "portfolio_backgroundImage");
@@ -410,6 +440,7 @@
     register_setting("general", "idleScrollEnabled");
     register_setting("general", "portfolio_enableMailToLink");
     register_setting("general", "portfolio_screensaverImages");
+    register_setting("general", "showFilterTags");
     //Matrix-View
     register_setting("general", "portfolio_showMatrixButton");
     register_setting("general", "matrix_filters");
@@ -423,8 +454,9 @@
     register_setting("general", "portfolio_factSheetItems");
     register_setting("general", "portfolio_factSheetItemsLocked");
     register_setting("general", "portfolio_detailViewSections");
+    register_setting("general", "portfolio_detailViewShowCube");
     register_setting("general", "portfolio_enableImgLightbox");
-    register_setting("general", "portfolio_showContactFunction");
+    register_setting("general", "portfolio_default_kiosk_mode");
     register_setting("general", "portfolio_showPDFOverlay");
   }
 

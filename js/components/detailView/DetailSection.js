@@ -17,9 +17,9 @@ export default class DetailSection extends React.Component {
                         <div className="detailview__content__text gr-11 prefix-1" dangerouslySetInnerHTML={{__html:this.props.html}} />
                     </div>
                     <div className="detailview__content__img gr-3 prefix-1">
-                        <DetailBubble portfolioAreaClass={this.props.portfolioAreaClass}>
-                          <Isvg src={`${window.icnThemePath}img/${this.props.icon}`} uniquifyIDs={true} className="detailview__content__bubble__isvg"/>
-                        </DetailBubble>
+                        {window.portfolio_detailViewShowCube && <DetailBubble portfolioAreaClass={this.props.portfolioAreaClass}>
+                            <Isvg src={`${window.icnThemePath}img/${this.props.icon}`} uniquifyIDs={true} className="detailview__content__bubble__isvg"/>
+                        </DetailBubble>}
                     </div>
                 </div>
             </div>

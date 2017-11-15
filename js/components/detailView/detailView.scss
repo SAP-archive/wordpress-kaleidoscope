@@ -183,12 +183,12 @@
   position: fixed;
   top: 50px;
   right: 50px;
-  z-index: 100;
+  z-index: 12;
   color: #444;
 }
 
 .detailview__exitbutton__overlay {
-  z-index:200;
+  z-index:13;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -201,10 +201,10 @@
 .SAPclea__brand {
   margin-bottom: 1vh;
   span svg {
-    width: 10vw;
+    width: 12vw;
     min-width: 100px;
     height: auto !important;
-    max-width: 300px;
+    max-width: 400px;
   }
 }
 
@@ -308,7 +308,7 @@
 }
 
 .request_info_button {
-  width: 40%;
+  width: 80%;
   display: inline-block;
   border: 1px solid black !important;
   text-align: center;
@@ -321,7 +321,7 @@
 }
 
 .request_info_button_left {
-  margin-left: 7%;
+  margin-left: 7%; 
 }
 
 .request_info_button_right {
@@ -342,7 +342,7 @@
     font-size: 18px;
     font-weight: 800;
     text-align: center;
-    right: 130px;
+    right: 165px;
     position: absolute;
     top: -90px;
     color: black !important;
@@ -367,6 +367,7 @@
       font-size: 1.2vw;
       line-height:1.4vw;
       top: -4.4vw;
+      right: 5.3vw;
       width: 14vw;
       padding: 0.8vw;
   }
@@ -377,4 +378,22 @@
     top: -3.6vw;
     max-height: 4.9vw;
   }
+}
+
+.row-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.9);
+  zoom: 150%;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.wrapper-fix-row-fullscreen {
+  max-width: 100% !important;
 }

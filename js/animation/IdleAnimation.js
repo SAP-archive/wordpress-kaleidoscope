@@ -2,6 +2,7 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 import { EventEmitter } from 'events';
 
 import Actions from '../actions/Actions';
+import AppRouter from '../router/AppRouter';
 
 import {
     ActionTypes,
@@ -59,9 +60,13 @@ class IdleAnimation extends EventEmitter {
                     that.resetTimer();
                     Actions.trigger(ActionTypes.ANIMATE_SCREENSAVER);
                 } else {
-                    if (that.idleTime >= 120) //20min
+                    if (that.idleTime >= 90) //20min
                     {
-                        location.reload();
+                        if (AppRouter.getBacklink()) {
+                            location.href = AppRouter.getBacklink();
+                        } else {
+                            location.reload();
+                        }
                     }
                 }
             }, 10000); // 10sec
@@ -106,9 +111,12 @@ class IdleAnimation extends EventEmitter {
         }
     }
     startAnimation() {
-        this.isActive = true;
-        this.scroll(1);
-
+        if (window.idleScrollEnabled && localStorage.getItem('locked') == 'true') {
+            this.isActive = true;
+            var scroller = AppStore.getIScroll();
+            scroller.scrollTo(scroller.x, scroller.y, 1);
+            this.scroll(true);
+        }
     }
     scroll(bDown) {
         var that = this;
@@ -119,6 +127,7 @@ class IdleAnimation extends EventEmitter {
         }
         var diff = target - scroller.y;
         var time = Math.abs(diff * IDLE_SCROLL_DURATION);
+
         scroller.scrollTo(scroller.x, target, time, {
             style: '',
 
@@ -131,6 +140,10 @@ class IdleAnimation extends EventEmitter {
 
         });
         this.animationTimeout = setTimeout(function() {
+            //Forces reload in case iScroller got stuck
+            /*if(Math.abs(scroller.y - target) > 500) {
+                location.reload();
+            }*/
             that.scroll(!bDown)
         }, time + 50)
     }

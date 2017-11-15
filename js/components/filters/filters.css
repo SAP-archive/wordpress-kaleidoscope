@@ -1,62 +1,3 @@
-@media (max-width: 1920px) {
-    .filters {
-        padding: 80px 15px 40px 15px !important;
-    }
-    #sapLogo {
-        height: 31.2969px !important;
-    }
-    img#icn {
-        height: 31.2969px !important;
-        left: 80px !important;
-    }
-    .icnCreditVisible .filterAboutButton {
-        bottom: 50px !important;
-    }
-    .filters .filterMenuButton {
-        font-size: 60px !important;
-        line-height: 35px !important;
-        padding-left: 4px !important;
-    }
-    .filters.filters__overview {
-        width: 42px !important;
-    }
-    .icnCreditVisible .filters__container {
-        bottom: 80px !important;
-    }
-    .filters__container {
-        top: 120px !important;
-        bottom: 42px !important;
-    }
-    .filterLogo {
-        height: 55px !important;
-        width: 173.25px !important;
-    }
-    .filterLogoRight {
-        height: 55px !important;
-        width: 228px !important;
-        right: 8px !important;
-    }
-    .filters .filterText {
-        font-size: 18px !important;
-        padding-top: 5px !important;
-        padding-left: 24px !important;
-        left: 55px;
-        top: 78px;
-    }
-    .filterAboutButton {
-        font-size: inherit !important;
-    }
-    .filterAboutButton {
-        left: 82px !important;
-        font-size: 16px !important;
-    }
-
-    .filterTextProjects {
-       margin-left: 6px;
-    }
-}
-
-
 /* fix about button font baseline for IE,
  has no effect on other browsers */
 
@@ -79,9 +20,9 @@
 
 .filterLogo {
     position: absolute;
-    top: 15px;
-    left: 10px;
-    height: 3vw;
+    top: 1vw;
+    left: 1vw;
+    height: 2.5vw;
     cursor: pointer;
 }
 .filterLogoRight {
@@ -90,10 +31,6 @@
     right: 12px;
     width: 11vw;
     cursor: pointer;
-}
-
-.filtersShown {
-    transform: translateX(0);
 }
 
 .filters {
@@ -105,12 +42,13 @@
     user-select: none;
     position: absolute;
     top: 0;
-    padding: 5.2vw 15px 2.2vw 15px;
+    padding: 4.2vw 0 2.2vw 0;
     left: 0;
     bottom: 0;
     z-index: 4;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.9);
+    width: 11.342vw;
+    /*overflow: hidden;*/
+    background: #272727;
     transition: transform 0.2s ease-in-out, width 0.2s ease-in-out;
 }
 
@@ -152,7 +90,8 @@
 }
 
 .filters.filters__overview {
-    width: 2.7vw;
+    transform: translateX(0);
+    width: 0vw;
 }
 
 .filters__overview .lock {
@@ -166,11 +105,11 @@
 .filters__container {
     color: white;
     position: absolute;
-    top: 7.2vw;
-    margin: 0 0 0 15px;
-    padding-right: 50000px;
+    top: 9vw;
+    margin: 0;
+   /* padding-right: 50000px;*/
     left: 0;
-    bottom: 2.2vw;
+    bottom: 2.5vw;
     z-index: 4;
     overflow-y: scroll;
     opacity: 1;
@@ -180,9 +119,10 @@
 
 .filters.filters__overview .filters__container {
     opacity: 0;
-    display: none;
+    display: none !important;
     transform: translateX(60px);
 }
+
 
 #icnLogo {
     z-index: 5;
@@ -200,8 +140,8 @@
 .filterSapLogo {
     position: fixed;
     z-index: 10;
-    bottom: 10px;
-    left: 5px;
+    bottom: 14px;
+    left: 10px;
     width: auto;
     height: 1.4vw;
 }
@@ -259,6 +199,122 @@
     opacity: 1;
 }
 
+.filters__gradient {
+    position: absolute;
+    pointer-events: none;
+    z-index: 99;
+    /*background-image: -webkit-gradient(
+            linear, left top, left bottom, from(rgba(255,255,255,0.15)),
+            to(rgba(255,255,255,0.15)), color-stop(.05,rgba(255,255,255,0)), color-stop(.95,rgba(255,255,255,0))
+    );*/
+}
+
+.filter-menu-button {
+    color: #eee;
+    font-size: 0.5vw !important;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #272727;
+    border-radius: 100vw;
+    margin: 0px;
+    padding: 0vw;
+    position: absolute;
+    top: 5vw;
+    left: 4.25vw;
+    height: 2.5vw;
+    width: 2.5vw;
+    line-height: 2.5vw;
+}
+
+/*.filters__overview .filter-menu-button {
+    opacity: 1.0;
+    top: 8.5vw;
+    left: 0.25vw;
+}*/
+
+@media (max-width: 1920px) {
+
+    .filters {
+        width: 280px;
+        padding-top: 80px;
+    }
+    .filters.filters__overview {
+        padding: 80px 0 40px 0 !important;
+        width: 0px;
+    }
+    #sapLogo {
+        height: 25px !important;
+    }
+    img#icn {
+        height: 31.2969px !important;
+        left: 80px !important;
+    }
+    .icnCreditVisible .filterAboutButton {
+        bottom: 50px !important;
+    }
+    .filters .filterMenuButton {
+        font-size: 60px !important;
+        line-height: 35px !important;
+        padding-left: 4px !important;
+    }
+    .icnCreditVisible .filters__container {
+        bottom: 80px !important;
+    }
+    .filters__container {
+        top: 180px !important;
+        bottom: 58px !important;
+        left: 12px;
+    }
+    .filterLogo {
+        height: 49px !important;
+        left: 25px !important;
+        top: 25px !important;
+    }
+    .filterLogoRight {
+        height: 55px !important;
+        width: 228px !important;
+        right: 8px !important;
+    }
+    .filters .filterText {
+        font-size: 18px !important;
+        padding-top: 5px !important;
+        padding-left: 24px !important;
+        left: 55px;
+        top: 78px;
+    }
+    .filterAboutButton {
+        font-size: inherit !important;
+    }
+    .filterAboutButton {
+        left: 82px !important;
+        font-size: 16px !important;
+    }
+
+    .filterTextProjects {
+        margin-left: 6px;
+    }
+
+    .filter-menu-button {
+        font-size: 11px !important;
+        text-align: center;
+        width: 55px;
+        height: 55px;
+        top: 100px;
+        left: 105px;
+        line-height: 55px;
+        padding: 0px;
+    }
+/*    .filters__overview .filter-menu-button {
+        top: 175px;
+        left: 5px;
+    }*/
+}
+
+.animated_button {
+    border: 2px solid #aaa;
+}
 
 /*#icnLogo {
     position: fixed;
@@ -269,3 +325,37 @@
     width: 160px;
     cursor: pointer;
 }*/
+
+
+.closing.animated_button {
+    color: transparent;
+}
+
+
+.closing.animated_button:before, .closing.animated_button:after {
+    position: absolute;
+    left: 1.225vw;
+    content: ' ';
+    height: 1.8vw;
+    width: 0.1vw;
+    background-color: #aaa;
+    top: 0.35vw;
+}
+@media (max-width: 1920px) {
+    .closing.animated_button:before, .closing.animated_button:after {
+        position: absolute;
+        left: 26.5px;
+        content: ' ';
+        height: 40px;
+        width: 2px;
+        background-color: #aaa;
+        top: 6.5px;
+    }
+}
+
+.closing.animated_button:before {
+  transform: rotate(45deg);
+}
+.closing.animated_button:after {
+  transform: rotate(-45deg);
+}

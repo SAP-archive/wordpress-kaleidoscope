@@ -5,13 +5,15 @@
         margin: 5px !important;
     }
     .filtermenuitem__filtertitle {
-        font-size: inherit !important;
+        font-size: 14px !important;
+        line-height: 20px !important;
+        letter-spacing: 0.6px;
     }
     .filtermenuitem__filtercount {
         font-size: inherit !important;
     }
     .filtermenuitem__legenditem {
-        top: 7px !important;
+        top: 5px !important;
         left: 6px !important;
         width: 14px !important;
         height: 14px !important;
@@ -36,7 +38,7 @@
 
 .filtermenuitem__height {
     overflow: hidden;
-    transition: height 0.15s;
+    transition: max-height 0.3s ease-out;
 }
 
 .filtermenuitem {
@@ -51,11 +53,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-}
-
-.filtermenuitem__asRadioButtons {
-    opacity: 1.0 !important;
-    cursor: pointer;
 }
 
 .filtermenuitem__legenditem {
@@ -94,14 +91,11 @@
 .filtermenuitem__filtertitle {
     font-weight: 300;
     font-size: 0.83vw;
-    font-family: "Geogrotesque", sans-serif;
     -moz-hyphens: none;
     -ms-hyphens: none;
     -webkit-hyphens: none;
     hyphens: none;
-    // max-width: 95%;
-    // white-space: nowrap;
-    // overflow: hidden;
+    color: #c2c2c2;
 }
 
 .filtermenuitem.filtermenuitem__selected .filtermenuitem__filtertitle {

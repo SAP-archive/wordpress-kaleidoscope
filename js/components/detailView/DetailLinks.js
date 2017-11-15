@@ -30,6 +30,7 @@ export default class DetailLinks extends React.Component {
                                                         <img className="ContactPartnerLogo" src={link.logo} />
                                                     ) } })()}
                                                 </p>
+												<div className="clear"/>
                     	    	            </a>
                     	    	        </li>
                                     );

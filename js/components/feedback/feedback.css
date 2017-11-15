@@ -1,47 +1,39 @@
-  @media (max-width: 1920px) {
+@media (max-width: 1920px) {
     .feedback__icon {
-      height: 30px !important;
+        height: 30px !important;
     }
-  }
+}
 
-  @media (max-width: 650px) {
-    .feedback__icon {
-      height: 30px !important;
-    }
-
+@media (max-width: 1200px) {
     .feedbackWrapper input {
-      width: calc(100% - 5vw) !important;
-      font-size: 16pt !important;
+        font-size: 16pt !important;
     }
 
     .feedbackWrapper textarea {
-      width: calc(100% - 5vw) !important;
-      height: 180px !important;
-      font-size: 16pt !important;
+        min-height:350px;
+        font-size: 16pt !important;
     }
 
     .feedbackWrapper button {
-      width: 150px;
-      height: 40px;
-      margin-right: calc(5vw + 4px) !important;
+        width: auto;
+        font-size: 16pt !important;
     }
 
     .feedback-headline {
-      width: 90vw !important;
-      margin-left: 5vw !important;
-      margin-right: 5vw !important;
-      padding-right: 0 !important;
+        width: 90% !important;
     }
+
     .feedback-headline-extra-space {
-      margin-top: 10vh !important;
+        margin-top: 10vh !important;
+        font-size: 20px !important;
     }
 
     .feedback-send-button-div {
-      width: 100vw !important;
+        width: 90% !important;
     }
-  }
+}
 
-  .feedback__icon {
+.feedback__icon {
     position: fixed;
     z-index: 2;
     bottom: 15px;
@@ -50,18 +42,18 @@
     height: 2.2vw;
     opacity: 1;
     cursor: pointer;
-  }
-  
-  .feedback__box {
+}
+
+.feedback__box {
     position: fixed;
     z-index: 10;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-  }
-  
-  .feedback__box-icon {
+}
+
+.feedback__box-icon {
     position: absolute;
     opacity: 0.2;
     height: 60px;
@@ -69,9 +61,9 @@
     top: 50%;
     margin-top: -34px;
     left: 150px;
-  }
-  
-  .feedback__box-close {
+}
+
+.feedback__box-close {
     top: 50%;
     margin-top: -80px;
     right: 150px;
@@ -85,82 +77,68 @@
     font-size: 48px;
     color: white;
     cursor: pointer;
-  }
-  
-  .feedbackWrapper {
+}
+
+.feedbackWrapper {
     margin: auto;
     /*width: 650px;*/
     width: 100%;
     margin-top: 10px;
     z-index: 10;
     position: relative;
-  }
-  
-  .feedbackScroller {
+}
+
+.feedbackScroller {
     overflow-x: hidden;
     overflow-y: auto;
     height: 90vh;
-  }
-  
-  ::-webkit-scrollbar {
+}
+
+::-webkit-scrollbar {
     width: 0px;
     background: transparent;
-  }
-  
-  .feedbackWrapper input {
-    font-size: 18pt;
+}
+
+.feedbackWrapper input, .feedbackWrapper textarea, .feedbackWrapper button {
+    width: calc(100% - 1vw);
+    margin: 1vw 0;
+    padding: 0.5vw;
+    border: 0.1vw solid white;
+    border-radius: 0.3vw;
+    font-size: 1.5vw;
     font-family: "Geogrotesque", sans-serif;
-    width: 550px;
-    margin: 10px 0;
-    padding: 5px;
-    border: 1px solid white;
-    border-radius: 3px;
-  }
-  
-  .feedbackWrapper form {
+}
+
+.feedbackWrapper form {
     text-align: center;
     color: white;
     font-family: "Geogrotesque", sans-serif;
-    font-size: 234pt;
-    /*margin-top: 10%; No margin because touch keyboard needs space */
-  }
-  
-  .feedbackWrapper textarea {
-    font-family: "Geogrotesque", sans-serif;
-    width: 550px;
-    height: 400px;
-    font-size: 18pt;
-    margin: 10px 0;
-    padding: 5px;
-    border: 1px solid white;
-    border-radius: 3px;
-  }
-  
-  .feedbackWrapper button {
-    font-family: "Geogrotesque", sans-serif;
+}
+
+.feedbackWrapper textarea {
+    height: 20vw;
+}
+
+.feedbackWrapper button {
     color: white;
     background: transparent;
-    border: 1px solid white;
-    border-radius: 3px;
-    width: 150px;
-    height: 40px;
+    width: auto;
     float: right;
-    font-size: 15pt;
     cursor: pointer;
-  }
-  
-  .feedback-headline {
-    width: 450px;
-    margin: auto;
-    font-size: 25pt;
+    padding: 0.5vw 1.5vw;
+    clear: both;
+}
+
+.feedback-headline {
+    width: 50%;
+    margin: 2vw auto 1vw auto;
+    font-size: 2vw;
     text-align: left;
-    padding-right: 100px;
-    margin-bottom: 15px;
-    line-height: 2.4rem;
+    line-height: 1.5vw;
     color: white;
-  }
-  
-  .feedback-send-button-div {
-    width: 550px;
+}
+
+.feedback-send-button-div {
+    width: 50%;
     margin: auto;
-  }
+}

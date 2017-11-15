@@ -58,7 +58,7 @@
               <span className="typeform-share" data-mode="1"  onClick={this.onToggleFeedback} >
                   <img src={`${window.icnThemePath}img/feedback.svg`} className="feedback__icon"/>
               </span>
-              <div className="feedbackWrapper" style={feedbackWrapperStyle}>
+              <div className="feedbackWrapper" style={feedbackWrapperStyle} id="feedbackWrapperOverlay" onClick={this.onCloseFeedbackByClickOnWrapper}>
               <div className="feedbackScroller">
 
                 <iframe width="0" height="0" border="0" style={{visibility:"hidden"}} name="invisDummyFrame" id="invisDummyFrame"></iframe>
@@ -105,6 +105,12 @@
       }
     }
 
+    onCloseFeedbackByClickOnWrapper(event) {
+        const controlElements = ['INPUT', "TEXTAREA", "BUTTON"];
+        if(!controlElements.includes(event.target.nodeName) && !event.target.className.includes("exitbutton")) {
+            Actions.trigger(ActionTypes.TOGGLE_FEEDBACK);
+        }
+    }
 
     onToggleFeedback() {
         if(!AppStore.isOniPadApp()) {

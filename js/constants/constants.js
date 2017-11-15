@@ -31,15 +31,15 @@ export const SCALE_MAX = 0.97;
 
 export const SCROLL_PADDING = function() {
     // for Mobile
-    if (IS_MOBILE()) {
-        return PARTICLE_SIZE() - 25;
-    } else {
+//    if (IS_MOBILE()) {
+//        return PARTICLE_SIZE() - 25;
+//    } else {
         return PARTICLE_SIZE() / 2;
-    }
+//    }
 };
 
-export const IDLE_SCROLL_DURATION = 20 // larger value: slower scroll
-export const IDLETIME_MULTIP = 9; // 9 = 90sec
+export const IDLE_SCROLL_DURATION = 7; // larger value: slower scroll
+export const IDLETIME_MULTIP = 6; // 9 = 90sec
 export const SCREENSAVER_IDLETIME = 30; //30*10/60=5min
 
 export const ActionTypes = {
@@ -62,6 +62,7 @@ export const ActionTypes = {
     SWITCH_SUB_FILTER: 'SWITCH_SUB_FILTER',
     CLEAR_FILTERS: 'CLEAR_FILTERS',
     COPY_LINK: 'COPY_LINK',
+    CONTACT_ALL: 'CONTACT_ALL',
     CHECK_EMAIL: 'CHECK_EMAIL',
     SWITCH_LOCK: 'SWITCH_LOCK',
     RESIZE: 'RESIZE',

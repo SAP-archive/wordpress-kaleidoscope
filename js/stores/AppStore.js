@@ -38,6 +38,7 @@ let isVideoPlaying = false;
 let backlink = null;
 let animate_screensaver = false;
 let accessibleMode = false;
+let detailview=false;
 
 class AppStore extends EventEmitter {
     constructor(props) {
@@ -64,6 +65,7 @@ class AppStore extends EventEmitter {
                     break;
 
                 case ActionTypes.SHOW_DETAIL_VIEW:
+                    detailview = true;
                     blur = true;
                     blackBlur = false;
                     currentProject = action.project;
@@ -84,6 +86,7 @@ class AppStore extends EventEmitter {
                   break;
 
                 case ActionTypes.EXIT_DETAIL_VIEW:
+                    detailview = false;
                     if (currentProject) {
                         projects.resetAnimations();
                         currentProject.animation = 'particle_closed';
@@ -135,6 +138,7 @@ class AppStore extends EventEmitter {
                 case ActionTypes.TOGGLE_MATRIX:
                     matrixIsVisible = !matrixIsVisible;
                     blur = matrixIsVisible;
+                    blackBlur = matrixIsVisible;
                     hideFilters = matrixIsVisible;
                     this.emit('change');
                     document.activeElement.blur();
@@ -158,8 +162,11 @@ class AppStore extends EventEmitter {
 
                 case ActionTypes.TOGGLE_SEARCH:
                     searching = !searching;
+                    /*
                     blur = searching;
+                    blackBlur = searching;
                     hideFilters = searching;
+                    */
                     this.emit('change');
                     document.activeElement.blur();
                     break;
@@ -174,8 +181,8 @@ class AppStore extends EventEmitter {
                     oToast[0].style.display = "none";
                     oToast[0].classList.toggle("dark_toast");
                     oToast[0].classList.toggle("light_toast");
-                    blur = feedbacking;
-                    blackBlur = true;
+                    blur = feedbacking || detailview;
+                    blackBlur = feedbacking;
                     hideFilters = feedbacking || (currentProject !== null);
                     this.emit('change');
                     break;
@@ -183,7 +190,8 @@ class AppStore extends EventEmitter {
                 case ActionTypes.EXIT_FEEDBACK_VIEW:
                     feedbacking = false;
                     hideFilters = false;
-                    blur = false;
+                    blur = detailview;
+                    blackBlur = false;
                     this.emit("change");
                     document.activeElement.blur();
                     document.getElementsByClassName("feedback-headline-email")[0].value = ("");
@@ -192,6 +200,7 @@ class AppStore extends EventEmitter {
                 case ActionTypes.TOGGLE_PASSWORD:
                     showPassword = !showPassword;
                     blur = showPassword;
+                    blackBlur = showPassword;
                     hideFilters = showPassword;
                     this.emit('change');
                     break;
@@ -229,17 +238,22 @@ class AppStore extends EventEmitter {
                         if (oldSearch) {
                             Actions.trigger(ActionTypes.CLEAR_FILTERS);
                         }
+                        Actions.trigger(ActionTypes.TOGGLE_FILTER);
                     }
                     break;
 
 
                 case ActionTypes.SWITCH_LOCK:
                     let locked = localStorage.getItem('locked') === 'true';
-                    localStorage.setItem('locked', !locked);
+                    try {
+                        localStorage.setItem('locked', !locked);
+                        localStorage.setItem('justSwitchedLock', true);
+                    } catch(e) {
+                        console.log(e);
+                    }
                     blur = true;
                     hideFilters = true;
-                    this.emit('change');
-                    location.search = "";
+                    Actions.trigger(ActionTypes.TOGGLE_PASSWORD);
                     break;
 
 
@@ -290,13 +304,14 @@ class AppStore extends EventEmitter {
                     }
                     // ATTENTION INTENTIONAL NO break;
                 case ActionTypes.CLEAR_FILTERS:
-                    blur = searching || feedbacking || currentProject ? true : false || false;
+                    blur = feedbacking || currentProject ? true : false || false;
                     searchTerm = '';
                     currentFilter = null;
                     lockedFilters = [];
                     //Actions.trigger(ActionTypes.TOGGLE_FILTER);
                     projects.resetFilters(filterOverview, that.getIScroll());
                     Actions.trigger(ActionTypes.NORESULTS_FALSE);
+                    Actions.trigger(ActionTypes.TOGGLE_FILTER);
                     this.emit('change');
                     break;
                 case ActionTypes.TOGGLE_FILTER:
@@ -305,8 +320,12 @@ class AppStore extends EventEmitter {
                     }
                     let scroller = that.getIScroll();
                     var initialScrollMax = scroller.maxScrollY;
-                    var initialScrollPercent = (scroller.y / scroller.maxScrollY);
 
+                    var initialScrollPercent = (scroller.y / scroller.maxScrollY);
+                    if (isNaN(scroller.y) || scroller.maxScrollY == 0) {
+                        initialScrollPercent = 0;
+                    }
+                    
                     that.emit('change');
                     setTimeout(function() {
                         if (lockedFilters.length > 0) {
@@ -335,7 +354,7 @@ class AppStore extends EventEmitter {
                             scrollY = parseFloat(document.getElementsByClassName("particles__inner")[0].style.transform.split(",")[1].split(")")[0]);
                         }
                         scroller.scrollTo(0, scrollY, 200);
-                    }, 500);
+                    }, 500); 
                     break;
 
                 case ActionTypes.COPY_LINK:
@@ -397,7 +416,23 @@ class AppStore extends EventEmitter {
                     oToast[0].style.display = "block";
                     document.body.removeChild(textArea);
                     break;
+                case ActionTypes.CONTACT_ALL: 
+                    let visibleProjects = projects.performSubFilterSwitch(lockedFilters);
+                    var emailOut = visibleProjects.map(function(x) {
+                        return icnAllProjects[x].contact_person.map(function(e) { 
+                            return e.contact_email; 
+                        });
+                    }).reduce(function(acc,val) {
+                        return acc.concat(val);
+                    }).filter(function(value, index, self){
+                        return self.indexOf(value) === index;
+                    }).join(";");
 
+                    window.open("mailto:"+emailOut);
+                    // for (var i in visibleProjects) {
+                    //     emailOut += icnAllProjects[i].contact_person.map(function(e) { return e.contact_email; }).join(";") 
+                    // }
+                    break;
                 case ActionTypes.CHECK_EMAIL:
                     oToast = document.getElementsByClassName("kaleidoscope_toast");
                     oToast[0].innerText = "Please provide a valid e-mail address";
