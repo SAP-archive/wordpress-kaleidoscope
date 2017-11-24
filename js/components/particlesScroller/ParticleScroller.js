@@ -61,8 +61,8 @@ export default class ParticleScroller extends React.Component {
         // trigger update on first mount
         // wait 1 second before triggering the update, shall fix the sporadic problems with initial scroll position
         window.setTimeout(function(){
-            Actions.trigger(ActionTypes.TOGGLE_FILTER, true);
-        }, 1000);
+            Actions.trigger(ActionTypes.TOGGLE_FILTER, AppStore.getLockedFilters().length == 0);
+        }, 250);
     }
 
     componentDidUpdate() {

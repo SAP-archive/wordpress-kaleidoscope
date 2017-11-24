@@ -233,10 +233,11 @@ projects.initParticles = function() {
             if (!Array.isArray(proj[filterGroup])) {
                 proj[filterGroup] = [proj[filterGroup]];
             }
-
+            /*
             if (filterGroup === "portfolio_area" && proj[filterGroup].length > 1){
                 proj[filterGroup] = proj[filterGroup].slice(0,1);
             }
+            */
             proj[filterGroup].forEach(function(filter) {
                 if (filter) {
                     if (typeof filter === "object") {
@@ -542,7 +543,7 @@ projects.reorderProjectParticles = function(filterOffset = 0) {
 projects.alignProjectsToFilterBar = function(oIScroller, filterOverview) {
     var scrollerX = oIScroller.x;
     var minDist = Infinity;
-    var filterOffset = document.getElementsByClassName("filters") ? document.getElementsByClassName("filters")[0].offsetWidth : 0;
+    var filterOffset = document.getElementsByClassName("filters") && document.getElementsByClassName("filters").length > 0 ? document.getElementsByClassName("filters")[0].offsetWidth : 0;
     var particleSize = PARTICLE_SIZE() * SCALE_MIN;
     if (IS_MOBILE()) {
         filterOffset = filterOffset / 2;

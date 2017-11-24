@@ -125,6 +125,9 @@ class AppRouter extends EventEmitter {
             //    Actions.trigger(ActionTypes.EXIT_DETAIL_VIEW); //reset url path filter in url will deleted
         } else if (nextPath === '/about'){
             Actions.trigger(ActionTypes.INIT_DETAIL_VIEW, AppStore.getAboutProject());
+        } else if (nextPath === '/overview') {
+            AppStore.setOverview(true);
+            AppStore.setOverviewData(window.overviewConfig);
         } else {
             let project = AppStore.getProjectFromSlug(nextPath.replace('/', ''));
             if(project) {

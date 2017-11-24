@@ -134,7 +134,7 @@ export default class Filters extends React.Component {
                     }
                 </div>
                 {(() => {
-                    if (window.portfolio_showMatrixButton) {
+                    if (window.portfolio_showMatrixButton && !AppStore.isLocked()) {
                         return (
                                 <div 
                                     className = "matrix__button animated_button" 

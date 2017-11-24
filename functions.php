@@ -87,6 +87,12 @@
       	<input type="text" name="lockTimeInSeconds" id="lockTimeInSeconds" value="<?php echo get_option('lockTimeInSeconds'); ?>" />
       <?php
   }
+  function display_overviewTimerMax_element()
+  {
+    ?>
+        <input type="text" name="overviewTimerMax" id="overviewTimerMax" value="<?php echo get_option('overviewTimerMax'); ?>" />
+      <?php
+  }
   function display_updatedTimeInDays_element()
   {
       ?>
@@ -133,7 +139,12 @@
       	<textarea name="main_filters" class="large-text" cols="50" rows="10"  id="main_filters"><?php echo get_option('main_filters'); ?></textarea>
       <?php
   }
-
+  function display_overviewConfig_element()
+  {
+    ?>
+        <textarea name="overview_config" class="large-text" cols="50" rows="10"  id="overview_config"><?php echo get_option('overview_config'); ?></textarea>
+      <?php
+  }
   function display_matrixFilters_element()
   {
    	?>
@@ -368,6 +379,7 @@
     add_settings_field("portfolio_analytic", "Analytic-Code-Snippet", "display_analytic_element", "theme-options", "general");
     add_settings_field("detail_captions", "Shortcut translation", "display_caption_element", "theme-options", "general");
     add_settings_field("main_filters", "Main filters", "display_mainFilters_element", "theme-options", "general");
+    add_settings_field("overview_config", "Overview Configuration", "display_overviewConfig_element", "theme-options", "general");
     add_settings_field("portfolio_searchString", "Allowed Items in Search", "display_searchString_element", "theme-options", "general");
     add_settings_field("portfolio_searchStringLocked", "Allowed Items in Search (Kiosk-Mode)", "display_searchStringLocked_element", "theme-options", "general");
     add_settings_field("portfolio_coloredByElement", "Filter for colour discrimination", "display_coloredByElement_element", "theme-options", "general");
@@ -380,6 +392,7 @@
     add_settings_field("portfolio_filterAsRadioButtons", "Filter behave like radio buttons", "display_filterAsRadioButtons", "theme-options", "general");
     add_settings_field("lockEnabled", "Enable Operation-Mode switch button.", "display_lockEnabled_element", "theme-options", "general");
     add_settings_field("lockTimeInSeconds", "Timeout sidebar opened", "display_lockTimeInSeconds_element", "theme-options", "general");
+    add_settings_field("overviewTimerMax", "Overview Timeout (minutes)", "display_overviewTimerMax_element", "theme-options", "general");
     add_settings_field("updatedTimeInDays", "Updated Tag shown within number of days", "display_updatedTimeInDays_element", "theme-options", "general");
     add_settings_field("enableCredit", "Enable ICN Credit", "display_showCredit_element", "theme-options", "general");
     add_settings_field("portfolio_showSapLogo", "Enable SAP Logo", "display_showSapLogo_element", "theme-options", "general");
@@ -420,6 +433,7 @@
     register_setting("general", "portfolio_analytic");
     register_setting("general", "detail_captions");
     register_setting("general", "main_filters");
+    register_setting("general", "overview_config");
     register_setting("general", "portfolio_searchString");
     register_setting("general", "portfolio_searchStringLocked");
     register_setting("general", "portfolio_coloredByElement");
@@ -432,6 +446,7 @@
     register_setting("general", "portfolio_filterAsRadioButtons");
     register_setting("general", "lockEnabled");
     register_setting("general", "lockTimeInSeconds");
+    register_setting("general", "overviewTimerMax");
     register_setting("general", "updatedTimeInDays");
     register_setting("general", "enableCredit");
     register_setting("general", "portfolio_showSapLogo");

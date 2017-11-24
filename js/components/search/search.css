@@ -260,7 +260,7 @@ ul.react-autosuggest__suggestions-list {
     background-color: #272727;
     border-radius: 100vw;
     font-size: 0.5vw;
-    color: white;
+    color: #eee;
     white-space: nowrap;
     text-align: center;
     line-height: 2.5vw;

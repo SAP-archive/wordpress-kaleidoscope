@@ -78,10 +78,6 @@ class ICNPortfolioApp extends React.Component {
         document.addEventListener("mousedown", this._handleClick);
         document.addEventListener("keydown", this._handleKeyDown);
         Actions.trigger(ActionTypes.RESIZE);
-
-        window.addEventListener('message', function(e) {
-            console.log(e.data);
-        });
     }
 
     componentWillUnmount() {

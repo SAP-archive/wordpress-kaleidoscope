@@ -142,10 +142,12 @@
             window.showCredit = <?php echo get_option('enableCredit', 'false')?>;
             window.feedbackUrl = '<?= get_option('portfolio_feedback_url') ?>';
             window.lockTimeInSeconds = <?php echo get_option('lockTimeInSeconds', '0')?>;
+            window.overviewTimerMax = <?php echo get_option('overviewTimerMax', '5')?>;
             window.updatedTimeInDays = <?php echo get_option('updatedTimeInDays', '10')?>;
             window.detailCaptions = <?php echo get_option('detail_captions', '[]')?>;
             window.portfolio_kiosk_password = '<?= get_option('portfolio_kiosk_password') ?>';
             window.mainFilters = <?php echo get_option('main_filters', '[]')?>;
+            window.overviewConfig = <?php echo get_option("overview_config", '[]') ?>;
             window.matrix_filters_excluded_x = <?php echo get_option('matrix_filters_excluded_x', '[]')?>;
             window.matrix_filters_excluded_y = <?php echo get_option('matrix_filters_excluded_y', '[]')?>;
             window.matrixFilters = <?php echo get_option('matrix_filters', '[]')?>;

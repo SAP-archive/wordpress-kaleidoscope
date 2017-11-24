@@ -53,11 +53,17 @@
             interestContacts = null;
             interestSlug = null;
         }
-        return (
-            <div className="feedback" style={feedbackButtonStyle}>
-              <span className="typeform-share" data-mode="1"  onClick={this.onToggleFeedback} >
+
+        /* FEEDBACK BUTTON COMMENTED OUT
+
+        <!--              <span className="typeform-share" data-mode="1"  onClick={this.onToggleFeedback} >
                   <img src={`${window.icnThemePath}img/feedback.svg`} className="feedback__icon"/>
               </span>
+              -->
+              */
+        return (
+            <div className="feedback" style={feedbackButtonStyle}>
+
               <div className="feedbackWrapper" style={feedbackWrapperStyle} id="feedbackWrapperOverlay" onClick={this.onCloseFeedbackByClickOnWrapper}>
               <div className="feedbackScroller">
 

@@ -130,7 +130,7 @@ class AppStore extends EventEmitter {
                 case ActionTypes.EXIT_MATRIX_VIEW:
                     matrixIsVisible = false;
                     blur = false;
-                    hideFilters = false;
+                   // hideFilters = false;
                     this.emit('change');
                     document.activeElement.blur();
                     break;
@@ -141,6 +141,7 @@ class AppStore extends EventEmitter {
                     blackBlur = matrixIsVisible;
                     hideFilters = matrixIsVisible;
                     this.emit('change');
+                    Actions.trigger(ActionTypes.TOGGLE_FILTER, true);
                     document.activeElement.blur();
                     break;
 

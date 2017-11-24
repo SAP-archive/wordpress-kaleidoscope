@@ -456,17 +456,17 @@ export default class Matrix extends React.Component {
                                             })()}
                                         </div>
                                         <div className="show_inactive_projects">
-                                            <label className="checkbox_description" for="checkboxInactiveProjects">
+                                            <label className="checkbox_description" htmlFor="checkboxInactiveProjects">
                                                 <input id="checkboxInactiveProjects" type="checkbox" onClick={this.handleShowInactiveProjectsChange}
                                                    checked={this.state.showInactiveProjects}/>
                                                 Show inactive projects
                                             </label>
-                                            <label className="checkbox_description" for="checkboxNoValueX">
+                                            <label className="checkbox_description" htmlFor="checkboxNoValueX">
                                                 <input id="checkboxNoValueX" type="checkbox" onClick={this.handleShowNoValueX}
                                                        checked={this.state.showNoValueX}/>
                                                 Show noValue X-Axis
                                             </label>
-                                            <label className="checkbox_description" for="checkboxNoValueY">
+                                            <label className="checkbox_description" htmlFor="checkboxNoValueY">
                                                 <input id="checkboxNoValueY" type="checkbox" onClick={this.handleShowNoValueY}
                                                        checked={this.state.showNoValueY}/>
                                                 Show noValue Y-Axis
