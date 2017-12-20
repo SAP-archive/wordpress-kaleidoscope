@@ -31,11 +31,11 @@ export const SCALE_MAX = 0.97;
 
 export const SCROLL_PADDING = function() {
     // for Mobile
-//    if (IS_MOBILE()) {
-//        return PARTICLE_SIZE() - 25;
-//    } else {
+    if (IS_MOBILE()) {
+        return PARTICLE_SIZE() - 25;
+    } else {
         return PARTICLE_SIZE() / 2;
-//    }
+    }
 };
 
 export const IDLE_SCROLL_DURATION = 7; // larger value: slower scroll

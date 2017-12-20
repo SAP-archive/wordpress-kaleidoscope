@@ -34,8 +34,8 @@ Tags: ICN, SAP, portfolio
 }
 
 .overview__particle-5 {
-    background-color: ##E57562;
-    border-color: ##E57562;
+    background-color: #E57562;
+    border-color: #E57562;
 }
 
 
@@ -443,37 +443,33 @@ Tags: ICN, SAP, portfolio
 }
 
 
-/* --- Particle tint --- */
+/* --- Particle tint ---  These are the bubble color definitions for Internet Explorer  */
 .particle_background_tint__category_01:before {
-    background-color: rgba(127, 182, 24, 0.7);
+    background-color: rgba(127, 182, 24, 0.6);
 }
-
-.particle_background_tint__category_02:before {
-    background-color: rgba(36, 182, 234, 0.7);
+.particle_background_tint__category_02:before{
+    background-color: rgba(134, 211, 244, 0.6)
 }
-
-.particle_background_tint__category_03:before {
-    background-color: rgba(88, 132, 211, 0.7);
+.particle_background_tint__category_03:before{
+    background-color: rgba(54, 105, 176, 0.6)
 }
-
-.particle_background_tint__category_04:before {
-    background-color: rgba(54, 168, 175, 0.7);
+.particle_background_tint__category_04:before{
+    background-color: rgba(53, 233, 221, 0.6)
 }
-
-.particle_background_tint__category_05:before {
-    background-color: rgba(157, 115, 170, 0.7);
+.particle_background_tint__category_05:before{
+    background-color: rgba(165, 97, 229, 0.6)
 }
-
 .particle_background_tint__category_06:before {
-    background-color: rgba(229, 117, 98, 0.7);
+    background-color: rgba(241, 92, 65, 0.6)
 }
-
 .particle_background_tint__category_07:before {
-    background-color: rgba(241, 160, 64, 0.7);
+    background-color: rgba(241, 160, 64, 0.6);
 }
-
-.particle_background_tint__category_00:before {
-    background-color: rgba(221, 19, 19, 0.7);
+.particle_background_tint__category_00:before{
+    background-color: rgba(189, 255, 122, 0.6);
+}
+.particle_background_tint__category_xx:before {
+    background-color: rgba(204, 204, 204, 0.6);
 }
 
 /* ##### START change filterbar size ##### */

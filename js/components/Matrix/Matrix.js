@@ -333,11 +333,13 @@ export default class Matrix extends React.Component {
                         return <li key={`${project.slug}_List_Line`}
                                    className={`Matrix_List_Line ${project.project_state} category_0${colorID}`}
                                    style={style}
-                                   onClick={() => this.onMatrixProjectClick(project.title)}>{project.title}</li>;
+                                   onClick={() => this.onMatrixProjectClick(project.title)}
+                                   dangerouslySetInnerHTML={{__html:project.title}}/>;
                     } else {
                         return <li key={`${project.slug}_List_Line`}
                                    className={`Matrix_List_Line ${project.project_state} category_0${colorID}`}
-                                   onClick={() => this.onMatrixProjectClick(project.title)}>{project.title}</li>;
+                                   onClick={() => this.onMatrixProjectClick(project.title)}
+                                   dangerouslySetInnerHTML={{__html:project.title}}/>;
                     }
                 });
                 return <div key={`${this.props.data.id}_MatrixCell`} className="Matrix_cell">
@@ -363,7 +365,7 @@ export default class Matrix extends React.Component {
                         }
                     })()}
                     {this.props.data.map((cell) => (
-                        <MatrixDescriptionCell data={cell} quantityList={this.props.quantityListX}/>
+                        <MatrixDescriptionCell key={cell} data={cell} quantityList={this.props.quantityListX}/>
                     ))}
                 </div>;
             }
@@ -388,16 +390,16 @@ export default class Matrix extends React.Component {
         let YAxisSelectionFilters = [];
         for (let item in Object.keys(this.filters)) {
             if (window.matrix_filters_excluded_x.indexOf(Object.keys(this.filters)[item]) == -1) {
-                XAxisSelectionFilters.push(<option>{Object.keys(this.filters)[item]}</option>);
+                XAxisSelectionFilters.push(<option key={item}>{Object.keys(this.filters)[item]}</option>);
             } else {
-                XAxisSelectionFilters.push(<option disabled="disabled">{Object.keys(this.filters)[item]}</option>);
+                XAxisSelectionFilters.push(<option key={item} disabled="disabled">{Object.keys(this.filters)[item]}</option>);
             }
         }
         for (let item in Object.keys(this.filters)) {
             if (window.matrix_filters_excluded_y.indexOf(Object.keys(this.filters)[item]) == -1) {
-                YAxisSelectionFilters.push(<option>{Object.keys(this.filters)[item]}</option>);
+                YAxisSelectionFilters.push(<option key={item}>{Object.keys(this.filters)[item]}</option>);
             } else {
-                YAxisSelectionFilters.push(<option disabled="disabled">{Object.keys(this.filters)[item]}</option>);
+                YAxisSelectionFilters.push(<option key={item} disabled="disabled">{Object.keys(this.filters)[item]}</option>);
             }
         }
 
@@ -487,8 +489,8 @@ export default class Matrix extends React.Component {
                                         })()}
                                         <div className="matrix_color_code">
                                             {matrix_colorDim_domain.map((color_category) => (
-                                                <div
-                                                    className={`matrix_legend_category matrix_legend_category_0${matrix_colorDim_domain.indexOf(color_category)}`}> {color_category}</div>
+                                                <div key={color_category}
+                                                className={`matrix_legend_category matrix_legend_category_0${matrix_colorDim_domain.indexOf(color_category)}`}> {color_category}</div>
                                             ))}
                                         </div>
                                     </div>

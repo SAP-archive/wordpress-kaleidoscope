@@ -173,6 +173,16 @@ export default class DetailView extends React.Component {
             backgroundSize: 'cover'
         };
 
+        if (project.files && project.files.length > 0) {
+          for (var i in project.files) {
+            var file = project.files[i];
+            allDownloads.push({
+              title: file.file_title,
+              url: file.file,
+              type: 'download'
+            });
+          }
+        }
 
         var category = AppStore.getPortfolioCategory(project.portfolioAreaClass);
         var editButton = null;

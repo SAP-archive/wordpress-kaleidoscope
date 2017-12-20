@@ -68,7 +68,7 @@
 }
 
 .filters .filterText {
-    font-family: "Geogrotesque", sans-serif;
+    font-family: "Benton Sans", sans-serif;
     font-weight: 800;
     opacity: 1;
     color: white;
@@ -157,7 +157,7 @@
 }
 
 .filterAboutButton {
-    font-family: "Geogrotesque", sans-serif;
+    font-family: "Benton Sans", sans-serif;
     font-weight: 400;
     /* background: linear-gradient(to right, rgba(117, 117, 117, 1) 0%, rgba(79, 74, 79, 1) 100%); */
     white-space: pre;

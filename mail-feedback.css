@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Geogrotesque';
+    font-family: 'Benton Sans';
     src: url('fonts/3095ED_5_0.eot');
     src: url('fonts/3095ED_5_0.eot?#iefix') format('embedded-opentype'), url('fonts/3095ED_5_0.woff2') format('woff2'), url('webfonts/3095ED_5_0.woff') format('woff'), url('fonts/3095ED_5_0.ttf') format('truetype');
     font-weight: 400;
@@ -8,7 +8,7 @@
 
 input {
 	font-size: 18pt;
-	font-family: "Geogrotesque", sans-serif;
+	font-family: "Benton Sans", sans-serif;
 	width: 550px;
 	margin: 10px 0;
 	padding: 5px;
@@ -17,13 +17,13 @@ input {
 form {
 	text-align:center;
 	color: white;
-	font-family: "Geogrotesque", sans-serif;
+	font-family: "Benton Sans", sans-serif;
 	font-size: 24pt;
 	margin-top: 15%;
 }
 
 textarea {
-	font-family: "Geogrotesque", sans-serif;
+	font-family: "Benton Sans", sans-serif;
 	width: 550px;
 	height: 400px;
 	font-size: 18pt;
@@ -32,7 +32,7 @@ textarea {
 }
 
 button {
-	font-family: "Geogrotesque", sans-serif;
+	font-family: "Benton Sans", sans-serif;
 	color: white;
     background: #3e82ff;
     border: 1px solid white;

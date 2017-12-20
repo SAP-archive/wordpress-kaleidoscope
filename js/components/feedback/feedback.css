@@ -106,13 +106,13 @@
     border: 0.1vw solid white;
     border-radius: 0.3vw;
     font-size: 1.5vw;
-    font-family: "Geogrotesque", sans-serif;
+    font-family: "Benton Sans", sans-serif;
 }
 
 .feedbackWrapper form {
     text-align: center;
     color: white;
-    font-family: "Geogrotesque", sans-serif;
+    font-family: "Benton Sans", sans-serif;
 }
 
 .feedbackWrapper textarea {
@@ -134,7 +134,7 @@
     margin: 2vw auto 1vw auto;
     font-size: 2vw;
     text-align: left;
-    line-height: 1.5vw;
+    line-height: 2.25vw;
     color: white;
 }
 

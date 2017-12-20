@@ -545,9 +545,9 @@ projects.alignProjectsToFilterBar = function(oIScroller, filterOverview) {
     var minDist = Infinity;
     var filterOffset = document.getElementsByClassName("filters") && document.getElementsByClassName("filters").length > 0 ? document.getElementsByClassName("filters")[0].offsetWidth : 0;
     var particleSize = PARTICLE_SIZE() * SCALE_MIN;
-    if (IS_MOBILE()) {
-        filterOffset = filterOffset / 2;
-    }
+    // if (IS_MOBILE()) {
+    //     filterOffset = filterOffset / 2;
+    // }
 
     projects.reorderProjectParticles(filterOffset);
 }

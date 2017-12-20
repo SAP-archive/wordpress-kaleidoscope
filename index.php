@@ -67,26 +67,6 @@
                 font-style: normal;
             }
             @font-face {
-                font-family: 'Geogrotesque';
-                src: url('<?php echo get_template_directory_uri(); ?>/fonts/Geogrotesque-SemiBold.eot');
-                src: url('<?php echo get_template_directory_uri(); ?>/fonts/Geogrotesque-SemiBold.eot?#iefix') format('embedded-opentype'),
-                     url('<?php echo get_template_directory_uri(); ?>/fonts/Geogrotesque-SemiBold.woff') format('woff'),
-                     url('<?php echo get_template_directory_uri(); ?>/fonts/Geogrotesque-SemiBold.ttf') format('truetype'),
-                     url('<?php echo get_template_directory_uri(); ?>/fonts/Geogrotesque-SemiBold.svg#CreativeBlockBBBold') format('svg');
-                font-weight: 600;
-                font-style: normal;
-            }
-            @font-face {
-                font-family: 'Geogrotesque';
-                src: url('<?php echo get_template_directory_uri(); ?>/fonts/Geogrotesque-UltraLight.eot');
-                src: url('<?php echo get_template_directory_uri(); ?>/fonts/Geogrotesque-UltraLight.eot?#iefix') format('embedded-opentype'),
-                     url('<?php echo get_template_directory_uri(); ?>/fonts/Geogrotesque-UltraLight.woff') format('woff'),
-                     url('<?php echo get_template_directory_uri(); ?>/fonts/Geogrotesque-UltraLight.ttf') format('truetype'),
-                     url('<?php echo get_template_directory_uri(); ?>/fonts/Geogrotesque-UltraLight.svg#CreativeBlockBBBold') format('svg');
-                font-weight: 100;
-                font-style: normal;
-            }
-            @font-face {
                 font-family: "slick";
                 src: url("<?php echo get_template_directory_uri(); ?>/fonts/slick.eot");
                 src: url("<?php echo get_template_directory_uri(); ?>/fonts/slick.eot?#iefix") format("embedded-opentype"),
@@ -196,7 +176,7 @@
                     $custom_fields = get_post_custom($post->ID);
                        ?>
                 window.icnAllProjects.push({
-                    title:              "<?php echo $post->post_title; ?>",
+                    title:              "<?php echo htmlentities($post->post_title); ?>",
                     slug:               "<?php echo $post->post_name; ?>",
                     date:               "<?= $post->post_modified; ?>",
                     tags:               '<?php echo json_encode(wp_get_post_tags($post->ID)); ?>',

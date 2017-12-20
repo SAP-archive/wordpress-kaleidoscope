@@ -5,7 +5,7 @@
 
 
 
-@media (min-width: 481px) and (max-width: 1920px) {
+@media (max-width: 1920px) {
     .search__icon {
         height: 55px !important;
         width: 55px !important;
@@ -32,7 +32,7 @@
     position: relative;
     left: 5%;
 }
-
+/*
 @media (max-width: 480px) {
     .search__icon {
         height: 32px !important;
@@ -54,7 +54,6 @@
 @media (max-width: 767px) {
     .react-autosuggest__suggestions-container {
         left: 0 !important;
-        /*padding-left: 5px !important;*/
         max-width: 65% !important;
         font-size: 3vh !important;
         line-height: 3.5vh !important;
@@ -65,7 +64,7 @@
         line-height: 120% !important;
     }
 }
-
+*/
 .react-autosuggest__suggestions-container::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 0px;
@@ -79,7 +78,7 @@
 }
 
 .search__send-button {
-    font-family: "Geogrotesque", sans-serif;
+    font-family: "Benton Sans", sans-serif;
     background: #aaa;
     color: white;
     border-radius: 4px;
@@ -150,7 +149,7 @@ position: absolute;
 
 .search__box-form {
     display: inline-block;
-    position: relative;
+    position: absolute;
     height: 60%;
     width: 100%;
 }

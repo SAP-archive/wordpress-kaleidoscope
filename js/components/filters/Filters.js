@@ -232,10 +232,10 @@ export default class Filters extends React.Component {
         if (e.shiftKey) {
             Actions.trigger(ActionTypes.TOGGLE_MATRIX);
         } else {
-            Actions.trigger(ActionTypes.TOGGLE_SEARCH);
             if (AppStore.isSearching()) {
                 Actions.trigger(ActionTypes.TOGGLE_FILTER, !this.props.overview);
             }
+            Actions.trigger(ActionTypes.TOGGLE_SEARCH);
         }
     }
 
