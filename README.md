@@ -5,7 +5,11 @@ ICN Kaleidoscope Wordpress theme
 Description
 -----------
 
-This wordpress theme can be used to display project information and filter them according to specific filter categories, such as locations, portfolio areas, industries etc.
+Kaleidoscope is a browser-based application that provides structured information about projects. The solution’s key benefits are a clear and easy to use user interface, an attractive and touch-enabled user experience and valuable features like combined filtering, full-text search & integrated feedback forms.
+
+On an overview screen the user can browse the full portfolio of projects displayed as colored bubbles. Each bubble represents one project. The color of the bubbles can be related to the main filter criterion. Using different filter dimensions, it is possible to narrow down the number of projects to those of interest.
+
+By clicking on a bubble found interesting, the user can jump to the detail page of the project. Each project detail page is structured the similarly. All content can be maintained in the WordPress content management system that serves as the backend of the solution. The project detail page starts with an individual header picture, including the project name and short catch phrase to get the user’s attention. Each following section, e.g. at a glance, key project information and sections for further detailed project information, can be adjusted by configuration in the WordPress backend.
 
 ![screenshot](installation/screenshot.png)
 
