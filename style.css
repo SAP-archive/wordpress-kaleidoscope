@@ -40,39 +40,10 @@ Tags: ICN, SAP, portfolio
 
 
 /* --- Project Particle Coloring --- */
-
-.category_01 path.cube.cubefill,
-.category_01 svg path.cube.cubefill,
-.category_01 path.cube,
-.category_01 rect.cube,
-.category_01 .cube,
-.category_01.detailview__exitbutton path,
-.category_01.detailview__exitbutton use {
-    fill: #7FB618;
-    stroke: #7FB618;
-}
-
-.category_02 path.cube.cubefill,
-.category_02 svg path.cube.cubefill,
-.category_02 path.cube,
-.category_02 rect.cube,
-.category_02 .cube,
-.category_02.detailview__exitbutton path,
-.category_02.detailview__exitbutton use {
-    fill: #24b6ea;
-    stroke: #24b6ea;
-}
-
-.detailview__footer.category_01,
-.detailview__hero.category_01,
-.particle__category_01,
-.matrix_color_code .matrix_legend_category_01::before,
-.lctable .category_01,
-.timeline .category_01,
-.Matrix_cell ul li.category_01,
-.filtermenuitem__selected .filtermenuitem__legenditem__category_01 {
-    background-color: #7FB618 !important;
-    border-color: #7FB618;
+.category_xx .slick-prev:before,
+.category_xx .slick-next:before {
+    border-color: #000 !important;
+    color: #000;
 }
 
 .detailview__footer.category_xx,
@@ -87,22 +58,61 @@ Tags: ICN, SAP, portfolio
     border-color: #000;
 }
 
-.detailview__footer.category_02,
-.detailview__hero.category_02,
-.particle__category_02,
-.matrix_color_code .matrix_legend_category_02::before,
-.lctable .category_02,
-.timeline .category_02,
-.Matrix_cell ul li.category_02,
-.filtermenuitem__selected .filtermenuitem__legenditem__category_02 {
-    background-color: #24b6ea !important;
-    border-color: #24b6ea;
+.category_00 path.cube.cubefill,
+.category_00 svg path.cube.cubefill,
+.category_00 path.cube,
+.category_00 rect.cube,
+.category_00 .cube,
+.category_00.detailview__exitbutton path,
+.category_00.detailview__exitbutton use {
+    fill: #b8db13;
+    stroke: #b8db13;
 }
 
-.category_xx .slick-prev:before,
-.category_xx .slick-next:before {
-    border-color: #000 !important;
-    color: #000;
+.detailview__footer.category_00,
+.detailview__hero.category_00,
+.particle__category_00,
+.matrix_color_code .matrix_legend_category_00::before,
+.lctable .category_00,
+.timeline .category_00,
+.Matrix_cell ul li.category_00,
+.filtermenuitem__selected .filtermenuitem__legenditem__category_00 {
+    background-color: #b8db13 !important;
+    border-color: #b8db13;
+}
+
+.request_info_button.category_00,
+.detailview__banner_sticker.category_00,
+.detailview__editButton.category_00,
+.category_00 .slick-dots li.slick-active button:before,
+.category_00 .slick-prev:before,
+.category_00 .slick-next:before,
+.filtermenuitem__legenditem.filtermenuitem__legenditem__category_00 {
+    border-color: #b8db13 !important;
+    color: #b8db13;
+}
+
+.category_01 path.cube.cubefill,
+.category_01 svg path.cube.cubefill,
+.category_01 path.cube,
+.category_01 rect.cube,
+.category_01 .cube,
+.category_01.detailview__exitbutton path,
+.category_01.detailview__exitbutton use {
+    fill: #7FB618;
+    stroke: #7FB618;
+}
+
+.detailview__footer.category_01,
+.detailview__hero.category_01,
+.particle__category_01,
+.matrix_color_code .matrix_legend_category_01::before,
+.lctable .category_01,
+.timeline .category_01,
+.Matrix_cell ul li.category_01,
+.filtermenuitem__selected .filtermenuitem__legenditem__category_01 {
+    background-color: #7FB618 !important;
+    border-color: #7FB618;
 }
 
 .request_info_button.category_01,
@@ -114,6 +124,29 @@ Tags: ICN, SAP, portfolio
 .filtermenuitem__legenditem.filtermenuitem__legenditem__category_01 {
     border-color: #7FB618 !important;
     color: #7FB618;
+}
+
+.category_02 path.cube.cubefill,
+.category_02 svg path.cube.cubefill,
+.category_02 path.cube,
+.category_02 rect.cube,
+.category_02 .cube,
+.category_02.detailview__exitbutton path,
+.category_02.detailview__exitbutton use {
+    fill: #24b6ea;
+    stroke: #24b6ea;
+}
+
+.detailview__footer.category_02,
+.detailview__hero.category_02,
+.particle__category_02,
+.matrix_color_code .matrix_legend_category_02::before,
+.lctable .category_02,
+.timeline .category_02,
+.Matrix_cell ul li.category_02,
+.filtermenuitem__selected .filtermenuitem__legenditem__category_02 {
+    background-color: #24b6ea !important;
+    border-color: #24b6ea;
 }
 
 .request_info_button.category_02,
@@ -229,17 +262,6 @@ Tags: ICN, SAP, portfolio
     color: #9D73AA;
 }
 
-.category_00 path.cube.cubefill,
-.category_00 svg path.cube.cubefill,
-.category_00 path.cube,
-.category_00 rect.cube,
-.category_00 .cube,
-.category_00.detailview__exitbutton path,
-.category_00.detailview__exitbutton use {
-    fill: #b8db13;
-    stroke: #b8db13;
-}
-
 .category_06 path.cube.cubefill,
 .category_06 svg path.cube.cubefill,
 .category_06 path.cube,
@@ -249,17 +271,6 @@ Tags: ICN, SAP, portfolio
 .category_06.detailview__exitbutton use {
     fill: #E57562;
     stroke: #E57562;
-}
-
-.category_07 path.cube.cubefill,
-.category_07 svg path.cube.cubefill,
-.category_07 path.cube,
-.category_07 rect.cube,
-.category_07 .cube,
-.category_07.detailview__exitbutton path,
-.category_07.detailview__exitbutton use {
-    fill: #F1A040;
-    stroke: #F1A040;
 }
 
 .detailview__footer.category_06,
@@ -274,6 +285,28 @@ Tags: ICN, SAP, portfolio
     border-color: #E57562;
 }
 
+.request_info_button.category_06,
+.detailview__editButton.category_06,
+.detailview__banner_sticker.category_06,
+.category_06 .slick-dots li.slick-active button:before,
+.category_06 .slick-prev:before,
+.category_06 .slick-next:before,
+.filtermenuitem__legenditem.filtermenuitem__legenditem__category_06 {
+    border-color: #E57562 !important;
+    color: #E57562;
+}
+
+.category_07 path.cube.cubefill,
+.category_07 svg path.cube.cubefill,
+.category_07 path.cube,
+.category_07 rect.cube,
+.category_07 .cube,
+.category_07.detailview__exitbutton path,
+.category_07.detailview__exitbutton use {
+    fill: #F1A040;
+    stroke: #F1A040;
+}
+
 .detailview__footer.category_07,
 .detailview__hero.category_07,
 .particle__category_07,
@@ -284,17 +317,6 @@ Tags: ICN, SAP, portfolio
 .filtermenuitem__selected .filtermenuitem__legenditem__category_07 {
     background-color: #F1A040 !important;
     border-color: #F1A040;
-}
-
-.request_info_button.category_06,
-.detailview__editButton.category_06,
-.detailview__banner_sticker.category_06,
-.category_06 .slick-dots li.slick-active button:before,
-.category_06 .slick-prev:before,
-.category_06 .slick-next:before,
-.filtermenuitem__legenditem.filtermenuitem__legenditem__category_06 {
-    border-color: #E57562 !important;
-    color: #E57562;
 }
 
 .request_info_button.category_07,
@@ -308,30 +330,16 @@ Tags: ICN, SAP, portfolio
     color: #F1A040;
 }
 
-.detailview__footer.category_00,
-.detailview__hero.category_00,
-.particle__category_00,
-.matrix_color_code .matrix_legend_category_00::before,
-.lctable .category_00,
-.timeline .category_00,
-.Matrix_cell ul li.category_00,
-.filtermenuitem__selected .filtermenuitem__legenditem__category_00 {
-    background-color: #b8db13 !important;
-    border-color: #b8db13;
+
+.request_info_button.category_xx:hover,
+.detailview__editButton.category_xx:hover {
+    color: #999999 !important;
 }
 
-.request_info_button.category_00,
-.detailview__banner_sticker.category_00,
-.detailview__editButton.category_00,
-.category_00 .slick-dots li.slick-active button:before,
-.category_00 .slick-prev:before,
-.category_00 .slick-next:before,
-.filtermenuitem__legenditem.filtermenuitem__legenditem__category_00 {
-    border-color: #b8db13 !important;
-    color: #b8db13;
+.request_info_button.category_00:hover,
+.detailview__editButton.category_00:hover {
+    color: #778d0c !important;
 }
-
-
 
 .request_info_button.category_01:hover,
 .detailview__editButton.category_01:hover {
@@ -341,6 +349,21 @@ Tags: ICN, SAP, portfolio
 .request_info_button.category_02:hover,
 .detailview__editButton.category_02:hover {
     color: #23a2cf;
+}
+
+.request_info_button.category_03:hover,
+.detailview__editButton.category_03:hover {
+    color: #1e5d61 !important;
+}
+
+.request_info_button.category_04:hover,
+.detailview__editButton.category_04:hover {
+    color: #1e5d61 !important;
+}
+
+.request_info_button.category_05:hover,
+.detailview__editButton.category_05:hover {
+    color: #674572 !important;
 }
 
 .request_info_button.category_06:hover,
@@ -353,33 +376,35 @@ Tags: ICN, SAP, portfolio
     color: #bd6d0e !important;
 }
 
-.request_info_button.category_00:hover,
-.detailview__editButton.category_00:hover {
-    color: #778d0c !important;
+
+.circle_Low.category_xx {
+    background-color: rgba(204, 204, 204, 0.6);
 }
 
-.request_info_button.category_05:hover,
-.detailview__editButton.category_05:hover {
-    color: #674572 !important;
+.circle_Low.category_00{
+    background-color: rgba(184, 219, 19,0.6);
 }
 
-.request_info_button.category_04:hover,
-.detailview__editButton.category_04:hover {
-    color: #1e5d61 !important;
-}
-
-.request_info_button.category_03:hover,
-.detailview__editButton.category_03:hover {
-    color: #1e5d61 !important;
-}
-
-.request_info_button.category_xx:hover,
-.detailview__editButton.category_xx:hover {
-    color: #999999 !important;
-}
 .circle_Low.category_01 {
     background-color: rgba(127, 182, 24, 0.6);
 }
+
+.circle_Low.category_02{
+    background-color: rgba(88, 132, 211, 0.6);
+}
+
+.circle_Low.category_03{
+    background-color: rgba(54, 168, 175, 0.6);
+}
+
+.circle_Low.category_04{
+    background-color: rgba(157, 115, 170, 0.6);
+}
+
+.circle_Low.category_05{
+    background-color: rgba(229, 117, 98, 0.6);
+}
+
 .circle_Low.category_06 {
     background-color: rgba(241, 160, 64, 0.6);
 }
@@ -388,28 +413,12 @@ Tags: ICN, SAP, portfolio
     background-color: rgba(241, 160, 64, 0.6);
 }
 
-.circle_Low.category_00{
-    background-color: rgba(184, 219, 19,0.6);
-}
-
-.circle_Low.category_05{
-    background-color: rgba(229, 117, 98, 0.6);
-}
-.circle_Low.category_02{
-    background-color: rgba(88, 132, 211, 0.6);
-}
-.circle_Low.category_04{
-    background-color: rgba(157, 115, 170, 0.6);
-}
-.circle_Low.category_03{
-    background-color: rgba(54, 168, 175, 0.6);
-}
-.circle_Low.category_xx {
-    background-color: rgba(204, 204, 204, 0.6);
-}
-
 
 /* --- RUBIX Cube border coloring --- */
+.detailview__content__bubble__bg.category_00 {
+    border-color: #cfeb47;
+}
+
 .detailview__content__bubble__bg.category_01 {
     border-color: #97c049;
 }
@@ -438,12 +447,16 @@ Tags: ICN, SAP, portfolio
     border-color: #F1A040;
 }
 
-.detailview__content__bubble__bg.category_00 {
-    border-color: #cfeb47;
-}
-
 
 /* --- Particle tint ---  These are the bubble color definitions for Internet Explorer  */
+.particle_background_tint__category_xx:before {
+    background-color: rgba(204, 204, 204, 0.6);
+}
+
+.particle_background_tint__category_00:before{
+    background-color: rgba(189, 255, 122, 0.6);
+}
+
 .particle_background_tint__category_01:before {
     background-color: rgba(127, 182, 24, 0.6);
 }
@@ -465,12 +478,7 @@ Tags: ICN, SAP, portfolio
 .particle_background_tint__category_07:before {
     background-color: rgba(241, 160, 64, 0.6);
 }
-.particle_background_tint__category_00:before{
-    background-color: rgba(189, 255, 122, 0.6);
-}
-.particle_background_tint__category_xx:before {
-    background-color: rgba(204, 204, 204, 0.6);
-}
+
 
 /* ##### START change filterbar size ##### */
 
