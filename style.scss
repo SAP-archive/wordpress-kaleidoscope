@@ -6,6 +6,7 @@ Author: Thomas Uhde & Stefan Ritter & Thomas Augsten & Florian Moritz & Lutz Ger
 Version: 1.0
 Tags: ICN, SAP, portfolio
 */
+
 /* --- Overview Page Particle Coloring --- */
 .overview__particle-0 {
   background-color: #7FB618;
@@ -37,7 +38,18 @@ Tags: ICN, SAP, portfolio
   border-color: #E57562;
 }
 
+
 /* --- Project Particle Coloring --- */
+$category_00_color: #b8db13;
+$category_01_color: #7FB618;
+$category_02_color: #24b6ea;
+$category_03_color: #5884d3;
+$category_04_color: #36A8AF;
+$category_05_color: #9D73AA;
+$category_06_color: #E57562;
+$category_07_color: #F1A040;
+
+
 .category_xx .slick-prev:before,
 .category_xx .slick-next:before {
   border-color: #000 !important;
@@ -63,8 +75,8 @@ Tags: ICN, SAP, portfolio
 .category_00 .cube,
 .category_00.detailview__exitbutton path,
 .category_00.detailview__exitbutton use {
-  fill: #b8db13;
-  stroke: #b8db13;
+  fill: $category_00_color;
+  stroke: $category_00_color;
 }
 
 .detailview__footer.category_00,
@@ -75,8 +87,8 @@ Tags: ICN, SAP, portfolio
 .timeline .category_00,
 .Matrix_cell ul li.category_00,
 .filtermenuitem__selected .filtermenuitem__legenditem__category_00 {
-  background-color: #b8db13 !important;
-  border-color: #b8db13;
+  background-color: $category_00_color !important;
+  border-color: $category_00_color;
 }
 
 .request_info_button.category_00,
@@ -86,8 +98,8 @@ Tags: ICN, SAP, portfolio
 .category_00 .slick-prev:before,
 .category_00 .slick-next:before,
 .filtermenuitem__legenditem.filtermenuitem__legenditem__category_00 {
-  border-color: #b8db13 !important;
-  color: #b8db13;
+  border-color: $category_00_color !important;
+  color: $category_00_color;
 }
 
 .category_01 path.cube.cubefill,
@@ -97,8 +109,8 @@ Tags: ICN, SAP, portfolio
 .category_01 .cube,
 .category_01.detailview__exitbutton path,
 .category_01.detailview__exitbutton use {
-  fill: #7FB618;
-  stroke: #7FB618;
+  fill: $category_01_color;
+  stroke: $category_01_color;
 }
 
 .detailview__footer.category_01,
@@ -109,8 +121,8 @@ Tags: ICN, SAP, portfolio
 .timeline .category_01,
 .Matrix_cell ul li.category_01,
 .filtermenuitem__selected .filtermenuitem__legenditem__category_01 {
-  background-color: #7FB618 !important;
-  border-color: #7FB618;
+  background-color: $category_01_color !important;
+  border-color: $category_01_color;
 }
 
 .request_info_button.category_01,
@@ -120,8 +132,8 @@ Tags: ICN, SAP, portfolio
 .category_01 .slick-prev:before,
 .category_01 .slick-next:before,
 .filtermenuitem__legenditem.filtermenuitem__legenditem__category_01 {
-  border-color: #7FB618 !important;
-  color: #7FB618;
+  border-color: $category_01_color !important;
+  color: $category_01_color;
 }
 
 .category_02 path.cube.cubefill,
@@ -131,8 +143,8 @@ Tags: ICN, SAP, portfolio
 .category_02 .cube,
 .category_02.detailview__exitbutton path,
 .category_02.detailview__exitbutton use {
-  fill: #24b6ea;
-  stroke: #24b6ea;
+  fill: $category_02_color;
+  stroke: $category_02_color;
 }
 
 .detailview__footer.category_02,
@@ -143,8 +155,8 @@ Tags: ICN, SAP, portfolio
 .timeline .category_02,
 .Matrix_cell ul li.category_02,
 .filtermenuitem__selected .filtermenuitem__legenditem__category_02 {
-  background-color: #24b6ea !important;
-  border-color: #24b6ea;
+  background-color: $category_02_color !important;
+  border-color: $category_02_color;
 }
 
 .request_info_button.category_02,
@@ -154,8 +166,8 @@ Tags: ICN, SAP, portfolio
 .category_02 .slick-prev:before,
 .category_02 .slick-next:before,
 .filtermenuitem__legenditem.filtermenuitem__legenditem__category_02 {
-  border-color: #24b6ea !important;
-  color: #24b6ea;
+  border-color: $category_02_color !important;
+  color: $category_02_color;
 }
 
 .category_03 path.cube.cubefill,
@@ -165,8 +177,8 @@ Tags: ICN, SAP, portfolio
 .category_03 .cube,
 .category_03.detailview__exitbutton path,
 .category_03.detailview__exitbutton use {
-  fill: #5884d3;
-  stroke: #5884d3;
+  fill: $category_03_color;
+  stroke: $category_03_color;
 }
 
 .detailview__footer.category_03,
@@ -177,8 +189,8 @@ Tags: ICN, SAP, portfolio
 .timeline .category_03,
 .Matrix_cell ul li.category_03,
 .filtermenuitem__selected .filtermenuitem__legenditem__category_03 {
-  background-color: #5884d3 !important;
-  border-color: #5884d3;
+  background-color: $category_03_color !important;
+  border-color: $category_03_color;
 }
 
 .request_info_button.category_03,
@@ -188,8 +200,8 @@ Tags: ICN, SAP, portfolio
 .category_03 .slick-prev:before,
 .category_03 .slick-next:before,
 .filtermenuitem__legenditem.filtermenuitem__legenditem__category_03 {
-  border-color: #5884d3 !important;
-  color: #5884d3;
+  border-color: $category_03_color !important;
+  color: $category_03_color;
 }
 
 .category_04 path.cube.cubefill,
@@ -199,8 +211,8 @@ Tags: ICN, SAP, portfolio
 .category_04 .cube,
 .category_04.detailview__exitbutton path,
 .category_04.detailview__exitbutton use {
-  fill: #36A8AF;
-  stroke: #36A8AF;
+  fill: $category_04_color;
+  stroke: $category_04_color;
 }
 
 .detailview__footer.category_04,
@@ -211,8 +223,8 @@ Tags: ICN, SAP, portfolio
 .timeline .category_04,
 .Matrix_cell ul li.category_04,
 .filtermenuitem__selected .filtermenuitem__legenditem__category_04 {
-  background-color: #36A8AF !important;
-  border-color: #36A8AF;
+  background-color: $category_04_color !important;
+  border-color: $category_04_color;
 }
 
 .request_info_button.category_04,
@@ -222,8 +234,8 @@ Tags: ICN, SAP, portfolio
 .category_04 .slick-prev:before,
 .category_04 .slick-next:before,
 .filtermenuitem__legenditem.filtermenuitem__legenditem__category_04 {
-  border-color: #36A8AF !important;
-  color: #36A8AF;
+  border-color: $category_04_color !important;
+  color: $category_04_color;
 }
 
 .category_05 path.cube.cubefill,
@@ -233,8 +245,8 @@ Tags: ICN, SAP, portfolio
 .category_05 .cube,
 .category_05.detailview__exitbutton path,
 .category_05.detailview__exitbutton use {
-  fill: #9D73AA;
-  stroke: #9D73AA;
+  fill: $category_05_color;
+  stroke: $category_05_color;
 }
 
 .detailview__footer.category_05,
@@ -245,8 +257,8 @@ Tags: ICN, SAP, portfolio
 .timeline .category_05,
 .Matrix_cell ul li.category_05,
 .filtermenuitem__selected .filtermenuitem__legenditem__category_05 {
-  background-color: #9D73AA !important;
-  border-color: #9D73AA;
+  background-color: $category_05_color !important;
+  border-color: $category_05_color;
 }
 
 .request_info_button.category_05,
@@ -256,8 +268,8 @@ Tags: ICN, SAP, portfolio
 .category_05 .slick-prev:before,
 .category_05 .slick-next:before,
 .filtermenuitem__legenditem.filtermenuitem__legenditem__category_05 {
-  border-color: #9D73AA !important;
-  color: #9D73AA;
+  border-color: $category_05_color !important;
+  color: $category_05_color;
 }
 
 .category_06 path.cube.cubefill,
@@ -267,8 +279,8 @@ Tags: ICN, SAP, portfolio
 .category_06 .cube,
 .category_06.detailview__exitbutton path,
 .category_06.detailview__exitbutton use {
-  fill: #E57562;
-  stroke: #E57562;
+  fill: $category_06_color;
+  stroke: $category_06_color;
 }
 
 .detailview__footer.category_06,
@@ -279,8 +291,8 @@ Tags: ICN, SAP, portfolio
 .timeline .category_06,
 .Matrix_cell ul li.category_06,
 .filtermenuitem__selected .filtermenuitem__legenditem__category_06 {
-  background-color: #E57562 !important;
-  border-color: #E57562;
+  background-color: $category_06_color !important;
+  border-color: $category_06_color;
 }
 
 .request_info_button.category_06,
@@ -290,8 +302,8 @@ Tags: ICN, SAP, portfolio
 .category_06 .slick-prev:before,
 .category_06 .slick-next:before,
 .filtermenuitem__legenditem.filtermenuitem__legenditem__category_06 {
-  border-color: #E57562 !important;
-  color: #E57562;
+  border-color: $category_06_color !important;
+  color: $category_06_color;
 }
 
 .category_07 path.cube.cubefill,
@@ -301,8 +313,8 @@ Tags: ICN, SAP, portfolio
 .category_07 .cube,
 .category_07.detailview__exitbutton path,
 .category_07.detailview__exitbutton use {
-  fill: #F1A040;
-  stroke: #F1A040;
+  fill: $category_07_color;
+  stroke: $category_07_color;
 }
 
 .detailview__footer.category_07,
@@ -313,8 +325,8 @@ Tags: ICN, SAP, portfolio
 .timeline .category_07,
 .Matrix_cell ul li.category_07,
 .filtermenuitem__selected .filtermenuitem__legenditem__category_07 {
-  background-color: #F1A040 !important;
-  border-color: #F1A040;
+  background-color: $category_07_color !important;
+  border-color: $category_07_color;
 }
 
 .request_info_button.category_07,
@@ -324,9 +336,10 @@ Tags: ICN, SAP, portfolio
 .category_07 .slick-prev:before,
 .category_07 .slick-next:before,
 .filtermenuitem__legenditem.filtermenuitem__legenditem__category_07 {
-  border-color: #F1A040 !important;
-  color: #F1A040;
+  border-color: $category_07_color !important;
+  color: $category_07_color;
 }
+
 
 .request_info_button.category_xx:hover,
 .detailview__editButton.category_xx:hover {
@@ -373,31 +386,32 @@ Tags: ICN, SAP, portfolio
   color: #bd6d0e !important;
 }
 
+
 .circle_Low.category_xx {
   background-color: rgba(204, 204, 204, 0.6);
 }
 
-.circle_Low.category_00 {
-  background-color: rgba(184, 219, 19, 0.6);
+.circle_Low.category_00{
+  background-color: rgba(184, 219, 19,0.6);
 }
 
 .circle_Low.category_01 {
   background-color: rgba(127, 182, 24, 0.6);
 }
 
-.circle_Low.category_02 {
+.circle_Low.category_02{
   background-color: rgba(88, 132, 211, 0.6);
 }
 
-.circle_Low.category_03 {
+.circle_Low.category_03{
   background-color: rgba(54, 168, 175, 0.6);
 }
 
-.circle_Low.category_04 {
+.circle_Low.category_04{
   background-color: rgba(157, 115, 170, 0.6);
 }
 
-.circle_Low.category_05 {
+.circle_Low.category_05{
   background-color: rgba(229, 117, 98, 0.6);
 }
 
@@ -409,6 +423,7 @@ Tags: ICN, SAP, portfolio
   background-color: rgba(241, 160, 64, 0.6);
 }
 
+
 /* --- RUBIX Cube border coloring --- */
 .detailview__content__bubble__bg.category_00 {
   border-color: #cfeb47;
@@ -419,90 +434,81 @@ Tags: ICN, SAP, portfolio
 }
 
 .detailview__content__bubble__bg.category_02 {
-  border-color: #24b6ea;
+  border-color: $category_02_color;
 }
 
 .detailview__content__bubble__bg.category_03 {
-  border-color: #5884d3;
+  border-color: $category_03_color;
 }
 
 .detailview__content__bubble__bg.category_04 {
-  border-color: #36A8AF;
+  border-color: $category_04_color;
 }
 
 .detailview__content__bubble__bg.category_05 {
-  border-color: #9D73AA;
+  border-color: $category_05_color;
 }
 
 .detailview__content__bubble__bg.category_06 {
-  border-color: #E57562;
+  border-color: $category_06_color;
 }
 
 .detailview__content__bubble__bg.category_07 {
-  border-color: #F1A040;
+  border-color: $category_07_color;
 }
+
 
 /* --- Particle tint ---  These are the bubble color definitions for Internet Explorer  */
 .particle_background_tint__category_xx:before {
   background-color: rgba(204, 204, 204, 0.6);
 }
 
-.particle_background_tint__category_00:before {
+.particle_background_tint__category_00:before{
   background-color: rgba(189, 255, 122, 0.6);
 }
 
 .particle_background_tint__category_01:before {
   background-color: rgba(127, 182, 24, 0.6);
 }
-
-.particle_background_tint__category_02:before {
-  background-color: rgba(134, 211, 244, 0.6);
+.particle_background_tint__category_02:before{
+  background-color: rgba(134, 211, 244, 0.6)
 }
-
-.particle_background_tint__category_03:before {
-  background-color: rgba(54, 105, 176, 0.6);
+.particle_background_tint__category_03:before{
+  background-color: rgba(54, 105, 176, 0.6)
 }
-
-.particle_background_tint__category_04:before {
-  background-color: rgba(53, 233, 221, 0.6);
+.particle_background_tint__category_04:before{
+  background-color: rgba(53, 233, 221, 0.6)
 }
-
-.particle_background_tint__category_05:before {
-  background-color: rgba(165, 97, 229, 0.6);
+.particle_background_tint__category_05:before{
+  background-color: rgba(165, 97, 229, 0.6)
 }
-
 .particle_background_tint__category_06:before {
-  background-color: rgba(241, 92, 65, 0.6);
+  background-color: rgba(241, 92, 65, 0.6)
 }
-
 .particle_background_tint__category_07:before {
   background-color: rgba(241, 160, 64, 0.6);
 }
 
+
 /* ##### START change filterbar size ##### */
+
 /* Edit filterbar size here for displays up to 1920 px with */
 @media (max-width: 1920px) {
   .filters__container {
-    width: 255px !important;
-    /* size of inner filterbar container, holding filterbar titles */
+    width: 255px !important;  /* size of inner filterbar container, holding filterbar titles */
     left: 12px;
   }
 
-  .filtersHidden {
-    transform: translateX(-256px) !important;
-    /*  Take the value from filters__container (above) and add 30px to it! */
+  .filtersHidden  {
+    transform: translateX(-256px) !important; /*  Take the value from filters__container (above) and add 30px to it! */
   }
 }
+
 .filters__container {
-  width: 11.22vw;
-  /* size of inner filterbar container, holding filterbar titles */
+  width: 11.22vw; /* size of inner filterbar container, holding filterbar titles */
 }
 
-.filtersHidden {
-  transform: translateX(-13.22vw);
-  /* only use vw here! Take the value from filters__container and add 2vw to it! */
+.filtersHidden  {
+  transform: translateX(-13.22vw); /* only use vw here! Take the value from filters__container and add 2vw to it! */
 }
-
 /* ##### END change filterbar size ##### */
-
-/*# sourceMappingURL=style.css.map */
